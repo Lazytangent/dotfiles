@@ -88,11 +88,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  brew
   django
-  cask
   zsh-interactive-cd
-  osx
   autojump
   tmux
 )
@@ -144,13 +141,26 @@ alias sqdbm='npx sequelize db:migrate'
 alias sqdbsa='npx sequelize db:seed:all'
 alias sqdbmua='npx sequelize db:migrate:undo:all'
 alias sqdbsua='npx sequelize db:seed:undo:all'
+
+alias dsqi='npx dotenv sequelize init'
+alias dsqdbc='npx dotenv sequelize db:create'
+alias dsqdbm='npx dotenv sequelize db:migrate'
+alias dsqdbsa='npx dotenv sequelize db:seed:all'
+alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
+alias dsqdbsua='npx dotenv sequelize db:seed:undo:all'
+
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
 alias python-venv='source venv/bin/activate'
 alias python-env='source env/bin/activate'
 # alias gcm='git commit -m'
 
+# Ubuntu specific aliases
+alias spotify='flatpak run com.spotify.Client'
+alias screen='sh ~/.screenlayout/default.sh; feh --bg-fill Pictures/Dome-2-dragged.jpg'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /usr/local/bin/activate.sh
+# source /usr/local/bin/activate.sh
+source /home/peter/.local/bin/activate.sh
