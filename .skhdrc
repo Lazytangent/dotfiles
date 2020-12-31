@@ -1,5 +1,5 @@
 # cmd - return : /Applications/iTerm.app/Contents/MacOS/iTerm2 --single-instance -d ~
-cmd - return : open -a iTerm .
+lctrl - return : open -a iTerm ~/
 
 # Navigation
 alt - h : yabai -m window --focus west
@@ -9,6 +9,22 @@ alt - l : yabai -m window --focus east
 
 cmd - j : yabai -m window --focus prev
 cmd - k : yabai -m window --focus next
+
+lctrl - 1 : yabai -m space --focus 1 # 1st Desktop on Macbook
+lctrl - 2 : yabai -m space --focus 2 # 2nd Desktop on Macbook
+lctrl - 3 : yabai -m space --focus 3 # 1st Desktop on BenQ
+lctrl - 4 : yabai -m space --focus 4 # 2nd Desktop on BenQ
+lctrl - 5 : yabai -m space --focus 5 # 3rd Desktop on BenQ
+lctrl - 6 : yabai -m space --focus 6 # 1st Desktop on AORUS
+lctrl - 7 : yabai -m space --focus 7 # 2nd Desktop on AORUS
+lctrl - 8 : yabai -m space --focus 8
+lctrl - 9 : yabai -m space --focus 9
+lctrl - 0 : yabai -m space --focus 10
+
+lctrl - h : yabai -m space --focus recent
+lctrl - j : yabai -m space --focus prev || yabai -m space --focus first
+lctrl - k : yabai -m space --focus next || yabai -m space --focus last
+
 
 # Equalize Windows
 shift + alt - 0 : yabai -m space --balance
@@ -29,3 +45,5 @@ shift + cmd - l : yabai -m window --warp east
 cmd + alt - w : yabai -m space --destroy
 cmd + alt - n : yabai -m space --create
 
+# Toggle float and tiled
+shift + alt - space : yabai -m window --toggle float
