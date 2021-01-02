@@ -39,10 +39,15 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 bindsym $alt+Shift+comma exec --no-startup-id pactl set-sink-volume 1 -10% && $refresh_i3status
-# bindsym $alt+comma exec --no-startup-id pactl set-sink-volume 1 -10% && $refresh_i3status
 bindsym $alt+Shift+period exec --no-startup-id pactl set-sink-volume 1 +10% && $refresh_i3status
-# bindsym $alt+period exec --no-startup-id pactl set-sink-volume 1 +10% && $refresh_i3status
 bindsym $alt+Shift+m exec --no-startup-id pactl set-sink-mute 1 && $refresh_i3status
+# bindsym $alt+comma exec --no-startup-id pactl set-sink-volume 1 -10% && $refresh_i3status
+# bindsym $alt+period exec --no-startup-id pactl set-sink-volume 1 +10% && $refresh_i3status
+
+# Assign programs to workspaces
+assign [class="^Slack$"] 3
+assign [class="^Discord$"] 3
+assign [class="^Spotify$"] 4
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -56,7 +61,7 @@ floating_modifier $super
 
 # start a terminal
 # bindsym $super+Return exec i3-sensible-terminal
-bindsym $super+Return exec gnome-terminal
+bindsym $super+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $super+Shift+q kill
