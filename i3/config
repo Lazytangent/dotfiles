@@ -1,0 +1,318 @@
+# i3 config file (v4)
+set $super Mod4
+set $alt Mod1
+set $ctrl Control
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 8
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+
+bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym $super+Shift+comma exec --no-startup-id pactl set-sink-volume 1 -10% && $refresh_i3status
+bindsym $super+Shift+period exec --no-startup-id pactl set-sink-volume 1 +10% && $refresh_i3status
+bindsym $super+Shift+m exec --no-startup-id pactl set-sink-mute 1 && $refresh_i3status
+# bindsym $super+comma exec --no-startup-id pactl set-sink-volume 1 -10% && $refresh_i3status
+# bindsym $super+period exec --no-startup-id pactl set-sink-volume 1 +10% && $refresh_i3status
+
+# Assign programs to workspaces
+assign [class="^Slack$"] 3
+assign [class="^Discord$"] 3
+assign [class="^Spotify$"] 4
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# Send to scratchpad
+bindsym $super+$ctrl+s move scratchpad
+bindsym $super+Shift+s scratchpad show
+
+# use Mouse+$alt to drag floating windows to their wanted position
+floating_modifier $alt
+
+# start a terminal
+bindsym $ctrl+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $super+Shift+q kill
+
+# lock screen
+# bindsym $super+l exec i3lock -i ~/Pictures/Desktop\ Pictures/Big\ Sur\ Graphic.heic
+# bindsym $super+l exec i3lock -i ~/Pictures/Desktop\ Pictures/Solid\ Colors/Teal.png
+bindsym $super+$alt+l exec i3lock -c 008080
+
+# start dmenu (a program launcher)
+bindsym $super+Shift+d exec dmenu_run
+bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
+
+# autostart
+exec --no-startup-id sh ~/.screenlayout/default.sh
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Desktop\ Pictures/Big\ Sur\ Aerial.heic
+exec --no-startup-id compton --backend glx --vsync opengl-swc
+
+# common apps keybinds
+bindsym $super+s exec flatpak run com.spotify.Client
+bindsym $super+w exec google-chrome
+bindsym $super+z exec slack
+bindsym $super+x exec discord
+
+# change focus
+bindsym $alt+$left focus left
+bindsym $alt+$down focus down
+bindsym $alt+$up focus up
+bindsym $alt+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $alt+Left focus left
+bindsym $alt+Down focus down
+bindsym $alt+Up focus up
+bindsym $alt+Right focus right
+
+# move focused window
+bindsym $alt+Shift+$left move left
+bindsym $alt+Shift+$down move down
+bindsym $alt+Shift+$up move up
+bindsym $alt+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $alt+Shift+Left move left
+bindsym $alt+Shift+Down move down
+bindsym $alt+Shift+Up move up
+bindsym $alt+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $alt+b split h
+
+# split in vertical orientation
+bindsym $alt+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $alt+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $alt+s layout stacking
+bindsym $alt+w layout tabbed
+bindsym $alt+e layout toggle split
+
+# toggle tiling / floating
+bindsym $alt+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $alt+space focus mode_toggle
+
+# focus the parent container
+bindsym $alt+a focus parent
+
+# focus the child container
+# bindsym $alt+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $alt+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $alt+minus scratchpad show
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $alt+1 workspace number $ws1
+bindsym $alt+2 workspace number $ws2
+bindsym $alt+3 workspace number $ws3
+bindsym $alt+4 workspace number $ws4
+bindsym $alt+5 workspace number $ws5
+bindsym $alt+6 workspace number $ws6
+bindsym $alt+7 workspace number $ws7
+bindsym $alt+8 workspace number $ws8
+bindsym $alt+9 workspace number $ws9
+bindsym $alt+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $alt+Shift+1 move container to workspace number $ws1
+bindsym $alt+Shift+2 move container to workspace number $ws2
+bindsym $alt+Shift+3 move container to workspace number $ws3
+bindsym $alt+Shift+4 move container to workspace number $ws4
+bindsym $alt+Shift+5 move container to workspace number $ws5
+bindsym $alt+Shift+6 move container to workspace number $ws6
+bindsym $alt+Shift+7 move container to workspace number $ws7
+bindsym $alt+Shift+8 move container to workspace number $ws8
+bindsym $alt+Shift+9 move container to workspace number $ws9
+bindsym $alt+Shift+0 move container to workspace number $ws10
+
+# reload the configuration file
+bindsym $alt+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $alt+Shift+r restart
+# exit i3 (logs you out of your X session)
+# bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $alt+Shift+e exit
+bindsym $super+$alt+F4 exec shutdown now
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or Mod1+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $alt+r mode "default"
+}
+
+bindsym $alt+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+}
+
+# Setting workspaces to monitors
+workspace 1 output primary
+workspace 2 output DP-0
+workspace 3 output HDMI-0
+workspace 4 output DP-5
+
+# Theme
+set $inner 20
+set $outerTop 30
+set $outerBottom 0
+set $radius 6
+
+set $borderSize 1
+set $focusBorder #FE7C8E
+set $unFocusBorder $7658A8
+set $bg #ED6F81
+set $fg #FFFFFF
+
+set $background #272827
+set $foreground #657B83
+
+# Black
+set $color0 #0F1619
+set $color8 #5D6160
+
+# Red
+set $color1 #393843
+set $color9       #662b37
+
+# green
+set $color2       #75404b
+set $color10      #39402e
+
+# yellow
+set $color3       #39402e
+set $color11      #393843
+
+# blue
+set $color4       #56694d
+set $color12      #75404b
+
+# magenta
+set $color5       #4c584a
+set $color13      #662b37
+
+# cyan
+set $color6       #662b37
+set $color14      #4c584a
+
+# white
+set $color7       #bfbfbf
+set $color15      #bfbfbf
+
+
+for_window [class="^.*"] border pixel $borderSize
+
+# Borders
+# client.focused $focusBorder $focusBorder $focusBorder $bg
+# client.focused_inactive $unFocusBorder          $unFocusBorder  $unFocusBorder  $unFocusBorder
+# client.unfocused        $unFocusBorder          $unFocusBorder  $unFocusBorder  $unFocusBorder
+# client.urgent           $unFocusBorder          $unFocusBorder  $unFocusBorder  $unFocusBorder
+# client.focused		 #526eff  #526eff  #282C34  #E5C07B  #526eff
+# client.focused_inactive	 #A3B2FF  #A3B2FF  #ABB2BF  #E0BEAE  #A3B2FF
+# client.unfocused	 #6C6F93  #6C6F93  #ABB2BF  #2E303E  #6C6F93
+# client.urgent		 #E5C07B  #E5C07B  #282C34  #E5C07B  #E5C07B
+# client.focused          #556064 #556064 #80FFF9 #FDF6E3
+# client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+# client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+# client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+# client.placeholder      #000000 #0c0c0c #ffffff #000000 
+
+# client.background       #2B2C2B
+client.background	$background
+
+client.focused         	$foreground	$background	$foreground	$color2		$color2	
+client.unfocused       	$foreground	$background	$foreground	$color4		$color4
+client.focused_inactive	$foreground	$background	$foreground	$color4		$color4
+client.urgent		$foreground	$background	$foreground	$color4		$color4
+client.placeholder	$foreground	$background	$foreground	$color4		$color4
+
+# Avoid tiling on specific types of windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="About"] floating enable 
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+#######################################################################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used their favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set) or
+# ~/.i3/config.
+#
+# Please remove the following exec line:
+#######################################################################
+exec i3-config-wizard
