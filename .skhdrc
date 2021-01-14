@@ -25,7 +25,6 @@ lctrl - h : yabai -m space --focus recent
 lctrl - j : yabai -m space --focus prev || yabai -m space --focus first
 lctrl - k : yabai -m space --focus next || yabai -m space --focus last
 
-
 # Equalize Windows
 shift + alt - 0 : yabai -m space --balance
 
@@ -47,3 +46,15 @@ cmd + alt - n : yabai -m space --create
 
 # Toggle float and tiled
 shift + alt - space : yabai -m window --toggle float
+
+# move focused window to occupy the left two thirds of the screen
+lctrl + shift - space : yabai -m window --grid 1:3:0:0:2:1
+
+# toggle split within parent node
+lctrl + alt - s : yabai -m window --toggle split
+
+# Quick restart yabai
+ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+# Quick reload skhd
+ctrl + alt + cmd - s : skhd -r
