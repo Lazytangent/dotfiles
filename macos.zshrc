@@ -80,6 +80,10 @@ crata() {
   npx create-react-app $1 --template @appacademy/react-v17 --use-npm
 }
 
+diffy() {
+  diff -y $1 $2
+}
+
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
 alias python-venv='source venv/bin/activate'
