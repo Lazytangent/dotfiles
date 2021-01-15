@@ -1,11 +1,4 @@
-" Stuff from regulat Vim
-filetype plugin on
-filetype indent on
-
-let mapleader = ","
-noremap \ ,
-
-nmap <leader>w :w!<cr>
+map <leader>w :w!<cr>
 
 set ruler
 set cmdheight=1
@@ -28,6 +21,11 @@ set listchars=tab:▸\ ,trail:▫
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set si
+set wrap
 
 call plug#begin("~/.nvim/plugged")
   " Plugin Section
@@ -36,13 +34,17 @@ call plug#begin("~/.nvim/plugged")
   Plug 'ryanoasis/vim-devicons'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+  " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'tpope/vim-commentary'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'joshdick/onedark.vim'
+  Plug 'prettier/vim-prettier'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " Config Section
@@ -51,16 +53,41 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-colorscheme dracula
+set background=dark
+colorscheme onedark
 
+let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeeMinimalUI = 1
-let g:NERDTreeIgnore = []
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERGTreeStatusLink = ''
 " Automatically close nvim if NERDTree is the only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
-nnoremap <silent> <C-b> :NERDTreeToggle<cr>
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark<Space>
+map <leader>nf :NERDTreeFind<cr>
+nnoremap <leader>nm :NERDTreeFocus<cr>
+
+" Vim-Markdown
+let g:markdown_fenced_languages = [ 'html', 'python', 'css', 'js=javascript' ]
+
+" => Parenthesis/bracket
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $q <esc>`>a'<esc>`<i'<esc>
+vnoremap $e <esc>`>a`<esc>`<i`<esc>
+
+" Map auto complete of (, ", ', [
+inoremap $1 ()<esc>i
+inoremap $2 []<esc>i
+inoremap $3 {}<esc>i
+inoremap $4 {<esc>o}<esc>O
+inoremap $q ''<esc>i
+inoremap $e ""<esc>i
 
 " open new split panes to right and below
 set splitright
@@ -94,3 +121,4 @@ let g:fzf_action = {
   \}
 
 let $FZF_DEFAULT_COMMAND = 'ag -g "" '
+
