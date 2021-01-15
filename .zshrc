@@ -30,6 +30,9 @@ plugins=(
   autojump
   vi-mode
   tmux
+  npm
+  ssh-agent
+  gitignore
 )
 
 source $ZSH/oh-my-zsh.sh
