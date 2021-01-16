@@ -2,6 +2,17 @@ set $alt Mod1
 set $super Mod4
 set $ctrl Control
 
+# autostart
+exec --no-startup-id sh ~/.screenlayout/Typical.sh
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Desktop\ Pictures/Big\ Sur\ Aerial.heic
+exec --no-startup-id compton --backend glx --vsync opengl-swc
+
+# Setting workspaces to monitors
+workspace 1 output primary
+workspace 2 output DP-0
+workspace 3 output HDMI-0
+workspace 4 output DP-5
+
 new_window pixel 1
 new_float normal
 
@@ -43,11 +54,6 @@ assign [class="^Discord$"] 3
 assign [class="^Spotify$"] 4
 
 bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
-
-# autostart
-exec --no-startup-id sh ~/.screenlayout/default.sh
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Desktop\ Pictures/Big\ Sur\ Aerial.heic
-exec --no-startup-id compton --backend glx --vsync opengl-swc
 
 # common apps keybinds
 bindsym $super+s exec flatpak run com.spotify.Client
@@ -195,6 +201,7 @@ for_window [class="Xfburn"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
+for_window [class="^.*"] border pixel 0
 
 # reload the configuration file
 bindsym $alt+$super+c reload
@@ -269,7 +276,8 @@ client.background #162025
 
 # Gaps
 gaps inner 10
-gaps outer -4
+# gaps outer -4
+workspace 1 gaps top 26
 
 smart_gaps on
 
