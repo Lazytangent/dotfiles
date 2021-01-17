@@ -10,7 +10,7 @@ noremap \ ,
 
 map <leader>w :w!<cr>
 
-set ruler
+" set ruler
 set cmdheight=1
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -30,6 +30,8 @@ set list
 set listchars=tab:▸\ ,trail:▫
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
+nnoremap <leader>rr :set rnu!<cr>
+nnoremap <leader>aa :set nu!<cr>
 
 set expandtab
 set shiftwidth=2
