@@ -78,7 +78,7 @@ autocmd BufRead *.twig set syntax=html filetype=html
 " => Markdown
 """"""""""""""""""""""""""""""
 let vim_markdown_folding_disabled = 1
-au FileType markdown setl sw=2 ts=2 sts=2 et
-" au FileType markdown setl shiftwidth=4 softtabstop=4 expandtab tabstop=4
+" au FileType markdown setl sw=2 ts=2 sts=2 et
+au FileType markdown setl shiftwidth=4 softtabstop=4 expandtab tabstop=4
 
 au BufNewFile,BufRead /*.rasi setf css
