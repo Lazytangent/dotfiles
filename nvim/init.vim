@@ -80,6 +80,8 @@ map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 nnoremap <leader>nm :NERDTreeFocus<cr>
 
+nnoremap <leader>py :Prettier<cr>
+
 " Vim-Markdown
 let g:markdown_fenced_languages = [ 'html', 'python', 'css', 'js=javascript' ]
 
