@@ -3,9 +3,8 @@ set $super Mod4
 set $ctrl Control
 
 # autostart
-exec --no-startup-id sh ~/.screenlayout/Typical.sh
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Desktop\ Pictures/Big\ Sur\ Aerial.heic
-exec --no-startup-id compton --backend glx --vsync opengl-swc
+exec --no-startup-id sh ~/.screenlayout/default.sh
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Big\ Sur\ Aerial.heic
 
 # Setting workspaces to monitors
 workspace 1 output primary
@@ -32,7 +31,7 @@ bindsym $ctrl+Return exec i3-sensible-terminal
 bindsym $super+Shift+q kill
 
 # start program launcher
-bindsym $alt+d exec --no-startup-id rofi -show run
+bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
 
 # Audio
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
@@ -53,10 +52,8 @@ assign [class="^Slack$"] 3
 assign [class="^Discord$"] 3
 assign [class="^Spotify$"] 4
 
-bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
-
 # common apps keybinds
-bindsym $super+s exec flatpak run com.spotify.Client
+bindsym $super+s exec spotify
 bindsym $super+w exec google-chrome
 bindsym $super+z exec slack
 bindsym $super+x exec discord
@@ -256,14 +253,17 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nitrogen --restore; sleep 1
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --shades
+exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh --pwidgets
+# exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
 # Theme colors
 client.focused #bfbfbf #162025 #bfbfbf #193a48 #193a48
@@ -277,7 +277,7 @@ client.background #162025
 # Gaps
 gaps inner 10
 # gaps outer -4
-workspace 1 gaps top 26
+# workspace 1 gaps top 26
 
 # smart_gaps on
 
@@ -319,5 +319,5 @@ mode "$mode_gaps_outer" {
 }
 
 # set power-manager and volume control
-exec --no-startup-id mate-power-manager
+# exec --no-startup-id mate-power-manager
 
