@@ -33,6 +33,10 @@ plugins=(
   autojump
   tmux
   vi-mode
+  gitignore
+  jsontools
+  ssh-agent
+  npm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -89,9 +93,14 @@ alias gfu='git fetch upstream'
 alias python-venv='source venv/bin/activate'
 alias python-env='source env/bin/activate'
 alias trnom='tree -I node_modules'
+alias n='nvim'
+alias v='vim'
+alias szsh='source .zshrc'
 # alias gcm='git commit -m'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /usr/local/bin/activate.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
