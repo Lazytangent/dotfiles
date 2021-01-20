@@ -15,6 +15,7 @@ call plug#begin("~/.vim/autoload/plugged")
   Plug 'plasticboy/vim-markdown'
   Plug 'jiangmiao/auto-pairs'
   Plug 'sheerun/vim-polyglot'
+  Plug 'dense-analysis/ale'
 call plug#end()
 
 let g:NERDTreeWinPos = "right"
