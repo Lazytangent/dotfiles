@@ -1,0 +1,19 @@
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle django
+antigen bundle zsh-interactive-cd
+antigen bundle autojump
+antigen bundle tmux
+antigen bundle ubuntu
+antigen bundle npm
+antigen bundle ssh-agent
+antigen bundle gitignore
+antigen bundle vi-mode
+antigen bundle jsontools
+
+antigen bundle zsh-users/zsh-autosuggestions
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply

@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source $HOME/antigen.zsh
+antigen init ~/.antigenrc
 export TERM=xterm-256color
 
 # If you come from bash you might have to change your $PATH.
@@ -13,10 +15,6 @@ export TERM=xterm-256color
 # Stuff from my .zshrc
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="/usr/local/sbin:$PATH"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -24,24 +22,28 @@ export NVM_DIR="$HOME/.nvm"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/Applications/Picom/picom/build/src:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Export TMUX Autostart
 export ZSH_TMUX_AUTOSTART_ONCE=true
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(
-  git
-  django
-  zsh-interactive-cd
-  autojump
-  tmux
-  ubuntu
-  npm
-  ssh-agent
-  gitignore
-  vi-mode
-)
+# plugins=(
+#   git
+#   django
+#   zsh-interactive-cd
+#   autojump
+#   tmux
+#   ubuntu
+#   npm
+#   ssh-agent
+#   gitignore
+#   vi-mode
+#   jsontools
+#   zsh-syntax-highlighting
+# )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,18 +90,28 @@ crata() {
   npx create-react-app $1 --template @appacademy/react-v17 --use-npm
 }
 
+diffy() {
+  diff -y $1 $2
+}
+
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
 alias python-venv='source venv/bin/activate'
 alias python-env='source env/bin/activate'
+alias trnom='tree -I node_modules'
+alias n='nvim'
+alias v='vim'
 # alias gcm='git commit -m'
 
 # Ubuntu specific aliases
 alias spotify='flatpak run com.spotify.Client'
-alias screen='sh ~/.screenlayout/default.sh; feh --bg-fill Pictures/Desktop\ Pictures/Big\ Sur\ Aerial.heic'
+alias screen='sh ~/.screenlayout/default.sh; feh --bg-fill Pictures/Big\ Sur\ Aerial.heic'
+alias killpicom='pkill picom'
+alias pcm='picom -b --experimental-backends &'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # source /usr/local/bin/activate.sh
-source /home/peter/.local/bin/activate.sh
+# source /home/peter/.local/bin/activate.sh
+export PATH="$HOME/Applications/dart-sass:$PATH"
