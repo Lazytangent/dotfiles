@@ -83,4 +83,4 @@ au FileType markdown setl shiftwidth=4 softtabstop=4 expandtab tabstop=4
 
 au BufNewFile,BufRead /*.rasi setf css
 
-au FiltType go :setlocal sw=4 ts=4 sts=4
+au FileType go :setlocal sw=4 ts=4 sts=4

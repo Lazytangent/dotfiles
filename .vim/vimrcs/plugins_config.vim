@@ -19,6 +19,8 @@ call plug#begin("~/.vim/autoload/plugged")
   Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
   Plug 'tpope/vim-surround'
   Plug 'mattn/emmet-vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-eunuch'
 call plug#end()
 
 let g:NERDTreeWinPos = "right"
