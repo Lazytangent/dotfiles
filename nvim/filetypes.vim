@@ -17,6 +17,7 @@ au FileType python map <buffer> <leader>1 /class
 au FileType python map <buffer> <leader>2 /def 
 au FileType python map <buffer> <leader>C ?class 
 au FileType python map <buffer> <leader>D ?def 
+au FileType python :setlocal sw=4 ts=4 sts=4
 
 
 """"""""""""""""""""""""""""""
@@ -78,7 +79,8 @@ autocmd BufRead *.twig set syntax=html filetype=html
 " => Markdown
 """"""""""""""""""""""""""""""
 let vim_markdown_folding_disabled = 1
-" au FileType markdown setl sw=2 ts=2 sts=2 et
 au FileType markdown setl shiftwidth=4 softtabstop=4 expandtab tabstop=4
 
 au BufNewFile,BufRead /*.rasi setf css
+
+au FiltType go :setlocal sw=4 ts=4 sts=4
