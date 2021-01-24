@@ -10,7 +10,7 @@ noremap \ ,
 
 map <leader>w :w!<cr>
 
-" set ruler
+set ruler
 set cmdheight=1
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -30,8 +30,6 @@ set list
 set listchars=tab:▸\ ,trail:▫
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
-nnoremap <leader>rr :set rnu!<cr>
-nnoremap <leader>aa :set nu!<cr>
 
 set expandtab
 set shiftwidth=2
@@ -58,16 +56,21 @@ call plug#begin("~/.nvim/plugged")
   Plug 'plasticboy/vim-markdown'
   Plug 'jiangmiao/auto-pairs'
   Plug 'sheerun/vim-polyglot'
+  Plug 'dense-analysis/ale'
+  Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
+  Plug 'tpope/vim-surround'
+  Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Config Section
-if (has("termguicolors"))
-  set termguicolors
-endif
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
 
 syntax enable
 set background=dark
 colorscheme onedark
+" colorscheme dracula
 
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowHidden = 1
@@ -81,11 +84,10 @@ map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 nnoremap <leader>nm :NERDTreeFocus<cr>
-
 nnoremap <leader>py :Prettier<cr>
 
 " Vim-Markdown
-let g:markdown_fenced_languages = [ 'html', 'python', 'css', 'js=javascript' ]
+let g:markdown_fenced_languages = [ 'html', 'python', 'css', 'javascript', 'js=javascript', 'json=javascript', 'sass' ]
 
 " => Parenthesis/bracket
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

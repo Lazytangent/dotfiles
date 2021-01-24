@@ -62,14 +62,18 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
-if has("termguicolors")
-  set termguicolors
-endif
+" if has("termguicolors")
+  " set termguicolors
+" endif
 
 set background=dark
 
 set encoding=utf8
 set ffs=unix
+
+set nobackup
+set nowb
+set noswapfile
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -98,12 +102,13 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
+map <leader>tt :tabnext<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings

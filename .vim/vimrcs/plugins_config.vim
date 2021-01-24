@@ -16,6 +16,9 @@ call plug#begin("~/.vim/autoload/plugged")
   Plug 'jiangmiao/auto-pairs'
   Plug 'sheerun/vim-polyglot'
   Plug 'dense-analysis/ale'
+  Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
+  Plug 'tpope/vim-surround'
+  Plug 'mattn/emmet-vim'
 call plug#end()
 
 let g:NERDTreeWinPos = "right"
@@ -33,7 +36,7 @@ nnoremap <leader>nm :NERDTreeFocus<cr>
 nnoremap <leader>py :Prettier<cr>
 
 " Vim-Markdown
-let g:markdown_fenced_languages = [ 'html', 'python', 'css', 'js=javascript' ]
+let g:markdown_fenced_languages = [ 'html', 'python', 'css', 'js=javascript', 'javascript', 'json=javascript', 'sass' ]
 
 
 nnoremap <C-p> :FZF<cr>
