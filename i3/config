@@ -138,6 +138,18 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+set $ws9 9
+set $ws10 10
+set $ws11 11
+set $ws12 12
+set $ws13 13
+set $ws14 14
+set $ws15 15
+set $ws16 16
+set $ws17 17
+set $ws18 18
+set $ws19 19
+set $ws20 20
 
 # switch to workspace
 bindsym $alt+1 workspace $ws1
@@ -148,6 +160,18 @@ bindsym $alt+5 workspace $ws5
 bindsym $alt+6 workspace $ws6
 bindsym $alt+7 workspace $ws7
 bindsym $alt+8 workspace $ws8
+bindsym $alt+9 workspace $ws9
+bindsym $alt+0 workspace $ws10
+bindsym $super+1 workspace $ws11
+bindsym $super+2 workspace $ws12
+bindsym $super+3 workspace $ws13
+bindsym $super+4 workspace $ws14
+bindsym $super+5 workspace $ws15
+bindsym $super+6 workspace $ws16
+bindsym $super+7 workspace $ws17
+bindsym $super+8 workspace $ws18
+bindsym $super+9 workspace $ws19
+bindsym $super+0 workspace $ws20
 
 # Move focused container to workspace
 bindsym $alt+Ctrl+1 move container to workspace $ws1
@@ -158,6 +182,18 @@ bindsym $alt+Ctrl+5 move container to workspace $ws5
 bindsym $alt+Ctrl+6 move container to workspace $ws6
 bindsym $alt+Ctrl+7 move container to workspace $ws7
 bindsym $alt+Ctrl+8 move container to workspace $ws8
+bindsym $alt+Ctrl+9 move container to workspace $ws9
+bindsym $alt+Ctrl+0 move container to workspace $ws10
+bindsym $super+Ctrl+1 move container to workspace $ws11
+bindsym $super+Ctrl+2 move container to workspace $ws12
+bindsym $super+Ctrl+3 move container to workspace $ws13
+bindsym $super+Ctrl+4 move container to workspace $ws14
+bindsym $super+Ctrl+5 move container to workspace $ws15
+bindsym $super+Ctrl+6 move container to workspace $ws16
+bindsym $super+Ctrl+7 move container to workspace $ws17
+bindsym $super+Ctrl+8 move container to workspace $ws18
+bindsym $super+Ctrl+9 move container to workspace $ws19
+bindsym $super+Ctrl+0 move container to workspace $ws20
 
 # Move to workspace with focused container
 bindsym $alt+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -168,6 +204,18 @@ bindsym $alt+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $alt+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $alt+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $alt+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $alt+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $alt+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $super+Shift+1 move container to workspace $ws11; workspace $ws11
+bindsym $super+Shift+2 move container to workspace $ws12; workspace $ws12
+bindsym $super+Shift+3 move container to workspace $ws13; workspace $ws13
+bindsym $super+Shift+4 move container to workspace $ws14; workspace $ws14
+bindsym $super+Shift+5 move container to workspace $ws15; workspace $ws15
+bindsym $super+Shift+6 move container to workspace $ws16; workspace $ws16
+bindsym $super+Shift+7 move container to workspace $ws17; workspace $ws17
+bindsym $super+Shift+8 move container to workspace $ws18; workspace $ws18
+bindsym $super+Shift+9 move container to workspace $ws19; workspace $ws19
+bindsym $super+Shift+0 move container to workspace $ws20; workspace $ws20
 
 # Open specific applications in floating mode
 # for_window [title="alsamixer"] floating enable border pixel 1
@@ -234,7 +282,7 @@ bindsym $alt+Shift+e exit
 bindsym $super+$alt+F4 exec shutdown now
 
 # Set shut down, restart and locking features
-bindsym $alt+0 mode "$mode_system"
+bindsym $alt+$ctrl+$super+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
