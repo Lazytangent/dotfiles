@@ -5,11 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source $HOME/antigen.zsh
+antigen init ~/.antigenrc
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="/usr/local/sbin:$PATH"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+# export PATH="/usr/local/sbin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -23,26 +26,24 @@ export ZSH_TMUX_ITERM2=true
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(
-  git
-  brew
-  django
-  cask
-  zsh-interactive-cd
-  osx
-  autojump
-  tmux
-  vi-mode
-  gitignore
-  jsontools
-  ssh-agent
-  npm
-)
+# plugins=(
+#   git
+#   brew
+#   django
+#   cask
+#   zsh-interactive-cd
+#   osx
+#   autojump
+#   tmux
+#   vi-mode
+#   gitignore
+#   jsontools
+#   ssh-agent
+#   npm
+# )
 
 source $ZSH/oh-my-zsh.sh
-
 bindkey -v
-
 export EDITOR='vim'
 
 mcd() {
@@ -71,6 +72,9 @@ alias dsqdbm='npx dotenv sequelize db:migrate'
 alias dsqdbsa='npx dotenv sequelize db:seed:all'
 alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
 alias dsqdbsua='npx dotenv sequelize db:seed:undo:all'
+
+alias herokubash='heroku run bash'
+alias herokusq='heroku run npm run sequelize'
 
 cra() {
   npx create-react-app $1 --use-npm
