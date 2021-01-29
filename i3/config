@@ -52,13 +52,14 @@ bindsym $super+Shift+m exec --no-startup-id pactl set-sink-mute 1 && $refresh_i3
 # Assign programs to workspaces
 assign [class="Slack"] 3
 assign [class="discord"] 3
-assign [class="spotify"] 4
+assign [class="^Spotify$" instance="spotify"] 4
 
 # common apps keybinds
 bindsym $super+s exec spotify
 bindsym $super+w exec google-chrome
 bindsym $super+z exec slack
 bindsym $super+x exec flatpak run com.discordapp.Discord
+bindsym $super+l exec steam
 
 # Set directional keys for navigating
 set $up k
