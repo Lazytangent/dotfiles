@@ -14,13 +14,19 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # eval "$(rbenv init -)"
 # export PATH="/usr/local/sbin:$PATH"
 
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1
+then
+  eval "$(pyenv init -)"
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_ITERM2=true
 
@@ -44,7 +50,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source $ZSH/oh-my-zsh.sh
 bindkey -v
-export EDITOR='vim'
+export EDITOR='nvim'
 
 mcd() {
   mkdir $1 && cd $1
@@ -94,8 +100,16 @@ diffy() {
 
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
+
 alias python-venv='source venv/bin/activate'
 alias python-env='source env/bin/activate'
+
+# Python Unit tests
+alias pytest='python -m unittest'
+alias grevf='green -vv -f'
+alias grevv='green -vv'
+alias grevq='green -vv -q'
+
 alias trnom='tree -I node_modules'
 alias n='nvim'
 alias v='vim'
