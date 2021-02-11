@@ -1,0 +1,52 @@
+format = """
+$username\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$docker_context\
+$package\
+$cmake\
+$golang\
+$java\
+$kotlin\
+$nodejs\
+$python\
+$swift\
+$aws\
+$gcloud\
+$openstack\
+$nix_shell\
+$env_var\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$status\
+$line_break\
+$character\
+"""
+
+[username]
+style_user = "green bold"
+show_always = true
+format = "[$user]($style) "
+
+[time]
+disabled = false
+time_format = "%a %d %h %Y %T"
+
+[git_branch]
+always_show_remote = true
+
+[kubernetes]
+disabled = false
+
+[directory]
+format = "in [$path]($style)[$read_only]($read_only_style) "
+
+[python]
+pyenv_version_name = true
+format = 'via [$symbol$pyenv_prefix($version)( \($virtualenv\))]($style) '
