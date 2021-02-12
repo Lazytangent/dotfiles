@@ -91,6 +91,7 @@ alias python-env='source env/bin/activate'
 # Pipenv
 alias pipi='pipenv install'
 alias pips='pipenv shell'
+alias pipr='pipenv run'
 
 # Python Unit tests
 alias pyutest='python -m unittest'
@@ -123,7 +124,9 @@ alias n='nvim'
 alias v='vim'
 alias szsh='source .zshrc'
 alias rmr='rm -r'
+alias rmrf='rm -rf'
 alias ezsh='exec zsh'
+alias zipr='zip -r'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
