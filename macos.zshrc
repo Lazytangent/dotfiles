@@ -10,6 +10,7 @@ antigen init ~/.antigenrc
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Pyenv Setup
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/Documents/mdloader/build:$PATH"
 
@@ -18,11 +19,13 @@ then
   eval "$(pyenv init -)"
 fi
 
+# Pipenv Setup
 export PIPENV_VENV_IN_PROJECT=1
 export PYENV_ROOT=$HOME/.pyenv
 export PIPENV_PYTHON=$PYENV_ROOT/shims/python
 export PATH="$PYENV_ROOT/shims:$PATH"
 
+# nvm Setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -31,13 +34,20 @@ export NVM_DIR="$HOME/.nvm"
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_ITERM2=true
-
 source $ZSH/oh-my-zsh.sh
+
+# Vi-Mode in Terminal
 bindkey -v
 set -o vi
 export EDITOR='nvim'
 
-alias npmt2='npm t 2> /dev/null'
+# Docker Plugin Completion
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+###################################################################################################
+#################################### START OF ALIASES #############################################
+###################################################################################################
 
 # Sequelize
 sqmg() {
@@ -110,6 +120,13 @@ alias fdbdown='flask db downgrade'
 alias fdbcurr='flask db current'
 alias fdbmerge='flask db merge'
 
+# Docker
+alias dps='docker ps'
+alias dc='docker container'
+alias der='docker'
+alias ders='docker start'
+alias dere='docker exec'
+
 # ZSH Related
 mcd() {
   mkdir $1 && cd $1
@@ -120,6 +137,8 @@ diffy() {
 }
 
 alias trnom='tree -I node_modules'
+alias trea='tree -a'
+alias treanom='tree -a -I node_modules'
 alias n='nvim'
 alias v='vim'
 alias szsh='source .zshrc'
@@ -127,6 +146,10 @@ alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
 alias zipr='zip -r'
+
+# Exa
+alias exa1='exa -1'
+alias exaa='exa -a'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
