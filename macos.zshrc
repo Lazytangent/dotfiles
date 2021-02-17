@@ -122,10 +122,15 @@ alias fdbmerge='flask db merge'
 
 # Docker
 alias dps='docker ps'
+alias dpsa='docker ps -a'
 alias dc='docker container'
 alias der='docker'
 alias ders='docker start'
 alias dere='docker exec'
+alias dermage='docker image'
+alias dermages='docker image ls'
+alias dernet='docker network'
+alias dernets='docker network ls'
 
 # ZSH Related
 mcd() {
