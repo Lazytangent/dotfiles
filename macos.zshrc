@@ -45,116 +45,15 @@ export EDITOR='nvim'
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
-###################################################################################################
-#################################### START OF ALIASES #############################################
-###################################################################################################
+# Port in Functions
+if [ -f ~/.zsh_functions ]; then
+  . ~/.zsh_functions
+fi
 
-# Sequelize
-sqmg() {
-  npx sequelize model:generate --name $1 --attributes $2
-}
-
-sqsg() {
-  npx sequelize seed:generate --name $1
-}
-
-alias sqi='npx sequelize init'
-alias sqdbc='npx sequelize db:create'
-alias sqdbm='npx sequelize db:migrate'
-alias sqdbsa='npx sequelize db:seed:all'
-alias sqdbmua='npx sequelize db:migrate:undo:all'
-alias sqdbsua='npx sequelize db:seed:undo:all'
-
-# Dotenv Sequelize
-alias dsqi='npx dotenv sequelize init'
-alias dsqdbc='npx dotenv sequelize db:create'
-alias dsqdbm='npx dotenv sequelize db:migrate'
-alias dsqdbsa='npx dotenv sequelize db:seed:all'
-alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
-alias dsqdbsua='npx dotenv sequelize db:seed:undo:all'
-
-# Heroku
-alias herokubash='heroku run bash'
-alias herokusq='heroku run npm run sequelize'
-
-# Create React App
-cra() {
-  npx create-react-app $1 --use-npm
-}
-
-crat() {
-  npx create-react-app $1 --template $2 --use-npm
-}
-
-crata() {
-  npx create-react-app $1 --template @appacademy/react-v17 --use-npm
-}
-
-# Git
-alias gphm='git push heroku $(git_main_branch)'
-alias gfu='git fetch upstream'
-
-# Python Venv and Env
-alias python-venv='source venv/bin/activate'
-alias python-env='source env/bin/activate'
-
-# Pipenv
-alias pipi='pipenv install'
-alias pips='pipenv shell'
-alias pipr='pipenv run'
-
-# Python Unit tests
-alias pyutest='python -m unittest'
-alias grevf='green -vv -f'
-alias grevv='green -vv'
-alias grevq='green -vv -q'
-alias grevqf='green -vv -q -f'
-
-# Flask-Migrate
-alias fdb='flask db'
-alias fdbi='flask db init'
-alias fdbr='flask db revision'
-alias fdbm='flask db migrate'
-alias fdbup='flask db upgrade'
-alias fdbdown='flask db downgrade'
-alias fdbcurr='flask db current'
-alias fdbmerge='flask db merge'
-
-# Docker
-alias dps='docker ps'
-alias dpsa='docker ps -a'
-alias dc='docker container'
-alias der='docker'
-alias ders='docker start'
-alias dere='docker exec'
-alias dermage='docker image'
-alias dermages='docker image ls'
-alias dernet='docker network'
-alias dernets='docker network ls'
-
-# ZSH Related
-mcd() {
-  mkdir $1 && cd $1
-}
-
-diffy() {
-  diff -y $1 $2
-}
-
-alias trnom='tree -I node_modules'
-alias trea='tree -a'
-alias treanom='tree -a -I node_modules'
-alias n='nvim'
-alias v='vim'
-alias szsh='source .zshrc'
-alias rmr='rm -r'
-alias rmrf='rm -rf'
-alias ezsh='exec zsh'
-alias zipr='zip -r'
-
-# Exa
-alias exa1='exa -1'
-alias exaa='exa -a'
+# Port in Aliases
+if [ -f ~/.zsh_aliases ]; then
+  . ~/.zsh_aliases
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

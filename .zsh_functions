@@ -1,0 +1,30 @@
+function mcd() {
+  mkdir $1 && cd $1
+}
+
+function diffy() {
+  diff -y $1 $2
+}
+
+# Create React App
+function cra() {
+  npx create-react-app $1 --use-npm
+}
+
+function crat() {
+  npx create-react-app $1 --template $2 --use-npm
+}
+
+function crata() {
+  npx create-react-app $1 --template @appacademy/react-v17 --use-npm
+}
+
+# Sequelize
+function sqmg() {
+  npx sequelize model:generate --name $1 --attributes $2
+}
+
+function sqsg() {
+  npx sequelize seed:generate --name $1
+}
+
