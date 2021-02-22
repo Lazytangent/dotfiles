@@ -1,6 +1,8 @@
 # Heroku
 alias herokubash='heroku run bash'
 alias herokusq='heroku run npm run sequelize'
+alias herconp='heroku container:push'
+alias herconr='heroku container:release'
 
 # Git
 alias gphm='git push heroku $(git_main_branch)'
