@@ -1,6 +1,7 @@
 # Heroku
 alias herokubash='heroku run bash'
 alias herokusq='heroku run npm run sequelize'
+alias herconfs='heroku config:set -a'
 alias herconp='heroku container:push'
 alias herconr='heroku container:release'
 
