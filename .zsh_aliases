@@ -1,7 +1,7 @@
 # Heroku
 alias herokubash='heroku run bash'
 alias herokusq='heroku run npm run sequelize'
-alias herconfs='heroku config:set -a'
+alias herconfs='heroku git:remote -a'
 alias herconp='heroku container:push'
 alias herconr='heroku container:release'
 
@@ -34,6 +34,11 @@ alias fdbup='flask db upgrade'
 alias fdbdown='flask db downgrade'
 alias fdbcurr='flask db current'
 alias fdbmerge='flask db merge'
+alias fdbr='flask db downgrade base'
+
+# Flask Seed Commands
+alias fsa='flask seed all'
+alias fsu='flask seed undo'
 
 # Docker
 alias dps='docker ps'
