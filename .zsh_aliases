@@ -1,3 +1,10 @@
+# NPM
+alias npmt='npm test'
+alias npmts='npm test -- --silent'
+
+# Django
+alias pmy='python manage.py'
+
 # Heroku
 alias herokubash='heroku run bash'
 alias herokusq='heroku run npm run sequelize'
@@ -10,8 +17,8 @@ alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
 
 # Python Venv and Env
-alias python-venv='source venv/bin/activate'
-alias python-env='source env/bin/activate'
+alias pyvenv='source venv/bin/activate'
+alias 'python-env'='source env/bin/activate'
 
 # Pipenv
 alias pipi='pipenv install'
