@@ -15,6 +15,7 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
+alias gitlog='git log --all --decorate --online --graph'
 
 # Python Venv and Env
 alias pyvenv='source venv/bin/activate'
