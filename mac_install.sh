@@ -5,5 +5,5 @@ set -e
 
 cp ~/dot-files/.zsh_aliases ~/
 cp ~/dot-files/.zsh_functions ~/
-cp ~/dot-files/.zshrc ~/
+cp ~/dot-files/macos.zshrc ~/.zshrc
 cp ~/.antigenrc ~/

@@ -33,7 +33,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_ITERM2=true
 source $ZSH/oh-my-zsh.sh
