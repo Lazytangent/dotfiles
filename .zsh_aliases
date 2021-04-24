@@ -15,11 +15,11 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
-alias gitlog='git log --all --decorate --online --graph'
+alias gitlog='git log --all --decorate --oneline --graph'
 
 # Python Venv and Env
 alias pyvenv='source venv/bin/activate'
-alias 'python-env'='source env/bin/activate'
+alias pyyenv='source env/bin/activate'
 
 # Pipenv
 alias pipi='pipenv install'
