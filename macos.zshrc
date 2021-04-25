@@ -35,7 +35,9 @@ export NVM_DIR="$HOME/.nvm"
 # Path to your oh-my-zsh installation.
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_ITERM2=true
-source $ZSH/oh-my-zsh.sh
+
+export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
 
 # Vi-Mode in Terminal
 bindkey -v
