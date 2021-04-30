@@ -1,3 +1,6 @@
+# Ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
 # NPM
 alias npmt='npm test'
 alias npmts='npm test -- --silent'
