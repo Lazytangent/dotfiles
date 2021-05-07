@@ -1,5 +1,6 @@
 format = """
 $username\
+$hostname\
 $kubernetes\
 $directory\
 $git_branch\
@@ -33,6 +34,10 @@ $character\
 style_user = "green bold"
 show_always = true
 format = "[$user]($style) "
+
+[hostname]
+ssh_only = false
+format = "@ [$hostname]($style) "
 
 [time]
 disabled = false
