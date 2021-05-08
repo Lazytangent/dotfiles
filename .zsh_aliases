@@ -3,6 +3,8 @@ alias thome="ts home -c ~/"
 alias twork="ts work -c ~/Documents/AppAcademyWork/"
 alias tnvim="ts nvim -c ~/.config/nvim/"
 alias tleet="ts leetcode -c ~/Documents/Algorithms/LeetCode/"
+alias tqmk="ts qmk -c ~/qmk_firmware"
+alias tdot="ts dot-files -c ~/dot-files"
 
 # Homebrew
 alias x86brew="/usr/local/Homebrew/bin/brew"
