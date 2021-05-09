@@ -1,3 +1,7 @@
+function jsdock() {
+  jsdoc -c $1
+}
+
 function tsw() {
   tmux switch -t $1
 }

@@ -1,3 +1,6 @@
+# JSDoc
+alias jsdocc="jsdoc -c ./conf.json"
+
 # Tmux
 alias thome="ts home -c ~/"
 alias twork="ts work -c ~/Documents/AppAcademyWork/"
