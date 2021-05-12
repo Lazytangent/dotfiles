@@ -8,6 +8,7 @@ alias tnvim="ts nvim -c ~/.config/nvim/"
 alias tleet="ts leetcode -c ~/Documents/Algorithms/LeetCode/"
 alias tqmk="ts qmk -c ~/qmk_firmware"
 alias tdot="ts dot-files -c ~/dot-files"
+alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
 
 # Homebrew
 alias x86brew="/usr/local/Homebrew/bin/brew"
@@ -91,8 +92,8 @@ alias ezsh='exec zsh'
 alias zipr='zip -r'
 
 # Exa
-alias exa1='exa -1'
-alias exaa='exa -a'
+alias l='exa -la --git'
+alias ls='exa'
 
 # Sequelize
 alias sqi='npx sequelize init'
