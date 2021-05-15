@@ -28,6 +28,9 @@ fi
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_PYTHON=$PYENV_ROOT/shims/python
 
+# Clangd Language Server
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 # nvm Setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -70,3 +73,4 @@ fi
 export PATH="/usr/local/sbin:$PATH"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
