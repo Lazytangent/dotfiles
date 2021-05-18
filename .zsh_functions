@@ -28,7 +28,8 @@ function tsw() {
       echo "Too many matches"
     fi
   else
-    tmux new -s $1
+    tmux new -s $1 -d
+    tmux switch -t $1
   fi
 }
 
