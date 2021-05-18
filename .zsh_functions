@@ -4,7 +4,12 @@ function jsdock() {
 
 function t() {
   if tmux ls | grep -q $1; then
-    tmux attach -t $1
+    local my_num=$(tmux ls | grep -c $1)
+    if [ $my_num = 1 ]; then
+      tmux attach -t $1
+    else
+      echo "Too many matches"
+    fi
   else
     tmux new -s $1
   fi
@@ -15,7 +20,16 @@ function tc() {
 }
 
 function tsw() {
-  tmux switch -t $1
+  if tmux ls | grep -q $1; then
+    local my_num=$(tmux ls | grep -c $1)
+    if [ $my_num = 1 ]; then
+      tmux switch -t $1
+    else
+      echo "Too many matches"
+    fi
+  else
+    tmux new -s $1
+  fi
 }
 
 function mcd() {
