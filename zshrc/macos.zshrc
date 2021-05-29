@@ -1,20 +1,11 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Set Antigen for plugins
 source $HOME/antigen.zsh
 antigen init ~/.antigenrc
 
-# MacOS iTerm Shell Integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Pyenv Setup
+export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$HOME/Documents/mdloader/build:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
 
 if command -v pyenv 1>/dev/null 2>&1
 then
@@ -23,18 +14,12 @@ fi
 
 # Pipenv Setup
 export PIPENV_VENV_IN_PROJECT=1
-export PYENV_ROOT=$HOME/.pyenv
 export PIPENV_PYTHON=$PYENV_ROOT/shims/python
-export PATH="$PYENV_ROOT/shims:$PATH"
 
 # nvm Setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Emacs
-export PATH="$HOME/.emacs.d/bin:$PATH"
-export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
 
 # Vi-Mode in Terminal
 bindkey -v

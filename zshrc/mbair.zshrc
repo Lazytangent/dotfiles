@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 source $HOME/antigen.zsh
 antigen init ~/.antigenrc
 
@@ -12,7 +5,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Pyenv Setup
 export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$HOME/Documents/mdloader/build:$PATH"
+export PYENV_ROOT=$HOME/.pyenv
+export PATH="$PYENV_ROOT/shims:$PATH"
 
 if command -v pyenv 1>/dev/null 2>&1
 then
@@ -21,9 +15,7 @@ fi
 
 # Pipenv Setup
 export PIPENV_VENV_IN_PROJECT=1
-export PYENV_ROOT=$HOME/.pyenv
 export PIPENV_PYTHON=$PYENV_ROOT/shims/python
-export PATH="$PYENV_ROOT/shims:$PATH"
 
 # Clangd
 export PATH="/usr/local/opt/llvm/bin:$PATH"
