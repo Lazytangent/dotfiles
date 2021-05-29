@@ -12,12 +12,12 @@ antigen init ~/.antigenrc
 # MacOS iTerm Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PATH="$HOME/Documents/mdloader/build:$PATH"
+
 # Pyenv Setup
 export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/shims:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
-
-export PATH="$HOME/Documents/mdloader/build:$PATH"
 
 if command -v pyenv 1>/dev/null 2>&1
 then
