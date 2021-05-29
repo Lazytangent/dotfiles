@@ -12,25 +12,30 @@ antigen init ~/.antigenrc
 # iTerm Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# MDLoader
+export PATH="$HOME/Documents/mdloader/build:$PATH"
+
 # Rbenv Setup
 eval "$(rbenv init -)"
 
 # Pyenv Setup
+export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$HOME/Documents/mdloader/build:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
 if command -v pyenv 1>/dev/null 2>&1
 then
   eval "$(pyenv init -)"
 fi
+
+# Clangd
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Go Setup
 export PATH="$HOME/go/bin:$PATH"
 
 # Pipenv Setup
 export PIPENV_VENV_IN_PROJECT=1
-export PYENV_ROOT=$HOME/.pyenv
 export PIPENV_PYTHON=$PYENV_ROOT/shims/python
-export PATH="$PYENV_ROOT/shims:$PATH"
 
 # nvm Setup
 export NVM_DIR="$HOME/.nvm"
@@ -76,26 +81,3 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Starship setup
 eval "$(starship init zsh)"
-
-# Conda setup
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/petermai/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/Users/petermai/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/Users/petermai/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/Users/petermai/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
-# Perl setup
-# PATH="/Users/petermai/perl5/bin${PATH:+:${PATH}}"; export PATH;
-# PERL5LIB="/Users/petermai/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-# PERL_LOCAL_LIB_ROOT="/Users/petermai/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-# PERL_MB_OPT="--install_base \"/Users/petermai/perl5\""; export PERL_MB_OPT;
-# PERL_MM_OPT="INSTALL_BASE=/Users/petermai/perl5"; export PERL_MM_OPT;
