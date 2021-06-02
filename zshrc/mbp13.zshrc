@@ -30,7 +30,6 @@ export NVM_DIR="$HOME/.nvm"
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_ITERM2=true
-source $ZSH/oh-my-zsh.sh
 
 # Doom Emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
@@ -56,9 +55,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Autoenv plugin
-source /usr/local/bin/activate.sh  # commented out by conda initialize
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/sbin:$PATH"
