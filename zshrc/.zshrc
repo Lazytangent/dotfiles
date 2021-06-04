@@ -1,18 +1,6 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Set Antigen for plugins
 source $HOME/antigen.zsh
 antigen init ~/.antigenrc
-
-# MacOS iTerm Shell Integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export PATH="$HOME/Documents/mdloader/build:$PATH"
 
 # Pyenv Setup
 export PYENV_ROOT=$HOME/.pyenv
@@ -27,9 +15,6 @@ fi
 # Pipenv Setup
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_PYTHON=$PYENV_ROOT/shims/python
-
-# Clangd Language Server
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # nvm Setup
 export NVM_DIR="$HOME/.nvm"
