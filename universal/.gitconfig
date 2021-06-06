@@ -1,13 +1,13 @@
 [user]
-	name = Lazytangent
-	email = pm123633@gmail.com
+        name = Lazytangent
+        email = pm123633@gmail.com
 [core]
-	editor = nvim
+        editor = nvim
 [url "git@github.com:"]
-	insteadOf = gh:
+        insteadOf = gh:
 [url "git@github.com:Lazytangent/"]
-	insteadOf = gh:L/
+        insteadOf = gh:L/
 [init]
-	defaultBranch = main
+        defaultBranch = main
 [pull]
-	rebase = false
+        rebase = false
