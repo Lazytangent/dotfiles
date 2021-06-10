@@ -1,3 +1,9 @@
+# Switch to an arm64 shell by default
+if [ `machine` != arm64e ]; then
+  echo 'Execing arm64 shell'
+  exec arch -arm64 zsh
+fi
+
 # Set Antigen for plugins
 source $HOME/antigen.zsh
 antigen init ~/.antigenrc
