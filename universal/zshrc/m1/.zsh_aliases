@@ -1,0 +1,112 @@
+# JSDoc
+alias jsdocc="jsdoc -c ./conf.json"
+
+# Tmux
+alias thome="ts home -c ~/"
+alias twork="ts work -c ~/Documents/AppAcademyWork/"
+alias tnvim="ts nvim -c ~/.config/nvim/"
+alias tleet="ts leetcode -c ~/Documents/Algorithms/LeetCode/"
+alias tqmk="ts qmk -c ~/qmk_firmware"
+alias tdot="ts dot-files -c ~/dot-files"
+alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
+
+# Homebrew
+alias x86brew="/usr/local/Homebrew/bin/brew"
+
+# Ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
+# NPM
+alias npmt='npm test'
+alias npmts='npm test -- --silent'
+
+# Django
+alias pmy='python manage.py'
+
+# Heroku
+alias herokubash='heroku run bash'
+alias herokusq='heroku run npm run sequelize'
+alias herconfs='heroku git:remote -a'
+alias herconp='heroku container:push'
+alias herconr='heroku container:release'
+
+# Git
+alias gphm='git push heroku $(git_main_branch)'
+alias gfu='git fetch upstream'
+alias gitlog='git log --all --decorate --oneline --graph'
+
+# Python Venv and Env
+alias pyvenv='source venv/bin/activate'
+alias pyyenv='source env/bin/activate'
+
+# Pipenv
+alias pipi='pipenv install'
+alias pips='pipenv shell'
+alias pipr='pipenv run'
+
+# Python Unit tests
+alias pyutest='python -m unittest'
+alias grevf='green -vv -f'
+alias grevv='green -vv'
+alias grevq='green -vv -q'
+alias grevqf='green -vv -q -f'
+
+# Flask-Migrate
+alias fdb='flask db'
+alias fdbi='flask db init'
+alias fdbr='flask db revision'
+alias fdbm='flask db migrate'
+alias fdbup='flask db upgrade'
+alias fdbdown='flask db downgrade'
+alias fdbcurr='flask db current'
+alias fdbmerge='flask db merge'
+alias fdbr='flask db downgrade base'
+
+# Flask Seed Commands
+alias fsa='flask seed all'
+alias fsu='flask seed undo'
+
+# Docker
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias dc='docker container'
+alias der='docker'
+alias ders='docker start'
+alias dere='docker exec'
+alias dermage='docker image'
+alias dermages='docker image ls'
+alias dernet='docker network'
+alias dernets='docker network ls'
+
+# Shell Stuff
+alias trnom='tree -I node_modules'
+alias trea='tree -a'
+alias treanom='tree -a -I node_modules'
+alias n='nvim'
+alias v='vim'
+alias vNo='vim -Nu NORC'
+alias szsh='source .zshrc'
+alias rmr='rm -r'
+alias rmrf='rm -rf'
+alias ezsh='exec zsh'
+alias zipr='zip -r'
+
+# Exa
+alias l='exa -la --git'
+alias ls='exa'
+
+# Sequelize
+alias sqi='npx sequelize init'
+alias sqdbc='npx sequelize db:create'
+alias sqdbm='npx sequelize db:migrate'
+alias sqdbsa='npx sequelize db:seed:all'
+alias sqdbmua='npx sequelize db:migrate:undo:all'
+alias sqdbsua='npx sequelize db:seed:undo:all'
+
+# Dotenv Sequelize
+alias dsqi='npx dotenv sequelize init'
+alias dsqdbc='npx dotenv sequelize db:create'
+alias dsqdbm='npx dotenv sequelize db:migrate'
+alias dsqdbsa='npx dotenv sequelize db:seed:all'
+alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
+alias dsqdbsua='npx dotenv sequelize db:seed:undo:all'
