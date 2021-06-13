@@ -1,24 +1,25 @@
 antigen use oh-my-zsh
 
-antigen bundle git
-antigen bundle django
-antigen bundle zsh-interactive-cd
-antigen bundle tmux
-antigen bundle nvm
-antigen bundle npm
-antigen bundle ssh-agent
-antigen bundle gitignore
-antigen bundle vi-mode
-antigen bundle jsontools
-antigen bundle osx
-antigen bundle gh
-antigen bundle autoenv
-antigen bundle brew
-antigen bundle cargo
-antigen bundle docker
-antigen bundle heroku
-antigen bundle pipenv
-antigen bundle vscode
+antigen bundles << EOBUNDLES
+  git
+  django
+  zsh-interactive-cd
+  tmux
+  nvm
+  npm
+  ssh-agent
+  gitignore
+  vi-mode
+  jsontools
+  osx
+  gh
+  brew
+  cargo
+  docker
+  heroku
+  pipenv
+  vscode
+EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
