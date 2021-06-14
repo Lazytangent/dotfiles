@@ -10,6 +10,9 @@ alias tqmk="ts qmk -c ~/qmk_firmware"
 alias tdot="ts dot-files -c ~/dot-files"
 alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
 
+# ARM64 Zsh
+alias armz="arch -arm64 zsh"
+
 # Homebrew
 alias x86brew="/usr/local/Homebrew/bin/brew"
 
