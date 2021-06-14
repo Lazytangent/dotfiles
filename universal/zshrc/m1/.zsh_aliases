@@ -33,16 +33,6 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
-alias gitlog='git log --all --decorate --oneline --graph'
-
-# Python Venv and Env
-alias pyvenv='source venv/bin/activate'
-alias pyyenv='source env/bin/activate'
-
-# Pipenv
-alias pipi='pipenv install'
-alias pips='pipenv shell'
-alias pipr='pipenv run'
 
 # Python Unit tests
 alias pyutest='python -m unittest'
@@ -53,18 +43,10 @@ alias grevqf='green -vv -q -f'
 
 # Flask-Migrate
 alias fdb='flask db'
-alias fdbi='flask db init'
-alias fdbr='flask db revision'
 alias fdbm='flask db migrate'
 alias fdbup='flask db upgrade'
 alias fdbdown='flask db downgrade'
-alias fdbcurr='flask db current'
-alias fdbmerge='flask db merge'
 alias fdbr='flask db downgrade base'
-
-# Flask Seed Commands
-alias fsa='flask seed all'
-alias fsu='flask seed undo'
 
 # Docker
 alias dps='docker ps'
@@ -83,8 +65,6 @@ alias trnom='tree -C -I node_modules'
 alias tree='tree -C'
 alias trea='tree -Ca'
 alias treanom='tree -Ca -I node_modules'
-alias n='nvim'
-alias v='vim'
 alias vNo='vim -Nu NORC'
 alias szsh='source .zshrc'
 alias rmr='rm -r'
