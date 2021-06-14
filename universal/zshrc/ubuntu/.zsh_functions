@@ -1,0 +1,69 @@
+function jsdock() {
+  jsdoc -c $1
+}
+
+function t() {
+  if tmux ls | grep -q $1; then
+    local my_num=$(tmux ls | grep -c $1)
+    if [ $my_num = 1 ]; then
+      tmux attach -t $1
+    else
+      echo "Too many matches"
+    fi
+  else
+    tmux new -s $1
+  fi
+}
+
+function tc() {
+  tmux new -s $1 -c $2
+}
+
+function tsw() {
+  if tmux ls | grep -q $1; then
+    local my_num=$(tmux ls | grep -c $1)
+    if [ $my_num = 1 ]; then
+      tmux switch -t $1
+    else
+      echo "Too many matches"
+    fi
+  else
+    tmux new -s $1 -d
+    tmux switch -t $1
+  fi
+}
+
+function mcd() {
+  mkdir -p "$1"
+  cd "$1"
+}
+
+function diffy() {
+  diff -y $1 $2
+}
+
+# Create React App
+function cra() {
+  npx create-react-app $1 --use-npm
+}
+
+function crat() {
+  npx create-react-app $1 --template $2 --use-npm
+}
+
+function crata() {
+  npx create-react-app $1 --template @appacademy/react-v17 --use-npm
+}
+
+# Sequelize
+function sqmg() {
+  npx sequelize model:generate --name $1 --attributes $2
+}
+
+function sqsg() {
+  npx sequelize seed:generate --name $1
+}
+
+function nvid() {
+  open -a /Applications/Neovide.app --args $1
+}
