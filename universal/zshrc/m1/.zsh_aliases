@@ -79,9 +79,10 @@ alias dernet='docker network'
 alias dernets='docker network ls'
 
 # Shell Stuff
-alias trnom='tree -I node_modules'
-alias trea='tree -a'
-alias treanom='tree -a -I node_modules'
+alias trnom='tree -C -I node_modules'
+alias tree='tree -C'
+alias trea='tree -Ca'
+alias treanom='tree -Ca -I node_modules'
 alias n='nvim'
 alias v='vim'
 alias vNo='vim -Nu NORC'
