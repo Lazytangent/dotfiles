@@ -39,6 +39,7 @@ export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
 export CPPFLAGS="-L/opt/homebrew/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
+export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
 
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
