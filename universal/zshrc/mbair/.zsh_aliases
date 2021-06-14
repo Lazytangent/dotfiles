@@ -10,9 +10,6 @@ alias tqmk="ts qmk -c ~/qmk_firmware"
 alias tdot="ts dot-files -c ~/dot-files"
 alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
 
-# Homebrew
-alias x86brew="/usr/local/Homebrew/bin/brew"
-
 # Ctags
 alias ctags="`brew --prefix`/bin/ctags"
 
@@ -33,16 +30,6 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
-alias gitlog='git log --all --decorate --oneline --graph'
-
-# Python Venv and Env
-alias pyvenv='source venv/bin/activate'
-alias pyyenv='source env/bin/activate'
-
-# Pipenv
-alias pipi='pipenv install'
-alias pips='pipenv shell'
-alias pipr='pipenv run'
 
 # Python Unit tests
 alias pyutest='python -m unittest'
@@ -53,18 +40,10 @@ alias grevqf='green -vv -q -f'
 
 # Flask-Migrate
 alias fdb='flask db'
-alias fdbi='flask db init'
-alias fdbr='flask db revision'
 alias fdbm='flask db migrate'
 alias fdbup='flask db upgrade'
 alias fdbdown='flask db downgrade'
-alias fdbcurr='flask db current'
-alias fdbmerge='flask db merge'
 alias fdbr='flask db downgrade base'
-
-# Flask Seed Commands
-alias fsa='flask seed all'
-alias fsu='flask seed undo'
 
 # Docker
 alias dps='docker ps'
@@ -79,11 +58,10 @@ alias dernet='docker network'
 alias dernets='docker network ls'
 
 # Shell Stuff
-alias trnom='tree -I node_modules'
-alias trea='tree -a'
-alias treanom='tree -a -I node_modules'
-alias n='nvim'
-alias v='vim'
+alias trnom='tree -C -I node_modules'
+alias trea='tree -Ca'
+alias tree='tree -C'
+alias treanom='tree -Ca -I node_modules'
 alias vNo='vim -Nu NORC'
 alias szsh='source .zshrc'
 alias rmr='rm -r'
