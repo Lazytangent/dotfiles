@@ -39,7 +39,11 @@ export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
 export CPPFLAGS="-L/opt/homebrew/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
-export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+export RUBY_CFLAGS="-w"
+
+# Go
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -57,6 +61,9 @@ export EDITOR='nvim'
 # Docker Plugin Completion
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+# Port in Completions
+fpath+=${ZDOTDIR:-~}/.zsh_completions
 
 # Port in Functions
 if [ -f ~/.zsh_functions ]; then
