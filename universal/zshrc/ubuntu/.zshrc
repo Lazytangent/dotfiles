@@ -29,4 +29,4 @@ then
   . ~/.zsh_aliases
 fi
 
-# source /usr/local/bin/activate.sh
+eval "$(starship init zsh)"
