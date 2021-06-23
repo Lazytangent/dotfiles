@@ -91,6 +91,7 @@ alias sqdbsua='npx sequelize db:seed:undo:all'
 # Dotenv Sequelize
 alias dsqi='npx dotenv sequelize init'
 alias dsqdbc='npx dotenv sequelize db:create'
+alias dsqdbd='npx dotenv sequelize db:drop'
 alias dsqdbm='npx dotenv sequelize db:migrate'
 alias dsqdbsa='npx dotenv sequelize db:seed:all'
 alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
