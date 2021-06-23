@@ -8,6 +8,7 @@ alias tnvim="ts nvim -c ~/.config/nvim/"
 alias tleet="ts leetcode -c ~/Documents/Algorithms/LeetCode/"
 alias tqmk="ts qmk -c ~/qmk_firmware"
 alias tdot="ts dot-files -c ~/dot-files"
+alias tpersonal="ts personal -c ~/Documents/PersonalProjects"
 alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
 
 # ARM64 Zsh
