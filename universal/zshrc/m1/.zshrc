@@ -53,6 +53,9 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
 
+# Rust Analyzer
+export PATH="$HOME/.local/bin:$PATH"
+
 # Vi-Mode in Terminal
 bindkey -v
 set -o vi
