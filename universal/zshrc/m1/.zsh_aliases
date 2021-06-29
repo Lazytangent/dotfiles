@@ -10,6 +10,7 @@ alias tqmk="ts qmk -c ~/qmk_firmware"
 alias tdot="ts dot-files -c ~/dot-files"
 alias tpersonal="ts personal -c ~/Documents/PersonalProjects"
 alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
+alias torg="ts org -c ~/Documents/org"
 
 # ARM64 Zsh
 alias armz="arch -arm64 zsh"
