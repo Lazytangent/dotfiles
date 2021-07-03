@@ -19,6 +19,7 @@ antigen bundles << EOBUNDLES
   heroku
   pipenv
   vscode
+  deno
 EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting
