@@ -20,6 +20,7 @@ antigen bundles << EOBUNDLES
   pipenv
   vscode
   deno
+  alias-finder
 EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting

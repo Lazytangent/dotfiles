@@ -61,6 +61,9 @@ bindkey -v
 set -o vi
 export EDITOR='nvim'
 
+# Alias-Finder
+export ZSH_ALIAS_FINDER_AUTOMATIC=true
+
 # Docker Plugin Completion
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
