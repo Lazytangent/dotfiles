@@ -76,7 +76,7 @@ alias szsh='source .zshrc'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
-alias zipr='zip -r'
+# alias zipr='zip -r'
 
 # Exa
 alias l='exa -la --git'
