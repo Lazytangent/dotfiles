@@ -30,6 +30,11 @@ function tc() {
   tmux new -s $1 -c $2
 }
 
+function tm() {
+  tmux command-prompt -I $PWD -p "New session dir:" "attach -c %1"
+  echo "Set tmux session directory to $(pwd)"
+}
+
 function tsw() {
   if tmux ls | grep -q $1; then
     local my_num=$(tmux ls | grep -c $1)
