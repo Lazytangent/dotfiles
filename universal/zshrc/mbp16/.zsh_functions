@@ -2,6 +2,17 @@ function jsdock() {
   jsdoc -c $1
 }
 
+function zipr() {
+  if [[ $1 ]] && [[ $2 ]]; then
+    zip -r $2 $1
+  elif [[ $1 ]]; then
+    zip -r "$1.zip" $1
+  else
+    echo "Missing argument(s)"
+    echo "Usage: zipr FILENAME [ZIPPED NAME]"
+  fi
+}
+
 function t() {
   if tmux ls | grep -q $1; then
     local my_num=$(tmux ls | grep -c $1)
