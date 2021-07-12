@@ -1,3 +1,6 @@
+# Terminal Emacs
+alias termacs="emacs -nw"
+
 # JSDoc
 alias jsdocc="jsdoc -c ./conf.json"
 
