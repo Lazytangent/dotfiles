@@ -39,6 +39,7 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
+# alias glump='git pull upstream $(git_main_branch) && git push'
 
 # Python Unit tests
 alias pyutest='python -m unittest'
