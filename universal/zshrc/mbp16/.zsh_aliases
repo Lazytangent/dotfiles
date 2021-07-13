@@ -1,3 +1,6 @@
+# Terminal Emacs
+alias termacs="emacs -nw"
+
 # JSDoc
 alias jsdocc="jsdoc -c ./conf.json"
 
@@ -89,7 +92,6 @@ alias szsh='source .zshrc'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
-alias zipr='zip -r'
 
 # Exa
 alias l='exa -la --git'
@@ -110,4 +112,3 @@ alias dsqdbm='npx dotenv sequelize db:migrate'
 alias dsqdbsa='npx dotenv sequelize db:seed:all'
 alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
 alias dsqdbsua='npx dotenv sequelize db:seed:undo:all'
-
