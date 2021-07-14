@@ -83,3 +83,5 @@ export PATH="/usr/local/sbin:$PATH"
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+[ -s "/Users/petermai/.jabba/jabba.sh" ] && source "/Users/petermai/.jabba/jabba.sh"
