@@ -1,0 +1,6 @@
+source ~/.vimrc
+set showmode
+" Plugins
+set which-key
+set sneak
+set notimeout

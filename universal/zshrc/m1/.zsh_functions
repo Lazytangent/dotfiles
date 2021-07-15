@@ -2,6 +2,13 @@ function jsdock() {
   jsdoc -c $1
 }
 
+function glump() {
+  git pull upstream $(git_main_branch)
+  echo "Pulled from upstream\n"
+  echo "Now pushing to remote origin"
+  git push
+}
+
 function zipr() {
   if [[ $1 ]] && [[ $2 ]]; then
     zip -r $2 $1
