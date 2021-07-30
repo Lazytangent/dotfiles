@@ -2,10 +2,28 @@ function jsdock() {
   jsdoc -c $1
 }
 
+function glump() {
+  git pull upstream $(git_main_branch)
+  echo "Pulled from upstream\n"
+  echo "Now pushing to remote origin"
+  git push
+}
+
+function zipr() {
+  if [[ $1 ]] && [[ $2 ]]; then
+    zip -r $2 $1
+  elif [[ $1 ]]; then
+    zip -r "$1.zip" $1
+  else
+    echo "Missing argument(s)"
+    echo "Usage: zipr FILENAME [ZIPPED NAME]"
+  fi
+}
+
 function t() {
   if tmux ls | grep -q $1; then
     local my_num=$(tmux ls | grep -c $1)
-    if [ $my_num = 1 ]; then
+    if [[ $my_num = 1 ]]; then
       tmux attach -t $1
     else
       echo "Too many matches"
@@ -27,7 +45,7 @@ function tm() {
 function tsw() {
   if tmux ls | grep -q $1; then
     local my_num=$(tmux ls | grep -c $1)
-    if [ $my_num = 1 ]; then
+    if [[ $my_num = 1 ]]; then
       tmux switch -t $1
     else
       echo "Too many matches"

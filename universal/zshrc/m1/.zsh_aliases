@@ -12,6 +12,7 @@ alias tpersonal="ts personal -c ~/Documents/PersonalProjects"
 alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
 alias torg="ts org -c ~/Documents/org"
 alias tkill="tmux command-prompt kill-session"
+alias ttest="ts test-runs -c ~/TestRuns"
 
 # ARM64 Zsh
 alias armz="arch -arm64 zsh"
@@ -39,6 +40,7 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
+# alias glump='git pull upstream $(git_main_branch) && git push'
 
 # Python Unit tests
 alias pyutest='python -m unittest'
@@ -76,7 +78,7 @@ alias szsh='source .zshrc'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
-alias zipr='zip -r'
+# alias zipr='zip -r'
 
 # Exa
 alias l='exa -la --git'
