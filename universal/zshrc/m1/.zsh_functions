@@ -80,7 +80,7 @@ function crata() {
 
 # Sequelize
 function sqmg() {
-  npx sequelize model:generate --name $1 --attributes $2
+  npx sequelize model:generate --name $1 --attributes $2 --underscored
 }
 
 function sqsg() {
