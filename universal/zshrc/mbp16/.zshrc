@@ -35,12 +35,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_TMUX_AUTOSTART_ONCE=true
-export ZSH_TMUX_ITERM2=true
-source $ZSH/oh-my-zsh.sh
-
 # Doom Emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
@@ -68,12 +62,6 @@ fi
 if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
 fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Autoenv plugin
-source /usr/local/bin/activate.sh  # commented out by conda initialize
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/sbin:$PATH"
