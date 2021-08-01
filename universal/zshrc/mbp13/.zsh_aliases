@@ -9,13 +9,13 @@ alias tleet="ts leetcode -c ~/Documents/Algorithms/LeetCode/"
 alias tqmk="ts qmk -c ~/qmk_firmware"
 alias tdot="ts dot-files -c ~/dot-files"
 alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
+alias tkill="tmux command-prompt kill-session"
 
 # Ctags
 alias ctags="`brew --prefix`/bin/ctags"
 
 # NPM
 alias npmt='npm test'
-alias npmts='npm test -- --silent'
 
 # Django
 alias pmy='python manage.py'
@@ -30,6 +30,8 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
+alias gsma='git submodule add'
+alias ggcl="git clone"
 
 # Python Unit tests
 alias pyutest='python -m unittest'
@@ -76,6 +78,8 @@ alias ls='exa'
 # Sequelize
 alias sqi='npx sequelize init'
 alias sqdbc='npx sequelize db:create'
+alias sqdbd='npx sequelize db:drop'
+alias sqdbr='npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all'
 alias sqdbm='npx sequelize db:migrate'
 alias sqdbsa='npx sequelize db:seed:all'
 alias sqdbmua='npx sequelize db:migrate:undo:all'
@@ -84,6 +88,8 @@ alias sqdbsua='npx sequelize db:seed:undo:all'
 # Dotenv Sequelize
 alias dsqi='npx dotenv sequelize init'
 alias dsqdbc='npx dotenv sequelize db:create'
+alias dsqdbd='npx dotenv sequelize db:drop'
+alias dsqdbr='npx dotenv sequelize db:drop && npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all'
 alias dsqdbm='npx dotenv sequelize db:migrate'
 alias dsqdbsa='npx dotenv sequelize db:seed:all'
 alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
