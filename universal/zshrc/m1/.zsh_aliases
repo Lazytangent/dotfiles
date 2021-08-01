@@ -25,7 +25,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # NPM
 alias npmt='npm test'
-alias npmts='npm test -- --silent'
 
 # Django
 alias pmy='python manage.py'
@@ -40,7 +39,8 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
-# alias glump='git pull upstream $(git_main_branch) && git push'
+alias gsma='git submodule add'
+alias ggcl='git clone'
 
 # Python Unit tests
 alias pyutest='python -m unittest'
@@ -78,7 +78,6 @@ alias szsh='source .zshrc'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
-# alias zipr='zip -r'
 
 # Exa
 alias l='exa -la --git'
@@ -87,6 +86,8 @@ alias ls='exa'
 # Sequelize
 alias sqi='npx sequelize init'
 alias sqdbc='npx sequelize db:create'
+alias sqdbd='npx sequelize db:drop'
+alias sqdbr='npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all'
 alias sqdbm='npx sequelize db:migrate'
 alias sqdbsa='npx sequelize db:seed:all'
 alias sqdbmua='npx sequelize db:migrate:undo:all'
