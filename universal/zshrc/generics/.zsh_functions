@@ -2,21 +2,48 @@ function jsdock() {
   jsdoc -c $1
 }
 
+function glump() {
+  git pull upstream $(git_main_branch)
+  echo "Pulled from upstream\n"
+  echo "Now pushing to remote origin"
+  git push
+}
+
+function zipr() {
+  if [[ $1 ]] && [[ $2 ]]; then
+    zip -r $2 $1
+  elif [[ $1 ]]; then
+    zip -r "$1.zip" $1
+  else
+    echo "Missing argument(s)"
+    echo "Usage: zipr FILENAME [ZIPPED NAME]"
+  fi
+}
+
 function t() {
   if tmux ls | grep -q $1; then
     local my_num=$(tmux ls | grep -c $1)
-    if [ $my_num = 1 ]; then
+    if [[ $my_num = 1 ]]; then
       tmux attach -t $1
     else
       echo "Too many matches"
     fi
   else
-    tmux new -s $1
+    if [ "$TERM_PROGRAM" = tmux ]; then
+      tmux new -s $1 -d
+    else
+      tmux new -s $1
+    fi
   fi
 }
 
 function tc() {
   tmux new -s $1 -c $2
+}
+
+function tm() {
+  tmux command-prompt -I $PWD -p "New session dir:" "attach -c %1"
+  echo "Set tmux session directory to $(pwd)"
 }
 
 function tsw() {
@@ -44,20 +71,24 @@ function diffy() {
 
 # Create React App
 function cra() {
-  npx create-react-app $1 --use-npm
+  npx create-react-app $1
 }
 
 function crat() {
-  npx create-react-app $1 --template $2 --use-npm
+  npx create-react-app $1 --template $2
 }
 
 function crata() {
-  npx create-react-app $1 --template @appacademy/react-v17 --use-npm
+  npx create-react-app $1 --template @appacademy/react-v17
 }
 
 # Sequelize
 function sqmg() {
   npx sequelize model:generate --name $1 --attributes $2
+}
+
+function sqmgu() {
+  npx sequelize model:generate --name $1 --attributes $2 --underscored
 }
 
 function sqsg() {

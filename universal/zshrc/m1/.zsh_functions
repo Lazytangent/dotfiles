@@ -71,15 +71,15 @@ function diffy() {
 
 # Create React App
 function cra() {
-  npx create-react-app $1 --use-npm
+  npx create-react-app $1
 }
 
 function crat() {
-  npx create-react-app $1 --template $2 --use-npm
+  npx create-react-app $1 --template $2
 }
 
 function crata() {
-  npx create-react-app $1 --template @appacademy/react-v17 --use-npm
+  npx create-react-app $1 --template @appacademy/react-v17
 }
 
 # Sequelize
