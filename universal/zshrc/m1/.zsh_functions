@@ -29,7 +29,11 @@ function t() {
       echo "Too many matches"
     fi
   else
-    tmux new -s $1
+    if [ "$TERM_PROGRAM" = tmux ]; then
+      tmux new -s $1 -d
+    else
+      tmux new -s $1
+    fi
   fi
 }
 
