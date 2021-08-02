@@ -2,6 +2,11 @@ function jsdock() {
   jsdoc -c $1
 }
 
+function gig() {
+  gi $1 >> .gitignore
+  echo "Added $1 ignores to .gitignore"
+}
+
 function glump() {
   git pull upstream $(git_main_branch)
   echo "Pulled from upstream\n"
