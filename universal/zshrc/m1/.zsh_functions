@@ -84,6 +84,10 @@ function crata() {
 
 # Sequelize
 function sqmg() {
+  npx sequelize model:generate --name $1 --attributes $2
+}
+
+function sqmgu() {
   npx sequelize model:generate --name $1 --attributes $2 --underscored
 }
 

@@ -2,22 +2,30 @@ source $HOME/antigen.zsh
 antigen init ~/.antigenrc
 export TERM=xterm-256color
 
+# Nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Path to your oh-my-zsh installation.
-export PATH="$HOME/Applications/Picom/picom/build/src:$PATH"
+# Pyenv
+export PYENV_ROOT=$HOME/.pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# Pipenv
+export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_PYTHON=$PYENV_ROOT/shims/python
+
+# Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
 export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 bindkey -v
 export EDITOR='nvim'
-
-# Ubuntu specific aliases
-alias spotify='flatpak run com.spotify.Client'
-alias screen='sh ~/.screenlayout/default.sh; feh --bg-fill Pictures/Big\ Sur\ Aerial.heic'
-alias killpicom='pkill picom'
-alias pcm='picom -b --experimental-backends &'
 
 if [ -f ~/.zsh_functions ]
 then

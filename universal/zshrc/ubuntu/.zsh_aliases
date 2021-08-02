@@ -27,7 +27,8 @@ alias herconr='heroku container:release'
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
-alias gitlog='git log --all --decorate --oneline --graph'
+alias gsma='git submodule add'
+alias ggcl='git clone'
 
 # Python Venv and Env
 alias pyvenv='source venv/bin/activate'
@@ -83,7 +84,6 @@ alias szsh='source .zshrc'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
-alias zipr='zip -r'
 
 # Exa
 alias l='exa -la --git'
@@ -92,6 +92,8 @@ alias ls='exa'
 # Sequelize
 alias sqi='npx sequelize init'
 alias sqdbc='npx sequelize db:create'
+alias sqdbd='npx sequelize db:drop'
+alias sqdbr='npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all'
 alias sqdbm='npx sequelize db:migrate'
 alias sqdbsa='npx sequelize db:seed:all'
 alias sqdbmua='npx sequelize db:migrate:undo:all'
@@ -100,6 +102,8 @@ alias sqdbsua='npx sequelize db:seed:undo:all'
 # Dotenv Sequelize
 alias dsqi='npx dotenv sequelize init'
 alias dsqdbc='npx dotenv sequelize db:create'
+alias dsqdbd='npx dotenv sequelize db:drop'
+alias dsqdbr='npx dotenv sequelize db:drop && npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all'
 alias dsqdbm='npx dotenv sequelize db:migrate'
 alias dsqdbsa='npx dotenv sequelize db:seed:all'
 alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
