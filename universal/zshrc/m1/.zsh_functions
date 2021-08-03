@@ -42,6 +42,16 @@ function t() {
   fi
 }
 
+function tdup() {
+  if [ "$TERM_PROGRAM" = tmux ]; then
+    current=$(tmux display-message -p '#S')
+    tmux new -s "COPY_OF_$current"
+  else
+    echo "Not in a tmux session"
+    echo "Usage: Run in a tmux session to make a copy of the current session"
+  fi
+}
+
 function tc() {
   tmux new -s $1 -c $2
 }
