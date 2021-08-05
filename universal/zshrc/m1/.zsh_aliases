@@ -12,6 +12,7 @@ alias tpersonal="ts personal -c ~/Documents/PersonalProjects"
 alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
 alias torg="ts org -c ~/Documents/org"
 alias tkill="tmux command-prompt kill-session"
+alias truby="ts ruby -c ~/Documents/Ruby/"
 alias ttest="ts test-runs -c ~/TestRuns"
 
 # ARM64 Zsh
@@ -41,6 +42,7 @@ alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
 alias gsma='git submodule add'
 alias ggcl='git clone'
+alias grrmo='git remove remote origin'
 
 # Python Unit tests
 alias pyutest='python -m unittest'
