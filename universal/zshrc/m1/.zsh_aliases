@@ -38,6 +38,9 @@ alias herconfs='heroku git:remote -a'
 alias herconp='heroku container:push'
 alias herconr='heroku container:release'
 
+# BitBucket
+alias gpbb='git push bitbucket'
+
 # Git
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'

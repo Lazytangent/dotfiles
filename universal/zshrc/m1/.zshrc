@@ -56,6 +56,12 @@ export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
 # Rust Analyzer
 export PATH="$HOME/.local/bin:$PATH"
 
+# Zathura
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+
+# FZF
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 # Vi-Mode in Terminal
 bindkey -v
 set -o vi
