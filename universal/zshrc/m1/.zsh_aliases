@@ -83,6 +83,8 @@ alias treanom='tree -Ca -I node_modules'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
+alias vimc='vim --clean'
+alias nvimc='nvim --clean'
 
 # Exa
 alias l='exa -la --git'
