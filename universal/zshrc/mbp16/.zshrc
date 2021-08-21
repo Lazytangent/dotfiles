@@ -8,27 +8,29 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # MDLoader
 export PATH="$HOME/Documents/mdloader/build:$PATH"
 
-# Rbenv Setup
-eval "$(rbenv init -)"
-
 # Pyenv Setup
 export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/shims:$PATH"
+
 if command -v pyenv 1>/dev/null 2>&1
 then
   eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
-
-# Clangd
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-
-# Go Setup
-export PATH="$HOME/go/bin:$PATH"
 
 # Pipenv Setup
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_PYTHON=$PYENV_ROOT/shims/python
+
+# Clangd
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# Rbenv Setup
+eval "$(rbenv init -)"
+
+# Go Setup
+export PATH="$HOME/go/bin:$PATH"
 
 # nvm Setup
 export NVM_DIR="$HOME/.nvm"
