@@ -85,6 +85,7 @@ alias rmrf='rm -rf'
 alias ezsh='exec zsh'
 alias vimc='vim --clean'
 alias nvimc='nvim --clean'
+alias agh='ag --hidden'
 
 # Exa
 alias l='exa -la --git'
