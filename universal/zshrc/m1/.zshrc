@@ -62,6 +62,9 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f'
 
+# Lite-XL
+export PATH="/Applications/lite-xl.app/Contents/MacOS:$PATH"
+
 # Vi-Mode in Terminal
 bindkey -v
 set -o vi
