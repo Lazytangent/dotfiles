@@ -85,9 +85,6 @@ function diffy() {
 }
 
 # Create React App
-function cra() {
-  npx create-react-app $1
-}
 
 function crat() {
   npx create-react-app $1 --template $2

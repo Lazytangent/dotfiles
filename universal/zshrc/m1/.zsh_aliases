@@ -89,6 +89,10 @@ alias nvimc='nvim --clean'
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
 
+# Create React App
+alias cra="npx create-react-app"
+alias craa="npx create-react-app --template @appacademy/react-v17"
+
 # Exa
 alias l='exa -la --git'
 alias ls='exa'
