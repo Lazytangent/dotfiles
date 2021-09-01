@@ -65,6 +65,12 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 # Lite-XL
 export PATH="/Applications/lite-xl.app/Contents/MacOS:$PATH"
 
+# Goneovim
+export PATH="/Applications/goneovim.app/Contents/MacOS:$PATH"
+
+# Uivonim
+export PATH="/Applications/uivonim.app/Contents/MacOS:$PATH"
+
 # Vi-Mode in Terminal
 bindkey -v
 set -o vi
