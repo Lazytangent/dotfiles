@@ -56,11 +56,20 @@ export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
 # Rust Analyzer
 export PATH="$HOME/.local/bin:$PATH"
 
+# Jabba
+[ -s "/Users/petermai/.jabba/jabba.sh" ] && source "/Users/petermai/.jabba/jabba.sh"
+
+# JDTLS
+export JDTLS_HOME="/Users/petermai/Documents/LSP/jdtls"
+
 # Zathura
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/sbin:$PATH"
 
 # Lite-XL
 export PATH="/Applications/lite-xl.app/Contents/MacOS:$PATH"
@@ -93,10 +102,5 @@ if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/sbin:$PATH"
-
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-
-[ -s "/Users/petermai/.jabba/jabba.sh" ] && source "/Users/petermai/.jabba/jabba.sh"
