@@ -67,8 +67,8 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export PATH="/usr/local/sbin:$PATH"
 
 # Lite-XL
@@ -94,12 +94,12 @@ fpath+=${ZDOTDIR:-~}/.zsh_completions
 
 # Port in Functions
 if [ -f ~/.zsh_functions ]; then
-  . ~/.zsh_functions
+  source ~/.zsh_functions
 fi
 
 # Port in Aliases
 if [ -f ~/.zsh_aliases ]; then
-  . ~/.zsh_aliases
+  source ~/.zsh_aliases
 fi
 
 eval "$(starship init zsh)"
