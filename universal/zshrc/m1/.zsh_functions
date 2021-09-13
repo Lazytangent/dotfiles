@@ -6,7 +6,7 @@ DB_USERNAME=$1
 DB_PASSWORD=password
 DB_DATABASE=$1_db
 DB_HOST=localhost
-JWT_SECRET=asdfopiuczxvb
+JWT_SECRET=$(openssl rand -base64 10)
 JWT_EXPIRES_IN=604800
 EOM
 }
