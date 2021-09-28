@@ -17,6 +17,10 @@ alias tkill="tmux command-prompt kill-session"
 alias truby="ts ruby -c ~/Documents/Ruby/"
 alias ttest="ts test-runs -c ~/TestRuns"
 alias talgos="ts algos -c ~/Documents/Java/Algorithms_4th_Edition/"
+alias trex="ts ruby-express -c ~/Documents/PersonalProjects/RubyExpressConversion/"
+
+# App Academy
+alias aa-gen="ruby ~/Documents/AppAcademyWork/WorkRepos/GithubApp/main.rb"
 
 # ARM64 Zsh
 alias armz="arch -arm64 zsh"

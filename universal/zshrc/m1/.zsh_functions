@@ -1,3 +1,7 @@
+function aa-gend() {
+  docker container run -v $(pwd):/$(basename $(pwd)) -a stdin -a stdout -it aa-github-app-local
+}
+
 function genv() {
   touch .env
 cat > .env <<- EOM
