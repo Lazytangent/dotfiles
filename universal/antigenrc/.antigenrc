@@ -2,7 +2,6 @@ antigen use oh-my-zsh
 
 antigen bundles << EOBUNDLES
   git
-  django
   zsh-interactive-cd
   tmux
   nvm
@@ -15,7 +14,6 @@ antigen bundles << EOBUNDLES
   gh
   brew
   cargo
-  docker
   heroku
   pipenv
   vscode
