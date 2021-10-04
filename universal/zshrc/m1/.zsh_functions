@@ -1,3 +1,20 @@
+# QMK
+function qmkc() {
+  qmk compile -km $1 -kb $2
+}
+
+function qmkcc() {
+  qmk compile
+}
+
+function qmkf() {
+  qmk flash -km $1 -kb $2
+}
+
+function qmkff() {
+  qmk flash
+}
+
 function aa-gend() {
   docker container run -v $(pwd):/$(basename $(pwd)) -a stdin -a stdout -it aa-github-app-local
 }
