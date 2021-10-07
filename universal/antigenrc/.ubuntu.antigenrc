@@ -1,0 +1,27 @@
+antigen use oh-my-zsh
+
+antigen bundles << EOBUNDLES
+  git
+  zsh-interactive-cd
+  nvm
+  npm
+  ssh-agent
+  gitignore
+  vi-mode
+  jsontools
+  gh
+  brew
+  cargo
+  heroku
+  pipenv
+  vscode
+  bundler
+  rails
+  ruby
+  ubuntu
+EOBUNDLES
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+
+antigen apply
