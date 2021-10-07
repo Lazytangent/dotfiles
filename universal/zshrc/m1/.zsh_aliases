@@ -2,22 +2,24 @@
 alias jsdocc="jsdoc -c ./conf.json"
 
 # Tmux
-alias thome="ts home -c ~/"
-alias twork="ts work -c ~/Documents/AppAcademyWork/"
-alias tnvim="ts nvim -c ~/.config/nvim/"
-alias tvim="ts vim -c ~/.vim_conf/"
-alias tdotvim="ts dotvim -c ~/.vim/"
-alias tleet="ts leetcode -c ~/Documents/Algorithms/LeetCode/"
-alias tqmk="ts qmk -c ~/qmk_firmware"
-alias tdot="ts dot-files -c ~/dotfiles"
-alias tpersonal="ts personal -c ~/Documents/PersonalProjects"
-alias tsocket="ts socketio -c ~/Documents/PersonalProjects/SocketIO"
-alias torg="ts org -c ~/Documents/org"
+alias tl="tmux list-sessions"
+alias tksv="tmux kill-server"
+alias thome="tmux new-session -s home -c ~/"
+alias twork="tmux new-session -s work -c ~/Documents/AppAcademyWork/"
+alias tnvim="tmux new-session -s nvim -c ~/.config/nvim/"
+alias tvim="tmux new-session -s vim -c ~/.vim_conf/"
+alias tdotvim="tmux new-session -s dotvim -c ~/.vim/"
+alias tleet="tmux new-session -s leetcode -c ~/Documents/Algorithms/LeetCode/"
+alias tqmk="tmux new-session -s qmk -c ~/qmk_firmware"
+alias tdot="tmux new-session -s dot-files -c ~/dotfiles"
+alias tpersonal="tmux new-session -s personal -c ~/Documents/PersonalProjects"
+alias tsocket="tmux new-session -s socketio -c ~/Documents/PersonalProjects/SocketIO"
+alias torg="tmux new-session -s org -c ~/Documents/org"
 alias tkill="tmux command-prompt kill-session"
-alias truby="ts ruby -c ~/Documents/Ruby/"
-alias ttest="ts test-runs -c ~/TestRuns"
-alias talgos="ts algos -c ~/Documents/Java/Algorithms_4th_Edition/"
-alias trex="ts ruby-express -c ~/Documents/PersonalProjects/RubyExpressConversion/"
+alias truby="tmux new-session -s ruby -c ~/Documents/Ruby/"
+alias ttest="tmux new-session -s test-runs -c ~/TestRuns"
+alias talgos="tmux new-session -s algos -c ~/Documents/Java/Algorithms_4th_Edition/"
+alias trex="tmux new-session -s ruby-express -c ~/Documents/PersonalProjects/RubyExpressConversion/"
 
 # App Academy
 alias aa-gen="ruby ~/Documents/AppAcademyWork/WorkRepos/GithubApp/main.rb"
@@ -95,11 +97,15 @@ alias nvimc='nvim --clean'
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
 
+# Vite
+alias vite='npm init vite@latest'
+
 # Create React App
 alias cra="npx create-react-app"
 alias craa="npx create-react-app --template @appacademy/react-v17"
 
 # Exa
+alias ll='ls'
 alias l='exa -la --git'
 alias ls='exa'
 
