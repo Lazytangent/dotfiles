@@ -24,14 +24,14 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
 
-# Port in Functions
-if [ -f ~/.zsh_functions ]; then
-  source ~/.zsh_functions
-fi
-
 # Port in Aliases
 if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
+fi
+
+# Port in Functions
+if [ -f ~/.zsh_functions ]; then
+  source ~/.zsh_functions
 fi
 
 eval "$(starship init zsh)"
