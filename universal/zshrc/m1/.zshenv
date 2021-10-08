@@ -9,12 +9,6 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/shims:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-if command -v pyenv 1>/dev/null 2>&1
-then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
 # Pipenv Setup
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_PYTHON=$PYENV_ROOT/shims/python
@@ -43,7 +37,6 @@ export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 # Emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
