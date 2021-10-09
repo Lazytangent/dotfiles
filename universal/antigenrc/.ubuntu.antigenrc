@@ -2,23 +2,23 @@ antigen use oh-my-zsh
 
 antigen bundles << EOBUNDLES
   git
+  zsh-interactive-cd
   nvm
   npm
   ssh-agent
   gitignore
   vi-mode
   jsontools
-  osx
   gh
   brew
   cargo
-  docker
   heroku
   pipenv
   vscode
   bundler
   rails
   ruby
+  ubuntu
 EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting

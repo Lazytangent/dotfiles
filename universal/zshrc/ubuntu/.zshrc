@@ -24,8 +24,10 @@ eval "$(rbenv init - zsh)"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 bindkey -v
-export EDITOR='nvim'
+export EDITOR='vim'
 
 if [ -f ~/.zsh_functions ]
 then

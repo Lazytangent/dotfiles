@@ -1,3 +1,24 @@
+# QMK
+function qmkc() {
+  qmk compile -km $1 -kb $2
+}
+
+function qmkcc() {
+  qmk compile
+}
+
+function qmkf() {
+  qmk flash -km $1 -kb $2
+}
+
+function qmkff() {
+  qmk flash
+}
+
+function aa-gend() {
+  docker container run -v $(pwd):/$(basename $(pwd)) -a stdin -a stdout -it aa-github-app-local
+}
+
 function genv() {
   touch .env
 cat > .env <<- EOM
@@ -33,15 +54,16 @@ function glump() {
 
 function zipr() {
   if [[ $1 ]] && [[ $2 ]]; then
-    zip -r $2 $1
+    zip -r $2 $1 -x "*node_modules*" -x "*.git/*"
   elif [[ $1 ]]; then
-    zip -r "$1.zip" $1
+    zip -r "$1.zip" $1 -x "*node_modules*" -x "*.git/*"
   else
     echo "Missing argument(s)"
     echo "Usage: zipr FILENAME [ZIPPED NAME]"
   fi
 }
 
+# TMUX
 function t() {
   if tmux ls | grep -q $1; then
     local my_num=$(tmux ls | grep -c $1)
@@ -58,6 +80,36 @@ function t() {
     fi
   fi
 }
+
+function tt() {
+  [[ -z "$1" ]] && { echo "Usage: tm <session>" >&2; return 1; }
+  tmux has -t $1 && tmux attach -t $1 || tmux new -s $1
+}
+
+function ta() {
+  tmux attach -t $1
+}
+
+function tad() {
+  tmux attach -d -t $1
+}
+
+function ts() {
+  tmux new-session -s $1
+}
+
+function tkss() {
+  tmux kill-session -t $1
+}
+
+function __tmux-sessions() {
+  local expl
+  local -a sessions
+  sessions=( ${${(f)"$(command tmux list-sessions)"}/:[ $'\t']##/:} )
+  _describe -t sessions 'sessions' sessions "$@"
+}
+
+compdef __tmux-sessions t tt ta tad ts tkss
 
 function tdup() {
   if [ "$TERM_PROGRAM" = tmux ]; then
@@ -91,6 +143,7 @@ function tsw() {
     tmux switch -t $1
   fi
 }
+
 
 function mcd() {
   mkdir -p "$1"
