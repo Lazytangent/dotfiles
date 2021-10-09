@@ -27,6 +27,7 @@ alias herconp='heroku container:push'
 alias herconr='heroku container:release'
 
 # Git
+alias gsma='git submodule add'
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
 alias gitlog='git log --all --decorate --oneline --graph'
