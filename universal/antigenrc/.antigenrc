@@ -3,7 +3,6 @@ antigen use oh-my-zsh
 antigen bundles << EOBUNDLES
   git
   zsh-interactive-cd
-  tmux
   nvm
   npm
   ssh-agent
@@ -22,5 +21,6 @@ antigen bundles << EOBUNDLES
 EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
 
 antigen apply
