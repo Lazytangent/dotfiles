@@ -95,7 +95,7 @@ function tad() {
 }
 
 function ts() {
-  tmux new-session -s $1
+  tmux new-session -s "$@"
 }
 
 function tkss() {
