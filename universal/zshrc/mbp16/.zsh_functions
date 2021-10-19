@@ -42,6 +42,27 @@ function t() {
   fi
 }
 
+function ts() {
+  tmux new-session "$@"
+}
+
+function ta() {
+  tmux attach-session -t "$@"
+}
+
+function tl() {
+  tmux list-sessions "$@"
+}
+
+function __tmux-sessions() {
+  local expl
+  local -a sessions
+  sessions=( ${${(f)"$(command tmux list-sessions)"}/:[ $'\t']##/:} )
+  _describe -t sessions 'sessions' sessions "$@"
+}
+
+compdef __tmux-sessions t ta ts tkss
+
 function tdup() {
   if [ "$TERM_PROGRAM" = tmux ]; then
     current=$(tmux display-message -p '#S')
