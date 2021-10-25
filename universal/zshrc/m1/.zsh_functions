@@ -1,3 +1,9 @@
+# Custom React Templates
+function crn() {
+  [[ -z "$1" ]] && { echo "Usage: crn <name>" >&2; return 1; }
+  git clone git@github.com:Lazytangent/react-next-template.git $1
+}
+
 # QMK
 function qmkc() {
   qmk compile -km $1 -kb $2
