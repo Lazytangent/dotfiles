@@ -2,6 +2,9 @@
 function crn() {
   [[ -z "$1" ]] && { echo "Usage: crn <name>" >&2; return 1; }
   git clone git@github.com:Lazytangent/react-next-template.git $1
+  cd $1
+  git remote remove origin
+  npm install
 }
 
 # QMK
