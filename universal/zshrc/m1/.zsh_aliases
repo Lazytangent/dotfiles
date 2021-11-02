@@ -11,6 +11,8 @@ alias tvim="tmux new-session -s vim -c ~/.vim_conf/"
 alias tdotvim="tmux new-session -s dotvim -c ~/.vim/"
 alias tleet="tmux new-session -s leetcode -c ~/Documents/Algorithms/LeetCode/"
 
+alias tvue="tmux new-session -s vue -c ~/Documents/Vue/"
+alias tfl="tmux new-session -s flask -c ~/Documents/Flask/"
 alias tgql="tmux new-session -s graphql -c ~/Documents/GraphQL/"
 alias talgos="tmux new-session -s algos -c ~/Documents/Java/Algorithms_4th_Edition/"
 alias tgrok="tmux new-session -s grokking -c ~/Documents/Algos/"

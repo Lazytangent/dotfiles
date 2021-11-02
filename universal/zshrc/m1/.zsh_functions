@@ -63,9 +63,9 @@ function glump() {
 
 function zipr() {
   if [[ $1 ]] && [[ $2 ]]; then
-    zip -r $2 $1 -x "*node_modules*" -x "*.git/*"
+    zip -r $2 $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
   elif [[ $1 ]]; then
-    zip -r "$1.zip" $1 -x "*node_modules*" -x "*.git/*"
+    zip -r "$1.zip" $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
   else
     echo "Missing argument(s)"
     echo "Usage: zipr FILENAME [ZIPPED NAME]"

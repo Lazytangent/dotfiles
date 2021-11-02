@@ -23,6 +23,7 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
+fpath+="/opt/homebrew/share/zsh/site-functions/"
 
 # Port in Aliases
 if [ -f ~/.zsh_aliases ]; then
