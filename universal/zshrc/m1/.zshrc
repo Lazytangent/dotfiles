@@ -1,3 +1,6 @@
+# Source Custom zshenv
+source ~/._zshenv
+
 # Set Antigen for plugins
 source $HOME/antigen.zsh
 antigen init ~/.antigenrc
@@ -42,5 +45,6 @@ then
 fi
 
 eval "$(rbenv init -)"
+eval "$(exenv init -)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

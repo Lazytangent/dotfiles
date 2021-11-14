@@ -38,6 +38,9 @@ export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+# Exenv
+export PATH="$HOME/.exenv/bin:$PATH"
+
 # Emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"

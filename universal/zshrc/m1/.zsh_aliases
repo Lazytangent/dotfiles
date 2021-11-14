@@ -11,6 +11,7 @@ alias tvim="tmux new-session -s vim -c ~/.vim_conf/"
 alias tdotvim="tmux new-session -s dotvim -c ~/.vim/"
 alias tleet="tmux new-session -s leetcode -c ~/Documents/Algorithms/LeetCode/"
 
+alias tdj="tmux new-session -s django -c ~/Documents/Django/"
 alias tdoom="tmux new-session -s doom -c ~/.doom.d/"
 alias tvue="tmux new-session -s vue -c ~/Documents/Vue/"
 alias tfl="tmux new-session -s flask -c ~/Documents/Flask/"
@@ -32,6 +33,8 @@ alias tkill="tmux command-prompt kill-session"
 alias truby="tmux new-session -s ruby -c ~/Documents/Ruby/"
 alias ttest="tmux new-session -s test-runs -c ~/TestRuns"
 alias trex="tmux new-session -s ruby-express -c ~/Documents/PersonalProjects/RubyExpressConversion/"
+
+alias emacsd="emacs --daemon"
 
 # App Academy
 alias aa-gen="ruby ~/Documents/AppAcademyWork/WorkRepos/GithubApp/main.rb"
