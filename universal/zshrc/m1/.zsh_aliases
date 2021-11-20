@@ -2,6 +2,7 @@
 alias jsdocc="jsdoc -c ./conf.json"
 
 # Tmux
+alias tll="tmuxp load"
 alias tl="tmux list-sessions"
 alias tksv="tmux kill-server"
 alias thome="tmux new-session -s home -c ~/"
