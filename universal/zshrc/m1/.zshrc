@@ -20,6 +20,9 @@ bindkey -v
 set -o vi
 export EDITOR='nvim'
 
+# tmuxp completion
+eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
+
 # Docker Plugin Completion
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes

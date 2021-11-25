@@ -116,6 +116,10 @@ function tkss() {
   tmux kill-session -t $1
 }
 
+function tll() {
+  tmuxp load "$@"
+}
+
 function __tmux-sessions() {
   local expl
   local -a sessions
@@ -123,7 +127,15 @@ function __tmux-sessions() {
   _describe -t sessions 'sessions' sessions "$@"
 }
 
+function __tmuxp-load() {
+  local expl
+  local -a templates
+  templates=( ${${(f)"$(find "$HOME"/.config/tmuxp -type f | xargs -n1 basename -s .yaml)"}/:[ $'\n']##/:} )
+  _describe -t templates 'templates' templates "$@"
+}
+
 compdef __tmux-sessions tt ta tad tkss
+compdef __tmuxp-load tll
 
 function tdup() {
   if [ "$TERM_PROGRAM" = tmux ]; then
