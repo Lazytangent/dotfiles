@@ -17,8 +17,9 @@ local doWin = function(fn)
 end
 
 module.start = function()
+  local keys = { "shift", "cmd" }
   local bind = function(key, fn)
-    hs.hotkey.bind({ "alt", "cmd" }, key, fn, nil, fn)
+    hs.hotkey.bind(keys, key, fn, nil, fn)
   end
 
   local gap = 0.0025
@@ -33,26 +34,35 @@ module.start = function()
     center = { x = 0.1, y = 0.05, w = 0.77, h = 0.88 },
 
     left34 = { x = 0 + left, y = 0 + top, w = 0.34, h = 1 + 2 * bottom },
-    left50 = { x = 0 + left, y = 0 + top, w = 0.5, h = 1 + 2 * bottom },
-    left66 = { x = 0 + left, y = 0 + top, w = 0.66, h = 1 + 2 * bottom },
-    left70 = { x = 0 + left, y = 0 + top, w = 0.7, h = 1 + 2 * bottom },
+    left50 = { x = 0 + left, y = 0 + top, w = 0.5 + right, h = 1 + 2 * bottom },
+    left66 = { x = 0 + left, y = 0 + top, w = 0.66 + 0.5 * right, h = 1 + 2 * bottom },
+    left70 = { x = 0 + left, y = 0 + top, w = 0.7 + 0.5 * right, h = 1 + 2 * bottom },
 
-    right30 = hs.layout.right30,
-    right34 = { x = 0.66, y = 0, w = 0.34, h = 1 },
-    right50 = hs.layout.right50,
-    right66 = { x = 0.34, y = 0, w = 0.66, h = 1 },
+    right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + right, h = 1 + 2 * bottom },
+    right34 = { x = 0.66 + left, y = 0 + top, w = 0.34 + right, h = 1 + 2 * bottom },
+    right50 = { x = 0.5 + left, y = 0 + top, w = 0.5 + right, h = 1 + 2 * bottom },
+    right66 = { x = 0.34 + left, y = 0 + top, w = 0.66 + right, h = 1 + 2 * bottom },
 
-    upper50 = { x = 0, y = 0, w = 1, h = 0.5 },
-    upper50Left50 = { x = 0, y = 0, w = 0.5, h = 0.5 },
-    upper50Right15 = { x = 0.85, y = 0, w = 0.15, h = 0.5 },
-    upper50Right30 = { x = 0.7, y = 0, w = 0.3, h = 0.5 },
-    upper50Right50 = { x = 0.5, y = 0, w = 0.5, h = 0.5 },
+    upper50 = { x = 0 + left, y = 0 + top, w = 1 + right, h = 0.5 + 2 * bottom },
+    upper50Left50 = { x = 0 + left, y = 0 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
+    upper50Right15 = { x = 0.85 + left, y = 0 + top, w = 0.15 + 0.5 * right, h = 0.5 + 2 * bottom },
+    upper50Right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + 0.5 * right, h = 0.5 + 2 * bottom },
+    upper50Right50 = { x = 0.5 + left, y = 0 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
 
-    lower50 = { x = 0, y = 0.5, w = 1, h = 0.5 },
-    lower50Left50 = { x = 0, y = 0.5, w = 0.5, h = 0.5 },
-    lower50Right50 = { x = 0.5, y = 0.5, w = 0.5, h = 0.5 },
+    lower50 = { x = 0 + left, y = 0.5 + top, w = 1 + right, h = 0.5 + 2 * bottom },
+    lower50Left50 = { x = 0 + left, y = 0.5 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
+    lower50Right50 = { x = 0.5 + left, y = 0.5 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
 
-    chat = { x = 0.5, y = 0, w = 0.35, h = 0.5 },
+    upper50left34 = { x = 0 + left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
+    upper50center34 = { x = 0.34 + 0.5 * left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
+    upper50right34 = { x = 0.66 + 0.5 * left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom},
+    lower50left34 = { x = 0 + left, y = 0.5 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
+    lower50center34 = { x = 0.34 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
+    lower50right34 = { x = 0.66 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
+
+    center34 = { x = 0.34 + 0.5 * right, y = 0 + top, w = 0.34 + 0.5 * right, h = 1 + 2 * bottom },
+
+    chat = { x = 0.5 + left, y = 0 + top, w = 0.35 + right, h = 0.5 + 2 * bottom },
   }
 
   grid = {
@@ -66,7 +76,11 @@ module.start = function()
     { key = "i", units = { positions.centered, positions.center, positions.maximized } },
     { key = ",", units = { positions.lower50Left50 } },
     { key = ".", units = { positions.lower50Right50 } },
-    { key = "f", units = { positions.maximized } },
+    { key = "m", units = { positions.maximized } },
+
+    { key = "d", units = { positions.left34 } },
+    { key = "f", units = { positions.center34 } },
+    { key = "g", units = { positions.right34 } },
   }
 
   hs.fnutils.each(grid, function(entry)
@@ -89,6 +103,52 @@ module.start = function()
 
       currentLayout = null
       window:moveToUnit(units[index + 1])
+    end)
+  end)
+
+  -- Keybinding Sixths
+  local mods = { "cmd", "ctrl", "shift" }
+  local modsBind = function(key, fn)
+    hs.hotkey.bind(mods, key, fn, nil, fn)
+  end
+
+  sixths = {
+    { key = "e", position = positions.upper50left34 },
+    { key = "r", position = positions.upper50center34 },
+    { key = "t", position = positions.upper50right34 },
+    { key = "d", position = positions.lower50left34 },
+    { key = "f", position = positions.lower50center34 },
+    { key = "g", position = positions.lower50right34 },
+  }
+
+  hs.fnutils.each(sixths, function(entry)
+    modsBind(entry.key, function()
+      local position = entry.position
+      local screen = hs.screen.mainScreen()
+      local window = hs.window.focusedWindow()
+      local windowGeo = window:frame()
+
+      currentLayout = null
+      print(position)
+      window:moveToUnit(position)
+    end)
+  end)
+
+  local optBind = function(key, fn)
+    local keys = { "alt", "ctrl" }
+    hs.hotkey.bind(keys, key, fn, nil, fn)
+  end
+
+  hs.fnutils.each({
+    { key = "1", layout = "main-left" },
+    { key = "2", layout = "main-right" },
+    { key = "3", layout = "main-center" },
+    { key = "4", layout = "monocle" },
+    { key = "5", layout = "tabbed-left" },
+    { key = "6", layout = "tabbed-right" },
+  }, function(obj)
+    optBind(obj.key, function()
+      hhtwm.setLayout(obj.layout)
     end)
   end)
 

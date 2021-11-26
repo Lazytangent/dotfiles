@@ -2,8 +2,7 @@ local highlightWindow = require('ext.drawing').highlightWindow
 local capitalize      = require('ext.utils').capitalize
 
 local module = {}
-local hhtwm  = wm.cache.hhtwm
-local keys = { "alt", "cmd" }
+-- local hhtwm  = wm.cache.hhtwm
 
 local move = function(dir)
   local win = hs.window.frontmostWindow()
@@ -48,18 +47,26 @@ local resize = function(resize)
   end
 end
 
+local swapInDirection = function(dir)
+  local win = hs.window.frontmostWindow()
+
+  hhtwm.swapInDirection(win, dir)
+  highlightWindow()
+end
+
 module.start = function()
+  local keys = { "alt", "cmd" }
   local bind = function(key, fn)
     hs.hotkey.bind(keys, key, fn, nil, fn)
   end
 
   -- throw between screens
-  -- hs.fnutils.each({
-  --   { key = ']', dir = 'prev' },
-  --   { key = '[', dir = 'next' },
-  -- }, function(obj)
-  --   bind(obj.key, function() throw(obj.dir) end)
-  -- end)
+  hs.fnutils.each({
+    { key = ']', dir = 'prev' },
+    { key = '[', dir = 'next' },
+  }, function(obj)
+    bind(obj.key, function() throw(obj.dir) end)
+  end)
 
   -- resize (floating only)
   hs.fnutils.each({
@@ -84,6 +91,15 @@ module.start = function()
     -- end
 
     highlightWindow()
+  end)
+
+  hs.fnutils.each({
+    { key = "h", dir = "west" },
+    { key = "j", dir = "south" },
+    { key = "k", dir = "north" },
+    { key = "l", dir = "east" },
+  }, function(obj)
+    bind(obj.key, function() swapInDirection(obj.dir) end)
   end)
 
   -- [r]eset
@@ -138,6 +154,13 @@ module.start = function()
       end
     end)
   end
+
+  local mods = { "cmd", "shift" }
+  local modsBind = function(key, fn)
+    hs.hotkey.bind(mods, key, fn, nil, fn)
+  end
+
+
 end
 
 module.stop = function()

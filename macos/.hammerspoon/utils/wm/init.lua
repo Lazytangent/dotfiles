@@ -100,7 +100,7 @@ module.start = function()
   hhtwm.margin = fullMargin
   hhtwm.screenMargin = screenMargin
   hhtwm.filters = filters
-  hhtwm.calcResizeStep = calcResizeStep
+  -- hhtwm.calcResizeStep = calcResizeStep
   hhtwm.displayLayouts = { "main-left", "main-right", "monocle", "tabbed-left", "tabbed-right", "main-center" }
   hhtwm.defaultLayout = "tabbed-right"
 
