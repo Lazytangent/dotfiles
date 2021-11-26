@@ -6,9 +6,6 @@ local system             = require('ext.system')
 local window             = require('ext.window')
 local wm = require('utils.wm')
 
--- local toggleCaffeine = require('utils.controlplane.caffeine').toggleCaffeine
--- local toggleVPN      = require('utils.controlplane.persistvpn').toggleVPN
-
 module.start = function()
   -- ultra bindings
   local ultra = { 'ctrl', 'alt', 'cmd' }
@@ -24,24 +21,12 @@ module.start = function()
   -- toggles
   hs.fnutils.each({
     { key = '/', fn = system.toggleConsole   },
-    { key = 'd', fn = system.toggleDND       },
     { key = 'g', fn = grid.toggleGrid        },
     { key = 'l', fn = wm.cycleLayout         },
-    { key = 'q', fn = system.displaySleep    },
     { key = 'r', fn = system.reloadHS        },
-    { key = 't', fn = system.toggleTheme     },
   }, function(object)
     hs.hotkey.bind(ultra, object.key, object.fn)
   end)
-
-  -- apps
-  -- hs.fnutils.each({
-  --   { key = 'return', apps = config.apps.terms        },
-  --   { key = 'space',  apps = config.apps.browsers     },
-  --   { key = ',',      apps = { 'System Preferences' } }
-  -- }, function(object)
-  --   hs.hotkey.bind(ultra, object.key, function() smartLaunchOrFocus(object.apps) end)
-  -- end)
 end
 
 module.stop = function()

@@ -1,7 +1,11 @@
 require('console').init()
 
 hhtwm = require('hhtwm')
-hs.console.darkMode(true)
+bindings = require('bindings')
+wm = require('utils.wm')
+
+hs.window.setShadows(false)
+hs.ipc.cliInstall()
 
 -- local isMenubarVisible = hs.screen.primaryScreen():frame().y > 0
 
@@ -51,20 +55,14 @@ hs.console.darkMode(true)
 
 config = {
   apps = {
-    terms    = { 'kitty'                   },
-    browsers = { 'Google Chrome', 'Safari' }
+    terms    = { 'alacritty'                   },
+    browsers = { 'Firefox', 'Safari' }
   },
 
   wm = {
-    defaultDisplayLayouts = {
-      ['Color LCD']    = 'monocle',
-      ['DELL U3818DW'] = 'main-center'
-    },
+    defaultDisplayLayouts = {},
 
-    displayLayouts = {
-      ['Color LCD']    = { 'monocle', 'main-right', 'side-by-side'     },
-      ['DELL U3818DW'] = { 'main-center', 'main-right', 'side-by-side' }
-    }
+    displayLayouts = {}
   },
 
   window = {
@@ -90,10 +88,7 @@ function reloadConfig(files)
   end
 end
 
-bindings = require('bindings')
-wm = require('utils.wm')
-
-bindings.enabled = { 'block-hide', 'focus', 'global', 'tiling' }
+bindings.enabled = { 'block-hide', 'grid', 'global', 'hotkeys', 'tiling' }
 
 local modules = { bindings, wm }
 

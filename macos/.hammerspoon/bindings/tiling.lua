@@ -3,6 +3,7 @@ local capitalize      = require('ext.utils').capitalize
 
 local module = {}
 local hhtwm  = wm.cache.hhtwm
+local keys = { "alt", "cmd" }
 
 local move = function(dir)
   local win = hs.window.frontmostWindow()
@@ -49,26 +50,16 @@ end
 
 module.start = function()
   local bind = function(key, fn)
-    hs.hotkey.bind({ 'ctrl', 'shift' }, key, fn, nil, fn)
+    hs.hotkey.bind(keys, key, fn, nil, fn)
   end
 
-  -- move window
-  hs.fnutils.each({
-    { key = 'h', dir = "west"  },
-    { key = 'j', dir = "south" },
-    { key = 'k', dir = "north" },
-    { key = 'l', dir = "east"  },
-  }, function(obj)
-    bind(obj.key, function() move(obj.dir) end)
-  end)
-
   -- throw between screens
-  hs.fnutils.each({
-    { key = ']', dir = 'prev' },
-    { key = '[', dir = 'next' },
-  }, function(obj)
-    bind(obj.key, function() throw(obj.dir) end)
-  end)
+  -- hs.fnutils.each({
+  --   { key = ']', dir = 'prev' },
+  --   { key = '[', dir = 'next' },
+  -- }, function(obj)
+  --   bind(obj.key, function() throw(obj.dir) end)
+  -- end)
 
   -- resize (floating only)
   hs.fnutils.each({
@@ -88,9 +79,9 @@ module.start = function()
 
     hhtwm.toggleFloat(win)
 
-    if hhtwm.isFloating(win) then
-      hs.grid.center(win)
-    end
+    -- if hhtwm.isFloating(win) then
+    --   hs.grid.center(win)
+    -- end
 
     highlightWindow()
   end)
@@ -103,19 +94,6 @@ module.start = function()
 
   -- [e]qualize
   bind('e', hhtwm.equalizeLayout)
-
-  -- [c]enter window
-  -- bind('c', function()
-  --   local win = hs.window.frontmostWindow()
-
-  --   if not hhtwm.isFloating(win) then
-  --     hhtwm.toggleFloat(win)
-  --   end
-
-  --   -- win:centerOnScreen()
-  --   hs.grid.center(win)
-  --   highlightWindow()
-  -- end)
 
   -- toggle [z]oom window
   bind('z', function()
@@ -136,7 +114,7 @@ module.start = function()
     local idx = tostring(n)
 
     -- important: use this with onKeyReleased, not onKeyPressed
-    hs.hotkey.bind({ 'ctrl', 'shift' }, idx, nil, function()
+    hs.hotkey.bind(keys, idx, nil, function()
       local win = hs.window.focusedWindow()
 
       -- if there's no focused window, just move to that space
