@@ -80,6 +80,7 @@ module.start = function()
     { app = "QuickTime Player", tile = false },
     { app = "Reminders", tile = false },
     { app = "Simulator", tile = false },
+    { app = "Slack", tile = true },
     { app = "System Preferences", tile = false },
     { app = "iTerm", subrole = "AXDialog", tile = false },
     { app = "iTerm2", subrole = "AXDialog", tile = false },

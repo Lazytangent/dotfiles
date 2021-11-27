@@ -17,7 +17,7 @@ local doWin = function(fn)
 end
 
 module.start = function()
-  local keys = { "shift", "cmd" }
+  local keys = { "ctrl", "alt" }
   local bind = function(key, fn)
     hs.hotkey.bind(keys, key, fn, nil, fn)
   end
@@ -109,7 +109,7 @@ module.start = function()
   end)
 
   -- Keybinding Sixths
-  local mods = { "cmd", "ctrl", "shift" }
+  local mods = { "alt", "ctrl", "shift" }
   local modsBind = function(key, fn)
     hs.hotkey.bind(mods, key, fn, nil, fn)
   end
