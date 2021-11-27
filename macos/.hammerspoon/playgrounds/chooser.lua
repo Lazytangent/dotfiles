@@ -1,8 +1,8 @@
 local cache = {}
 local module = { cache = cache }
 
-local hhtwm = require('hhtwm')
-local wm = require('utils.wm')
+local hhtwm = require "hhtwm"
+local wm = require "utils.wm"
 
 module.start = function()
   local keys = { "cmd", "alt", "ctrl" }
@@ -28,68 +28,68 @@ module.start = function()
   local readFilesInDirectory = function(dir)
     local cmd = "ls " .. dir
     local output = hs.execute(cmd)
-    return hs.fnutils.split(output, '\n')
+    return hs.fnutils.split(output, "\n")
   end
 
   local readKeys = function(tbl)
     local keys = {}
-    for k,v in pairs(tbl) do
+    for k, v in pairs(tbl) do
       table.insert(keys, k)
     end
 
     return keys
   end
 
-  bind('/', function()
-    local chooseLayout = function(obj)
-      if obj ~= nil then
-        local layout = obj.text
-        if layout ~= nil then
-          wm.setLayout(layout)
-        end
+  local chooseLayout = function(obj)
+    if obj ~= nil then
+      local layout = obj.text
+      if layout ~= nil then
+        wm.setLayout(layout)
       end
     end
+  end
 
-    local openApplication = function(obj)
-      if obj ~= nil then
-        local name = obj.text
-        if name ~= nil then
-          hs.application.open(name)
-        end
+  local openApplication = function(obj)
+    if obj ~= nil then
+      local name = obj.text
+      if name ~= nil then
+        hs.application.open(name)
       end
     end
+  end
 
-    local options = {}
+  local options = {}
 
-    options.Layout = function()
-      createNewChooser(chooseLayout, createChoices(hhtwm.getLayouts()))
-    end
+  options.Layout = function()
+    createNewChooser(chooseLayout, createChoices(hhtwm.getLayouts()))
+  end
 
-    options.Applications = function()
-      createNewChooser(openApplication, createChoices(readFilesInDirectory('/Applications')))
-    end
+  options.Applications = function()
+    createNewChooser(openApplication, createChoices(readFilesInDirectory "/Applications"))
+  end
 
-    local chooserChooser = function(obj)
-      if obj ~= nil then
-        local chooser = obj.text
-        if chooser ~= nil then
-          options[chooser]()
-        end
+  local chooserChooser = function(obj)
+    if obj ~= nil then
+      local chooser = obj.text
+      if chooser ~= nil then
+        options[chooser]()
       end
     end
+  end
 
+  bind("/", function()
     local choosers = readKeys(options)
     createNewChooser(chooserChooser, createChoices(choosers))
   end)
 
-  bind('.', function()
-    local output = hs.execute('ls /Applications')
-    local tbl = hs.fnutils.split(output, '\n')
+  -- For testing
+  bind(".", function()
+    local output = hs.execute "ls /Applications"
+    local tbl = hs.fnutils.split(output, "\n")
     print(hs.inspect(tbl))
   end)
 end
 
-module.stop = function()
-end
+module.stop = function() end
 
 return module
