@@ -89,6 +89,7 @@ function reloadConfig(files)
 end
 
 bindings.enabled = { 'block-hide', 'grid', 'global', 'hotkeys', 'tiling' }
+playgrounds.enabled = { 'chooser' }
 
 local modules = { bindings, wm }
 
