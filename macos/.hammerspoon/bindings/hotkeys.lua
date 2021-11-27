@@ -13,4 +13,7 @@ module.start = function()
   end)
 end
 
+module.stop = function()
+end
+
 return module

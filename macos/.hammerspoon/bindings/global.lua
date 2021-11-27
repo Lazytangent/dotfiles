@@ -20,7 +20,7 @@ module.start = function()
 
   -- toggles
   hs.fnutils.each({
-    { key = '/', fn = system.toggleConsole   },
+    { key = 'c', fn = system.toggleConsole   },
     { key = 'g', fn = grid.toggleGrid        },
     { key = 'l', fn = wm.cycleLayout         },
     { key = 'r', fn = system.reloadHS        },

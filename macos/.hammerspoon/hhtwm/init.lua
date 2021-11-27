@@ -658,6 +658,11 @@ module.tile = function()
       local screenWindows = hs.fnutils.filter(spaceWindows, function(win) return win:screen():id() == screen:id() end)
       local layoutName    = module.getLayout(spaceId)
 
+      if type(layoutName) ~= 'string' then
+        log.e('layoutName needs to be a string')
+        return
+      end
+
       if not layoutName or not layouts[layoutName] then
         log.e('layout doesn\'t exist: ' .. layoutName)
       else

@@ -42,6 +42,10 @@ module.setLayout = function(layout)
   notify("Switching to: " .. layout)
 end
 
+module.reset = function()
+  cache = { hhtwm = hhtwm }
+end
+
 module.cycleLayout = function()
   local screen = activeScreen()
 
