@@ -38,10 +38,10 @@ module.start = function()
     left66 = { x = 0 + left, y = 0 + top, w = 0.66 + 0.5 * right, h = 1 + 2 * bottom },
     left70 = { x = 0 + left, y = 0 + top, w = 0.7 + 0.5 * right, h = 1 + 2 * bottom },
 
-    right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + right, h = 1 + 2 * bottom },
-    right34 = { x = 0.66 + left, y = 0 + top, w = 0.34 + right, h = 1 + 2 * bottom },
-    right50 = { x = 0.5 + left, y = 0 + top, w = 0.5 + right, h = 1 + 2 * bottom },
-    right66 = { x = 0.34 + left, y = 0 + top, w = 0.66 + right, h = 1 + 2 * bottom },
+    right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + 2 * right, h = 1 + 2 * bottom },
+    right34 = { x = 0.66 + left, y = 0 + top, w = 0.34 + 2 * right, h = 1 + 2 * bottom },
+    right50 = { x = 0.5 + left, y = 0 + top, w = 0.5 + 2 * right, h = 1 + 2 * bottom },
+    right66 = { x = 0.34 + left, y = 0 + top, w = 0.66 + 2 * right, h = 1 + 2 * bottom },
 
     upper50 = { x = 0 + left, y = 0 + top, w = 1 + right, h = 0.5 + 2 * bottom },
     upper50Left50 = { x = 0 + left, y = 0 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
@@ -81,6 +81,8 @@ module.start = function()
     { key = "d", units = { positions.left34 } },
     { key = "f", units = { positions.center34 } },
     { key = "g", units = { positions.right34 } },
+    { key = "e", units = { positions.left66 } },
+    { key = "t", units = { positions.right66 } },
   }
 
   hs.fnutils.each(grid, function(entry)
