@@ -199,6 +199,66 @@ return function(hhtwm)
     return frame
   end
 
+  layouts["quadrants"] = function(window, windows, screen, index, layoutOptions)
+    if #windows == 1 then
+      return layouts["main-center"](window, windows, screen, index, layoutOptions)
+    end
+
+    if #windows == 2 or #windows == 3 then
+      return layouts["main-left"](window, windows, screen, index, layoutOptions)
+    end
+
+    local margin = hhtwm.margin or 0
+    local insetFrame = getInsetFrame(screen)
+
+    local frame = {
+      x = insetFrame.x,
+      y = insetFrame.y,
+      w = 0,
+      h = 0,
+    }
+
+    if index == 1 then
+      frame.x = frame.x + margin / 2
+      frame.y = frame.y + margin / 2
+      frame.h = insetFrame.h - margin
+      frame.w = insetFrame.w * layoutOptions.mainPaneRatio - margin
+    else
+      local divs = #windows - 1
+
+      -- At least four secondary windows
+      if divs % 2 == 0 then
+        local rows = divs / 2
+        local h = insetFrame.h / rows
+
+        if index == 2 then
+          frame.x = frame.x + insetFrame.w * (1 - layoutOptions.mainPaneRatio) + margin / 2
+          frame.w = frame.w + insetFrame.w * (1 - layoutOptions.mainPaneRatio) / 2 - margin
+          frame.h = frame.h + insetFrame.h * (1 - layoutOptions.mainPaneRatio) / rows - margin
+        elseif index == 3 then
+          frame.x = frame.x + insetFrame.w * (1 - layoutOptions.mainPaneRatio) / 2 - margin + margin / 2
+          frame.w = frame.w + insetFrame.w * (1 - layoutOptions.mainPaneRatio) / 2 - margin
+          frame.h = frame.h + insetFrame.h * (1 - layoutOptions.mainPaneRatio) / rows - margin
+        end
+      else
+        -- At least three secondary windows
+        local rows = insetFrame.h / 2
+
+        if index == 2 then
+          frame.x = frame.x + insetFrame.w + (1 - layoutOptions.mainPaneRatio) + margin / 2
+          frame.w = frame.w + insetFrame.w + (1 - layoutOptions.mainPaneRatio) - margin
+          frame.h = frame.h + insetFrame.h * (1 - layoutOptions.mainPaneRatio) / rows - margin
+        else
+          frame.x = frame.x + insetFrame.w * (1 - layoutOptions.mainPaneRatio) + margin / 2
+          frame.w = frame.w + insetFrame.w + (1 - layoutOptions.mainPaneRatio) - margin
+          frame.h = frame.h + insetFrame.h * (1 - layoutOptions.mainPaneRatio) / rows - margin
+        end
+      end
+    end
+
+    return frame
+  end
+
   -- TODO
   -- layouts["stacking-columns"] = function(window, windows, screen, index, layoutOptions)
   --   return nil
