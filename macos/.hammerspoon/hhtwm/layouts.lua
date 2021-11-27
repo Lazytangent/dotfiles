@@ -242,18 +242,51 @@ return function(hhtwm)
         end
       else
         -- At least three secondary windows
-        local rows = insetFrame.h / 2
+        local rows = 2
 
         if index == 2 then
-          frame.x = frame.x + insetFrame.w + (1 - layoutOptions.mainPaneRatio) + margin / 2
-          frame.w = frame.w + insetFrame.w + (1 - layoutOptions.mainPaneRatio) - margin
-          frame.h = frame.h + insetFrame.h * (1 - layoutOptions.mainPaneRatio) / rows - margin
+          frame.x = frame.x + insetFrame.w * (1 - layoutOptions.mainPaneRatio) + margin / 2
+          frame.w = frame.w + insetFrame.w * (1 - layoutOptions.mainPaneRatio) - margin
+          frame.h = frame.h + insetFrame.h / rows - margin
+          frame.y = margin
         else
           frame.x = frame.x + insetFrame.w * (1 - layoutOptions.mainPaneRatio) + margin / 2
-          frame.w = frame.w + insetFrame.w + (1 - layoutOptions.mainPaneRatio) - margin
-          frame.h = frame.h + insetFrame.h * (1 - layoutOptions.mainPaneRatio) / rows - margin
+          frame.w = frame.w + insetFrame.w * (1 - layoutOptions.mainPaneRatio) - margin
+          frame.h = frame.h + insetFrame.h / rows - margin
+          frame.y = margin + insetFrame.h / rows
         end
       end
+    end
+
+    return frame
+  end
+
+  layouts["corners"] = function(window, windows, screen, index, layoutOptions)
+    if #windows == 1 then
+      return layouts["monocle"](window, windows, screen, index, layoutOptions)
+    end
+
+    if #windows == 2 or #windows == 3 then
+      return layouts["main-left"](window, windows, screen, index, layoutOptions)
+    end
+
+    local margin = hhtwm.margin or 0
+    local insetFrame = getInsetFrame(screen)
+
+    local frame = {
+      x = insetFrame.x,
+      y = insetFrame.y,
+      w = 0,
+      h = 0,
+    }
+
+    if index == 1 and #windows == 2 or #windows == 3 then
+      frame.x = frame.x + margin / 2
+      frame.y = frame.y + margin / 2
+      frame.h = insetFrame.h - margin
+      frame.w = insetFrame.w * layoutOptions.mainPaneRatio - margin
+    elseif index
+      local divs = #windows - 1
     end
 
     return frame

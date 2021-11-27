@@ -11,7 +11,7 @@ module.start = function()
   local ultra = { 'ctrl', 'alt', 'cmd' }
 
   -- ctrl + tab as alternative to cmd + tab
-  hs.hotkey.bind({ 'ctrl' }, 'tab', window.windowHints)
+  hs.hotkey.bind({ 'alt' }, 'tab', window.windowHints)
 
   -- force paste (sometimes cmd + v is blocked)
   hs.hotkey.bind({ 'cmd', 'alt', 'shift' }, 'v', function()
