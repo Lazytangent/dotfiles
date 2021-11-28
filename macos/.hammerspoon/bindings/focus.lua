@@ -45,7 +45,7 @@ end
 
 module.start = function()
   local bind = function(key, fn)
-    hs.hotkey.bind({ 'ctrl', 'alt' }, key, fn, nil, fn)
+    hs.hotkey.bind({ 'ctrl', 'cmd' }, key, fn, nil, fn)
   end
 
   cache.focusFilter = hs.window.filter.new()

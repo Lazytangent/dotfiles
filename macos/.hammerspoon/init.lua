@@ -45,7 +45,7 @@ function reloadConfig(files)
   end
 end
 
-bindings.enabled = { 'block-hide', 'grid', 'global', 'hotkeys', 'tiling' }
+bindings.enabled = { 'block-hide', 'focus', 'grid', 'global', 'hotkeys', 'tiling' }
 playgrounds.enabled = { 'chooser' }
 
 -- wm module needs to be loaded first to apply default settings
