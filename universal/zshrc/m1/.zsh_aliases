@@ -13,7 +13,7 @@ alias tdotvim="tmux new-session -s dotvim -c ~/.vim/"
 alias tleet="tmux new-session -s leetcode -c ~/Documents/Algorithms/LeetCode/"
 
 alias tdj="tmux new-session -s django -c ~/Documents/Django/"
-alias tdoom="tmux new-session -s doom -c ~/.doom.d/"
+alias tdoom="tmux new-session -s doom -c ~/.config/doom"
 alias tvue="tmux new-session -s vue -c ~/Documents/Vue/"
 alias tfl="tmux new-session -s flask -c ~/Documents/Flask/"
 alias tgql="tmux new-session -s graphql -c ~/Documents/GraphQL/"

@@ -42,8 +42,11 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.exenv/bin:$PATH"
 
 # Emacs
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
+export EMACSDIR="$HOME/.config/emacs"
+export DOOMDIR="$HOME/.config/doom"
+export DOOMLOCALDIR="$HOME/.config/emacs/.local"
 
 # Rust Analyzer
 export PATH="$HOME/.local/bin:$PATH"
