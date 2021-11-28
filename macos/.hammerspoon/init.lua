@@ -48,7 +48,8 @@ end
 bindings.enabled = { 'block-hide', 'grid', 'global', 'hotkeys', 'tiling' }
 playgrounds.enabled = { 'chooser' }
 
-local modules = { bindings, wm, playgrounds }
+-- wm module needs to be loaded first to apply default settings
+local modules = { wm, bindings, playgrounds }
 
 hs.fnutils.each(modules, function(module)
   if module then module.start() end
