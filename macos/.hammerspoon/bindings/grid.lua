@@ -154,13 +154,6 @@ module.start = function()
       hhtwm.setLayout(obj.layout)
     end)
   end)
-
-  bind("u", function()
-    window.persistPosition(hs.window.frontmostWindow(), "undo")
-  end)
-  bind("r", function()
-    window.persistPosition(hs.window.frontmostWindow(), "redo")
-  end)
 end
 
 module.stop = function() end
