@@ -41,7 +41,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
 
 # Doom Emacs
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
