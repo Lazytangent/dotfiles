@@ -285,7 +285,7 @@ return function(hhtwm)
       frame.y = frame.y + margin / 2
       frame.h = insetFrame.h - margin
       frame.w = insetFrame.w * layoutOptions.mainPaneRatio - margin
-    elseif index
+    elseif index ~= 1 then
       local divs = #windows - 1
     end
 
