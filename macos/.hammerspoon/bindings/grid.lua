@@ -22,6 +22,7 @@ module.start = function()
     hs.hotkey.bind(keys, key, fn, nil, fn)
   end
 
+  local margin = hhtwm.margin
   local gap = 0.0025
   local left = gap
   local top = 2 * gap
@@ -152,13 +153,6 @@ module.start = function()
     optBind(obj.key, function()
       hhtwm.setLayout(obj.layout)
     end)
-  end)
-
-  bind("u", function()
-    window.persistPosition(hs.window.frontmostWindow(), "undo")
-  end)
-  bind("r", function()
-    window.persistPosition(hs.window.frontmostWindow(), "redo")
   end)
 end
 
