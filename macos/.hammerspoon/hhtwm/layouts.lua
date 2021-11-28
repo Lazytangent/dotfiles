@@ -34,12 +34,17 @@ return function(hhtwm)
   end
 
   layouts["main-left"] = function(window, windows, screen, index, layoutOptions)
-    if #windows == 1 then
-      return layouts["main-center"](window, windows, screen, index, layoutOptions)
-    end
-
     local margin     = hhtwm.margin or 0
     local insetFrame = getInsetFrame(screen)
+
+    if #windows == 1 then
+      return {
+        x = insetFrame.x + margin / 2,
+        y = insetFrame.y + margin / 2,
+        h = insetFrame.h - margin,
+        w = insetFrame.w * layoutOptions.mainPaneRatio - margin
+      }
+    end
 
     local frame = {
       x = insetFrame.x,
@@ -67,12 +72,17 @@ return function(hhtwm)
   end
 
   layouts["main-right"] = function(window, windows, screen, index, layoutOptions)
-    if #windows == 1 then
-      return layouts["main-center"](window, windows, screen, index, layoutOptions)
-    end
-
     local margin     = hhtwm.margin or 0
     local insetFrame = getInsetFrame(screen)
+
+    if #windows == 1 then
+      return {
+        x = insetFrame.x + insetFrame.w * layoutOptions.mainPaneRatio + margin / 2,
+        y = insetFrame.y + margin / 2,
+        w = insetFrame.w * (1 - layoutOptions.mainPaneRatio) - margin,
+        h = insetFrame.h - margin
+      }
+    end
 
     local frame = {
       x = insetFrame.x,
@@ -141,7 +151,7 @@ return function(hhtwm)
 
   layouts["tabbed-left"] = function(window, windows, screen, index, layoutOptions)
     if #windows == 1 then
-      return layouts["main-center"](window, windows, screen, index, layoutOptions)
+      return layouts["monocle"](window, windows, screen, index, layoutOptions)
     end
 
     local margin     = hhtwm.margin or 0
@@ -171,7 +181,7 @@ return function(hhtwm)
 
   layouts["tabbed-right"] = function(window, windows, screen, index, layoutOptions)
     if #windows == 1 then
-      return layouts["main-center"](window, windows, screen, index, layoutOptions)
+      return layouts["monocle"](window, windows, screen, index, layoutOptions)
     end
 
     local margin     = hhtwm.margin or 0
@@ -201,7 +211,7 @@ return function(hhtwm)
 
   layouts["quadrants"] = function(window, windows, screen, index, layoutOptions)
     if #windows == 1 then
-      return layouts["main-center"](window, windows, screen, index, layoutOptions)
+      return layouts["monocle"](window, windows, screen, index, layoutOptions)
     end
 
     if #windows == 2 or #windows == 3 then
