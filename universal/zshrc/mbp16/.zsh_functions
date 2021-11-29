@@ -33,15 +33,16 @@ function glump() {
 
 function zipr() {
   if [[ $1 ]] && [[ $2 ]]; then
-    zip -r $2 $1
+    zip -r $2 $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
   elif [[ $1 ]]; then
-    zip -r "$1.zip" $1
+    zip -r "$1.zip" $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
   else
     echo "Missing argument(s)"
     echo "Usage: zipr FILENAME [ZIPPED NAME]"
   fi
 }
 
+# TMUX
 function t() {
   if tmux ls | grep -q $1; then
     local my_num=$(tmux ls | grep -c $1)
@@ -70,7 +71,9 @@ function ta() {
 function tl() {
   tmux list-sessions "$@"
 }
-
+function tll() {
+  tmuxp load "$@"
+}
 function __tmux-sessions() {
   local expl
   local -a sessions
@@ -78,7 +81,15 @@ function __tmux-sessions() {
   _describe -t sessions 'sessions' sessions "$@"
 }
 
+function __tmuxp-load() {
+  local expl
+  local -a templates
+  templates=( ${${(f)"$(find "$HOME"/.config/tmuxp -type f | xargs -n1 basename -s .yaml)"}/:[ $'\n']##/:} )
+  _describe -t templates 'templates' templates "$@"
+}
+
 compdef __tmux-sessions t ta ts tkss
+compdef __tmuxp-load tll
 
 function tdup() {
   if [ "$TERM_PROGRAM" = tmux ]; then
