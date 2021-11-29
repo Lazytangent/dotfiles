@@ -56,10 +56,10 @@ module.start = function()
 
     upper50left34 = { x = 0 + left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
     upper50center34 = { x = 0.34 + 0.5 * left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
-    upper50right34 = { x = 0.66 + 0.5 * left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom},
+    upper50right34 = { x = 0.66 + 0.5 * left, y = 0 + top, w = 0.34 + 2 * right, h = 0.5 + bottom},
     lower50left34 = { x = 0 + left, y = 0.5 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
     lower50center34 = { x = 0.34 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
-    lower50right34 = { x = 0.66 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
+    lower50right34 = { x = 0.66 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 2 * right, h = 0.5 + bottom },
 
     center34 = { x = 0.34 + 0.5 * right, y = 0 + top, w = 0.34 + 0.5 * right, h = 1 + 2 * bottom },
 
@@ -149,6 +149,8 @@ module.start = function()
     { key = "4", layout = "monocle" },
     { key = "5", layout = "tabbed-left" },
     { key = "6", layout = "tabbed-right" },
+    { key = "7", layout = "quadrants" },
+    { key = "8", layout = "corners" },
   }, function(obj)
     optBind(obj.key, function()
       hhtwm.setLayout(obj.layout)

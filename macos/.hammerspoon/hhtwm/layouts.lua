@@ -291,12 +291,43 @@ return function(hhtwm)
     }
 
     if index == 1 and #windows == 2 or #windows == 3 then
+      -- First window is left half
       frame.x = frame.x + margin / 2
       frame.y = frame.y + margin / 2
       frame.h = insetFrame.h - margin
       frame.w = insetFrame.w * layoutOptions.mainPaneRatio - margin
-    elseif index ~= 1 then
-      local divs = #windows - 1
+    elseif index ~= 1 and #windows == 2 or #windows == 3 then
+      local divs = 2
+
+      -- Second window
+      if index == 2 then
+        frame.x = insetFrame.w * (1 - layoutOptions.mainPaneRatio) + margin / 2
+        frame.w = insetFrame.w * (1 - layoutOptions.mainPaneRatio) - margin
+        frame.h = insetFrame.h / 2 - margin
+      else
+        frame.x = insetFrame.w * (1 - layoutOptions.mainPaneRatio) + margin / 2
+        frame.y = insetFrame.h / 2
+        frame.w = insetFrame.w * (1 - layoutOptions.mainPaneRatio) - margin
+        frame.h = insetFrame.h / 2 - margin
+      end
+    elseif #windows == 4 then
+      if index == 1 then
+        frame.w = insetFrame.w * layoutOptions.mainPaneRatio - margin
+        frame.h = insetFrame.h / 2 - margin
+      elseif index == 2 then
+        frame.x = insetFrame.w * (1 - layoutOptions.mainPaneRatio) + margin / 2
+        frame.w = insetFrame.w * (1 - layoutOptions.mainPaneRatio) - margin
+        frame.h = insetFrame.h / 2 - margin
+      elseif index == 3 then
+        frame.x = insetFrame.w * (1 - layoutOptions.mainPaneRatio) + margin / 2
+        frame.y = insetFrame.h / 2
+        frame.w = insetFrame.w * (1 - layoutOptions.mainPaneRatio) - margin
+        frame.h = insetFrame.h / 2 - margin
+      elseif index == 4 then
+        frame.y = insetFrame.h / 2
+        frame.w = insetFrame.w * (1 - layoutOptions.mainPaneRatio) - margin
+        frame.h = insetFrame.h / 2 - margin
+      end
     end
 
     return frame

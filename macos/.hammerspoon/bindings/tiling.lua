@@ -86,10 +86,6 @@ module.start = function()
 
     hhtwm.toggleFloat(win)
 
-    -- if hhtwm.isFloating(win) then
-    --   hs.grid.center(win)
-    -- end
-
     highlightWindow()
   end)
 
