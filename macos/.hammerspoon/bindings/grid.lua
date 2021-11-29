@@ -36,7 +36,7 @@ module.start = function()
 
     left34 = { x = 0 + left, y = 0 + top, w = 0.34, h = 1 + 2 * bottom },
     left50 = { x = 0 + left, y = 0 + top, w = 0.5 + right, h = 1 + 2 * bottom },
-    left66 = { x = 0 + left, y = 0 + top, w = 0.66 + 0.5 * right, h = 1 + 2 * bottom },
+    left66 = { x = 0 + left, y = 0 + top, w = 0.67 + 2 * right, h = 1 + 2 * bottom },
     left70 = { x = 0 + left, y = 0 + top, w = 0.7 + 0.5 * right, h = 1 + 2 * bottom },
 
     right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + 2 * right, h = 1 + 2 * bottom },
@@ -54,12 +54,12 @@ module.start = function()
     lower50Left50 = { x = 0 + left, y = 0.5 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
     lower50Right50 = { x = 0.5 + left, y = 0.5 + 0.5 * top, w = 0.5 + 2 * right, h = 0.5 + 2 * bottom },
 
-    upper50left34 = { x = 0 + left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
-    upper50center34 = { x = 0.34 + 0.5 * left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
-    upper50right34 = { x = 0.66 + 0.5 * left, y = 0 + top, w = 0.34 + 2 * right, h = 0.5 + bottom},
-    lower50left34 = { x = 0 + left, y = 0.5 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
-    lower50center34 = { x = 0.34 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
-    lower50right34 = { x = 0.66 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 2 * right, h = 0.5 + bottom },
+    upper50left34 = { x = 0 + left, y = 0 + top, w = 0.34 + 2 * right, h = 0.5 + bottom },
+    upper50center34 = { x = 0.34 + 0.5 * left, y = 0 + top, w = 0.33 + right, h = 0.5 + bottom },
+    upper50right34 = { x = 0.67 + 0.5 * left, y = 0 + top, w = 0.33 + right, h = 0.5 + bottom},
+    lower50left34 = { x = 0 + left, y = 0.5 + top, w = 0.34 + 2 * right, h = 0.5 + bottom },
+    lower50center34 = { x = 0.34 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.33 + right, h = 0.5 + bottom },
+    lower50right34 = { x = 0.67 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.33 + right, h = 0.5 + bottom },
 
     center34 = { x = 0.34 + 0.5 * right, y = 0 + top, w = 0.33 + 0.5 * right, h = 1 + 2 * bottom },
 
@@ -132,7 +132,7 @@ module.start = function()
       local windowGeo = window:frame()
 
       currentLayout = null
-      print(position)
+      print(hs.inspect(position))
       window:moveToUnit(position)
     end)
   end)
