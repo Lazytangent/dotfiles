@@ -36,7 +36,7 @@ module.start = function()
 
     left34 = { x = 0 + left, y = 0 + top, w = 0.34 + right, h = 1 + 2 * bottom },
     left50 = { x = 0 + left, y = 0 + top, w = 0.5 + right, h = 1 + 2 * bottom },
-    left66 = { x = 0 + left, y = 0 + top, w = 0.67 + 2 * right, h = 1 + 2 * bottom },
+    left66 = { x = 0 + left, y = 0 + top, w = 0.67 + right, h = 1 + 2 * bottom },
     left70 = { x = 0 + left, y = 0 + top, w = 0.7 + 0.5 * right, h = 1 + 2 * bottom },
 
     right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + 2 * right, h = 1 + 2 * bottom },
