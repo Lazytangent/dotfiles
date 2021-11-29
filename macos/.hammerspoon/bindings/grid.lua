@@ -40,7 +40,7 @@ module.start = function()
     left70 = { x = 0 + left, y = 0 + top, w = 0.7 + 0.5 * right, h = 1 + 2 * bottom },
 
     right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + 2 * right, h = 1 + 2 * bottom },
-    right34 = { x = 0.66 + left, y = 0 + top, w = 0.34 + 2 * right, h = 1 + 2 * bottom },
+    right34 = { x = 0.67 + 0.5 * left, y = 0 + top, w = 0.33 + 2 * right, h = 1 + 2 * bottom },
     right50 = { x = 0.5 + left, y = 0 + top, w = 0.5 + 2 * right, h = 1 + 2 * bottom },
     right66 = { x = 0.34 + left, y = 0 + top, w = 0.66 + 2 * right, h = 1 + 2 * bottom },
 
@@ -48,11 +48,11 @@ module.start = function()
     upper50Left50 = { x = 0 + left, y = 0 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
     upper50Right15 = { x = 0.85 + left, y = 0 + top, w = 0.15 + 0.5 * right, h = 0.5 + 2 * bottom },
     upper50Right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + 0.5 * right, h = 0.5 + 2 * bottom },
-    upper50Right50 = { x = 0.5 + left, y = 0 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
+    upper50Right50 = { x = 0.5 + left, y = 0 + top, w = 0.5 + 2 * right, h = 0.5 + 2 * bottom },
 
     lower50 = { x = 0 + left, y = 0.5 + top, w = 1 + right, h = 0.5 + 2 * bottom },
     lower50Left50 = { x = 0 + left, y = 0.5 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
-    lower50Right50 = { x = 0.5 + left, y = 0.5 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
+    lower50Right50 = { x = 0.5 + left, y = 0.5 + 0.5 * top, w = 0.5 + 2 * right, h = 0.5 + 2 * bottom },
 
     upper50left34 = { x = 0 + left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
     upper50center34 = { x = 0.34 + 0.5 * left, y = 0 + top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
@@ -61,7 +61,7 @@ module.start = function()
     lower50center34 = { x = 0.34 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 0.5 * right, h = 0.5 + bottom },
     lower50right34 = { x = 0.66 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.34 + 2 * right, h = 0.5 + bottom },
 
-    center34 = { x = 0.34 + 0.5 * right, y = 0 + top, w = 0.34 + 0.5 * right, h = 1 + 2 * bottom },
+    center34 = { x = 0.34 + 0.5 * right, y = 0 + top, w = 0.33 + 0.5 * right, h = 1 + 2 * bottom },
 
     chat = { x = 0.5 + left, y = 0 + top, w = 0.35 + right, h = 0.5 + 2 * bottom },
   }
