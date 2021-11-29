@@ -60,7 +60,7 @@ module.start = function()
 
   local options = {}
 
-  options.Layout = function()
+  options.Layouts = function()
     createNewChooser(chooseLayout, createChoices(hhtwm.getLayouts()))
   end
 
