@@ -68,6 +68,10 @@ module.start = function()
     createNewChooser(openApplication, createChoices(readFilesInDirectory "/Applications"))
   end
 
+  options.Emacs = function()
+    hs.application.open('Emacs.app')
+  end
+
   local chooserChooser = function(obj)
     if obj ~= nil then
       local chooser = obj.text
