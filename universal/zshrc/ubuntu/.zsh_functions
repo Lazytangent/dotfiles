@@ -1,3 +1,13 @@
+function test() {
+  nvm use "$1"
+  rm -rf node_modules
+  git restore .
+  ls
+  git status
+  npm install
+  npm start
+}
+
 function jsdock() {
   jsdoc -c $1
 }
