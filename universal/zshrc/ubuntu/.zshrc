@@ -24,7 +24,11 @@ eval "$(rbenv init - zsh)"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Go
+export PATH="$PATH:/usr/local/go/bin"
 
 bindkey -v
 export EDITOR='vim'
