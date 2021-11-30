@@ -42,7 +42,7 @@ module.start = function()
     right30 = { x = 0.7 + left, y = 0 + top, w = 0.3 + 2 * right, h = 1 + 2 * bottom },
     right34 = { x = 0.67 + left, y = 0 + top, w = 0.33 + 2 * right, h = 1 + 2 * bottom },
     right50 = { x = 0.5 + left, y = 0 + top, w = 0.5 + 2 * right, h = 1 + 2 * bottom },
-    right66 = { x = 0.34 + left, y = 0 + top, w = 0.66 + 2 * right, h = 1 + 2 * bottom },
+    right66 = { x = 0.34 + 0.5 * left, y = 0 + top, w = 0.66 + 2 * right, h = 1 + 2 * bottom },
 
     upper50 = { x = 0 + left, y = 0 + top, w = 1 + right, h = 0.5 + 2 * bottom },
     upper50Left50 = { x = 0 + left, y = 0 + top, w = 0.5 + 0.5 * right, h = 0.5 + 2 * bottom },
@@ -57,7 +57,7 @@ module.start = function()
     upper50left34 = { x = 0 + left, y = 0 + top, w = 0.34 + 2 * right, h = 0.5 + bottom },
     upper50center34 = { x = 0.34 + 0.5 * left, y = 0 + top, w = 0.33 + right, h = 0.5 + bottom },
     upper50right34 = { x = 0.67 + 0.5 * left, y = 0 + top, w = 0.33 + right, h = 0.5 + bottom},
-    lower50left34 = { x = 0 + left, y = 0.5 + top, w = 0.34 + 2 * right, h = 0.5 + bottom },
+    lower50left34 = { x = 0 + left, y = 0.5 + 0.5 * top, w = 0.34 + 2 * right, h = 0.5 + bottom },
     lower50center34 = { x = 0.34 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.33 + right, h = 0.5 + bottom },
     lower50right34 = { x = 0.67 + 0.5 * left, y = 0.5 + 0.5 * top, w = 0.33 + right, h = 0.5 + bottom },
 
