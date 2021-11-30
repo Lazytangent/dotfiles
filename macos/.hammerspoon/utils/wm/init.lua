@@ -88,6 +88,7 @@ module.start = function()
     { app = "iTunes", title = "Multiple Song Info", tile = false },
     { app = "iTunes", title = "Song Info", tile = false },
     { title = "Quick Look", tile = false },
+    { title = "Enter name of file to save to...", tile = false },
   }
 
   local isMenubarVisible = hs.screen.primaryScreen():frame().y > 0
