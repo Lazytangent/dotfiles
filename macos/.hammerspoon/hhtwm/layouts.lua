@@ -280,6 +280,10 @@ return function(hhtwm)
       return layouts["main-left"](window, windows, screen, index, layoutOptions)
     end
 
+    if #windows > 4  then
+      return layouts["main-left"](window, windows, screen, index, layoutOptions)
+    end
+
     local margin = hhtwm.margin or 0
     local insetFrame = getInsetFrame(screen)
 
