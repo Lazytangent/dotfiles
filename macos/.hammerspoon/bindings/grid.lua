@@ -151,6 +151,7 @@ module.start = function()
     { key = "6", layout = "tabbed-right" },
     { key = "7", layout = "quadrants" },
     { key = "8", layout = "corners" },
+    { key = "9", layout = "columns" },
   }, function(obj)
     optBind(obj.key, function()
       hhtwm.setLayout(obj.layout)
