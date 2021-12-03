@@ -337,6 +337,42 @@ return function(hhtwm)
     return frame
   end
 
+  layouts["columns"] = function(window, windows, screen, index, layoutOptions)
+    local mainThirdRatio = layoutOptions.mainThirdRatio or 0.33
+    if #windows == 1 or #windows == 2 then
+      return layouts["main-left"](window, windows, screen, index, layoutOptions)
+    end
+
+    if #windows > 3 then
+      return layouts["monocle"](window, windows, screen, index, layoutOptions)
+    end
+
+    local margin = hhtwm.margin or 0
+    local insetFrame = getInsetFrame(screen)
+
+    local frame = {
+      x = insetFrame.x,
+      y = insetFrame.y,
+      w = 0,
+      h = 0
+    }
+
+    if index == 1 then
+      frame.w = insetFrame.w * mainThirdRatio - margin / 2
+      frame.h = insetFrame.h
+    elseif index == 2 then
+      frame.x = insetFrame.x + insetFrame.w * mainThirdRatio + margin / 2
+      frame.w = insetFrame.w * (1 - mainThirdRatio) / 2 - margin / 2
+      frame.h = insetFrame.h
+    else
+      frame.x = insetFrame.x + insetFrame.w * mainThirdRatio + margin / 2 + insetFrame.w * (1 - mainThirdRatio) / 2 + margin / 2
+      frame.w = insetFrame.w * (1 - mainThirdRatio) / 2 - margin / 2
+      frame.h = insetFrame.h
+    end
+
+    return frame
+  end
+
   -- TODO
   -- layouts["stacking-columns"] = function(window, windows, screen, index, layoutOptions)
   --   return nil

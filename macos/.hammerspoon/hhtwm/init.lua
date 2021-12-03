@@ -13,7 +13,8 @@ local SWAP_BETWEEN_SCREENS = false
 
 local getDefaultLayoutOptions = function()
   return {
-    mainPaneRatio = 0.5
+    mainPaneRatio = 0.5,
+    mainThirdRatio = 0.33,
   }
 end
 
