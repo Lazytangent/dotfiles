@@ -37,6 +37,7 @@ alias trex="tmux new-session -s ruby-express -c ~/Documents/PersonalProjects/Rub
 
 alias emacsd="emacs --daemon"
 alias emacsc="emacs --with-profile custom"
+alias doomacs="emacs --with-profile default"
 
 # App Academy
 alias aa-gen="ruby ~/Documents/AppAcademyWork/WorkRepos/GithubApp/main.rb"
