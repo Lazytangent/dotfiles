@@ -9,7 +9,7 @@ antigen bundles << EOBUNDLES
   gitignore
   vi-mode
   jsontools
-  osx
+  macos
   brew
   cargo
   heroku
