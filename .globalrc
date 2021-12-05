@@ -1,0 +1,2 @@
+common:\
+      :skip=HTML/,HTML.pub/,tags,TAGS,ID,node_modules,GPATH,GTAGS
