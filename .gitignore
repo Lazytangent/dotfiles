@@ -3,3 +3,6 @@
 tags
 *.zip
 autosave
+GPATH
+GTAGS
+GRTAGS
