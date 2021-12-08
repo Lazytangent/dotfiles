@@ -1,3 +1,10 @@
+# Set Emacs Profiles
+function setmacs() {
+  [[ -z "$1" ]] && { echo "Usage: setmacs <name>" >&2; return 1; }
+  echo "$1" > ~/dotfiles/.emacs-profile
+  echo "Set $1 as the default Emacs profile"
+}
+
 # Custom React Templates
 function crn() {
   [[ -z "$1" ]] && { echo "Usage: crn <name>" >&2; return 1; }
