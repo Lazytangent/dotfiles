@@ -2,6 +2,7 @@
 
 local createLayouts = require('hhtwm.layouts')
 local spaces        = require('hs._asm.undocumented.spaces')
+local forceFocus    = require('ext.window').forceFocus
 
 local cache   = { spaces = {}, layouts = {}, floating = {}, layoutOptions = {} }
 local module  = { cache = cache }
@@ -345,8 +346,10 @@ module.throwToScreen = function(win, direction)
     -- retile to update layouts
     if hs.window.animationDuration > 0 then
       hs.timer.doAfter(hs.window.animationDuration * 1.2, module.tile)
+      hs.timer.doAfter(hs.window.animationDuration * 1.3, function() forceFocus(win) end)
     else
       module.tile()
+      forceFocus(win)
     end
   end
 end
