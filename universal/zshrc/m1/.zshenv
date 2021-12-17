@@ -36,7 +36,7 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 
 # Rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 
 # Exenv
 export PATH="$HOME/.exenv/bin:$PATH"

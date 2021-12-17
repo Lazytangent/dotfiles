@@ -8,7 +8,7 @@ antigen bundles << EOBUNDLES
   gitignore
   vi-mode
   jsontools
-  osx
+  macos
   gh
   brew
   cargo
@@ -19,6 +19,9 @@ antigen bundles << EOBUNDLES
   bundler
   rails
   ruby
+  docker
+  docker-compose
+  terraform
 EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting
