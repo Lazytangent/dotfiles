@@ -1,0 +1,22 @@
+[user]
+        name = Lazytangent
+        email = pm123633@gmail.com
+[core]
+        editor = nvim
+	pager = delta
+[url "git@github.com:"]
+        insteadOf = gh:
+[url "git@github.com:Lazytangent/"]
+        insteadOf = gh:L/
+[init]
+        defaultBranch = main
+[pull]
+        rebase = false
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	confictstyle = diff3
+[diff]
+	colorMoved = default
