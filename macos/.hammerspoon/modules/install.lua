@@ -5,11 +5,10 @@ spoon.SpoonInstall.use_syncinstall = true
 local Install = spoon.SpoonInstall
 local hyper = {"cmd", "alt", "ctrl"}
 local shift_hyper = {"shift", "cmd", "alt", "ctrl"}
-local ctrl_cmd = {"cmd", "ctrl"}
 
 Install:andUse("KSheet", {
   hotkeys = {
-    toggle = { hyper, "/" },
+    toggle = { shift_hyper, "/" },
   }
 })
 
@@ -19,5 +18,13 @@ Install:andUse("Seal", {
     s:loadPlugins({ "apps", "calc", "screencapture" })
     s:refreshAllCommands()
   end,
+  start = true,
+})
+
+Install:andUse("HSKeybindings")
+Install:andUse("ClipboardTool", {
+  hotkeys = {
+    toggle_clipboard = { {"alt"}, "v" },
+  },
   start = true,
 })
