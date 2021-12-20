@@ -4,6 +4,7 @@ hhtwm = require('hhtwm')
 bindings = require('bindings')
 wm = require('utils.wm')
 playgrounds = require('playgrounds')
+local custom_modules = require('modules')
 
 hs.window.setShadows(false)
 hs.ipc.cliInstall()
@@ -45,11 +46,11 @@ function reloadConfig(files)
   end
 end
 
-bindings.enabled = { 'block-hide', 'focus', 'grid', 'global', 'hotkeys', 'tiling' }
+bindings.enabled = { 'block-hide', 'focus', 'grid', 'global', 'hotkeys', 'tiling', }
 playgrounds.enabled = { 'chooser' }
 
 -- wm module needs to be loaded first to apply default settings
-local modules = { wm, bindings, playgrounds }
+local modules = { wm, bindings, playgrounds, custom_modules }
 
 hs.fnutils.each(modules, function(module)
   if module then module.start() end
