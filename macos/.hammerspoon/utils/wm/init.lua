@@ -87,6 +87,7 @@ module.start = function()
     { app = "iTunes", title = "Mini Player", tile = false },
     { app = "iTunes", title = "Multiple Song Info", tile = false },
     { app = "iTunes", title = "Song Info", tile = false },
+    { app = "DisplayLinkUserAgent", tile = false },
     { title = "Quick Look", tile = false },
     { title = "Enter name of file to save to...", tile = false },
   }

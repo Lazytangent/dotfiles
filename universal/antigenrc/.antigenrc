@@ -18,6 +18,10 @@ antigen bundles << EOBUNDLES
   bundler
   rails
   ruby
+
+  docker
+  docker-compose
+  terraform
 EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting
