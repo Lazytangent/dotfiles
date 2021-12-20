@@ -21,7 +21,7 @@ export PIPENV_PYTHON=$PYENV_ROOT/shims/python
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.config/doom-emacs/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Rust
