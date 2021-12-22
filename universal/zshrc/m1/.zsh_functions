@@ -5,6 +5,14 @@ function setmacs() {
   echo "Set $1 as the default Emacs profile"
 }
 
+function cpr() {
+  cp -r "$@"
+}
+
+function mkdirp() {
+  mkdir -p "$@"
+}
+
 # Custom React Templates
 function crn() {
   [[ -z "$1" ]] && { echo "Usage: crn <name>" >&2; return 1; }
@@ -49,6 +57,10 @@ EOM
 }
 
 function psqlc() {
+  psql -c "$@"
+}
+
+function psqlcc() {
   psql -c "CREATE USER $1 WITH PASSWORD 'password' CREATEDB;"
 }
 
