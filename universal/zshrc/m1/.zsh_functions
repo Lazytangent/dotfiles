@@ -184,10 +184,9 @@ function tsw() {
   fi
 }
 
-
 function mcd() {
-  mkdir -p "$1"
-  cd "$1"
+  mkdir -p "$@"
+  cd "$@"
 }
 
 function diffy() {
