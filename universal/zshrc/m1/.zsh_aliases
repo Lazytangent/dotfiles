@@ -72,6 +72,7 @@ alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
 alias gsma='git submodule add'
 alias ggcl='git clone'
+alias gcs='git checkout staging'
 alias grrmo='git remove remote origin'
 
 # Python Unit tests
