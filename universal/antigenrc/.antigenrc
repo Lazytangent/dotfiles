@@ -2,7 +2,6 @@ antigen use oh-my-zsh
 
 antigen bundles << EOBUNDLES
   git
-  zsh-interactive-cd
   nvm
   npm
   ssh-agent
