@@ -1,6 +1,9 @@
 # JSDoc
 alias jsdocc="jsdoc -c ./conf.json"
 
+# Direnv
+alias da="direnv allow"
+
 # Tmux
 # alias tll="tmuxp load"
 alias tl="tmux list-sessions"
