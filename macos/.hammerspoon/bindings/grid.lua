@@ -138,7 +138,7 @@ module.start = function()
   end)
 
   local optBind = function(key, fn)
-    local keys = { "alt", "ctrl" }
+    local keys = { "alt", "ctrl", "shift" }
     hs.hotkey.bind(keys, key, fn, nil, fn)
   end
 
