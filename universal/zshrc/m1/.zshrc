@@ -27,9 +27,16 @@ eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
-fpath+="/opt/homebrew/share/zsh/site-functions/"
 
 # Port in Aliases
 if [ -f ~/.zsh_aliases ]; then
