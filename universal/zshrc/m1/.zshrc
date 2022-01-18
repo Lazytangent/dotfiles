@@ -48,6 +48,10 @@ if [ -f ~/.zsh_functions ]; then
   source ~/.zsh_functions
 fi
 
+if [ -f ~/.vaultrc ]; then
+  source ~/.vaultrc
+fi
+
 if command -v pyenv 1>/dev/null 2>&1
 then
   eval "$(pyenv init -)"
