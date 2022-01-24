@@ -41,11 +41,15 @@ fpath+=${ZDOTDIR:-~}/.zsh_completions
 # Port in Aliases
 if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
+else
+  echo "You're missing the aliases"
 fi
 
 # Port in Functions
 if [ -f ~/.zsh_functions ]; then
   source ~/.zsh_functions
+else
+  echo "You're missing the functions"
 fi
 
 if [ -f ~/.vaultrc ]; then
