@@ -5,6 +5,13 @@ function get_remote_origin() {
     | pbcopy
 }
 
+function git-nitialize() {
+  touch README.org
+  git add -A
+  git commit -m "Initial commit"
+  git push -u origin $(git_current_branch)
+}
+
 # Set Emacs Profiles
 function setmacs() {
   [[ -z "$1" ]] && { echo "Usage: setmacs <name>" >&2; return 1; }
