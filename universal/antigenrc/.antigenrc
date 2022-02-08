@@ -17,6 +17,7 @@ antigen bundles << EOBUNDLES
   bundler
   rails
   ruby
+  golang
 
   docker
   docker-compose
