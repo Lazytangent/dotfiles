@@ -1,3 +1,9 @@
+# Brew Services
+alias bs="brew services"
+alias bsst="brew services start"
+alias bssp="brew services stop"
+alias bsr="brew services restart"
+
 # JSDoc
 alias jsdocc="jsdoc -c ./conf.json"
 
@@ -54,18 +60,8 @@ alias x86brew="/usr/local/Homebrew/bin/brew"
 # Ctags
 alias ctags="`brew --prefix`/bin/ctags"
 
-# NPM
-alias npmt='npm test'
-
 # Django
 alias pmy='python manage.py'
-
-# Heroku
-alias herokubash='heroku run bash'
-alias herokusq='heroku run npm run sequelize'
-alias herconfs='heroku git:remote -a'
-alias herconp='heroku container:push'
-alias herconr='heroku container:release'
 
 # BitBucket
 alias gpbb='git push bitbucket'
@@ -74,7 +70,6 @@ alias gpbb='git push bitbucket'
 alias gphm='git push heroku $(git_main_branch)'
 alias gfu='git fetch upstream'
 alias gsma='git submodule add'
-alias ggcl='git clone'
 alias gcs='git checkout staging'
 alias grrmo='git remove remote origin'
 
@@ -122,10 +117,6 @@ alias grep='grep --color=auto'
 
 # Vite
 alias vite='npm init vite@latest'
-
-# Create React App
-alias cra="npx create-react-app"
-alias craa="npx create-react-app --template @appacademy/react-v17"
 
 # Exa
 alias ll='ls'
