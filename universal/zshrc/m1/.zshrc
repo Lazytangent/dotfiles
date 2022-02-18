@@ -35,6 +35,11 @@ then
   compinit
 fi
 
+# Use Zoxide if it's executable
+if command -v z > /dev/null 2>&1; then
+  alias cd=z
+fi
+
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
 
