@@ -67,7 +67,7 @@ then
   eval "$(pyenv virtualenv-init -)"
 fi
 
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 # eval "$(exenv init -)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
