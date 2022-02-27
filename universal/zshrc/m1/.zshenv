@@ -65,3 +65,5 @@ export PATH="/Applications/goneovim.app/Contents/MacOS:$PATH"
 
 # Uivonim
 export PATH="/Applications/uivonim.app/Contents/MacOS:$PATH"
+
+export GPG_TTY=$(tty)
