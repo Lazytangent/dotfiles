@@ -120,8 +120,8 @@ alias grep='grep --color=auto'
 alias vite='npm init vite@latest'
 
 # Exa/ls
-alias l='ls -lFh --git'
-alias la='ls -laFh --git'
+alias l='ls -laFh --git'
+alias ll='ls -lFh --git'
 alias ldot='ls -ld .*'
 
 alias zshrc='source ~/.zshrc'
