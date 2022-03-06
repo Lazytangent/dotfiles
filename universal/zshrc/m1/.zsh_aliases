@@ -118,10 +118,10 @@ alias grep='grep --color=auto'
 # Vite
 alias vite='npm init vite@latest'
 
-# Exa
-alias ll='ls'
-alias l='exa -la --git'
-alias ls='exa'
+# Exa/ls
+alias l='ls -lFh --git'
+alias la='ls -laFh --git'
+alias ldot='ls -ld .*'
 
 # Sequelize
 alias sqi='npx sequelize init'

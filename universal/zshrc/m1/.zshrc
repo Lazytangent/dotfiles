@@ -40,6 +40,10 @@ if command -v z > /dev/null 2>&1; then
   alias cd=z
 fi
 
+if command -v exa > /dev/null 2>&1; then
+  alias ls=exa
+fi
+
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
 

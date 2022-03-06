@@ -151,14 +151,14 @@ function tll() {
 function __tmux-sessions() {
   local expl
   local -a sessions
-  sessions=( ${${(f)"$(command tmux list-sessions)"}/:[ $'\t']##/:} )
+  sessions=( ${${(f)"$(command tmux list-sessions)"}} )
   _describe -t sessions 'sessions' sessions "$@"
 }
 
 function __tmuxp-load() {
   local expl
   local -a templates
-  templates=( ${${(f)"$(find "$HOME"/.config/tmuxp -type f | xargs -n1 basename -s .yaml)"}/:[ $'\n']##/:} )
+  templates=( ${${(f)"$(command find $HOME/.config/tmuxp -type f | xargs -n1 basename -s .yaml)"}} )
   _describe -t templates 'templates' templates "$@"
 }
 
