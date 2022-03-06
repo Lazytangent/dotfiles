@@ -3,6 +3,7 @@ alias bs="brew services"
 alias bsst="brew services start"
 alias bssp="brew services stop"
 alias bsr="brew services restart"
+alias brr='brew reinstall'
 
 # JSDoc
 alias jsdocc="jsdoc -c ./conf.json"
@@ -122,6 +123,8 @@ alias vite='npm init vite@latest'
 alias l='ls -lFh --git'
 alias la='ls -laFh --git'
 alias ldot='ls -ld .*'
+
+alias zshrc='source ~/.zshrc'
 
 # Sequelize
 alias sqi='npx sequelize init'
