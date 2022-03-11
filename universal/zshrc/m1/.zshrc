@@ -26,6 +26,12 @@ eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 # Docker Plugin Completion
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
+zstyle ':completion:*' completer _extensions _complete _approximate
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-up-line-or-history
+bindkey -M menuselect 'k' vi-down-line-history
+bindkey -M menuselect 'l' vi-forward-char
 
 if type brew &>/dev/null
 then

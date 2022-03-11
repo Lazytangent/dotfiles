@@ -105,6 +105,20 @@ function zipr() {
   fi
 }
 
+# Kitty
+function k() {
+  kitty --session "$@" &
+}
+
+function __kitty-templates() {
+  local expl
+  local -a templates
+  templates=( ${${(f)"$(command find $HOME/.config/kitty/sessions -type f | xargs -n1 basename -s .conf)"}} )
+  _describe -t templates 'templates' templates "$@"
+}
+
+compdef __kitty-templates k
+
 # TMUX
 function t() {
   if tmux ls | grep -q $1; then
