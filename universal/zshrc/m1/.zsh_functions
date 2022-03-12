@@ -107,7 +107,9 @@ function zipr() {
 
 # Kitty
 function k() {
-  kitty --session "$@" &
+  file=$1
+  shift
+  kitty --session "$HOME/.config/kitty/sessions/$file.conf" "$@" &
 }
 
 function __kitty-templates() {
