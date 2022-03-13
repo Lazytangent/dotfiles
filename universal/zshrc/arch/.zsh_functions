@@ -1,0 +1,251 @@
+function get_remote_origin() {
+  git remote -v \
+    | grep -m 1 origin \
+    | awk '{printf "%s",$2}' \
+    | pbcopy
+}
+
+function git-nitialize() {
+  touch README.org
+  git add -A
+  git commit -m "Initial commit"
+  git push -u origin $(git_current_branch)
+}
+
+# Set Emacs Profiles
+function setmacs() {
+  [[ -z "$1" ]] && { echo "Usage: setmacs <name>" >&2; return 1; }
+  echo "$1" > ~/dotfiles/.emacs-profile
+  echo "Set $1 as the default Emacs profile"
+}
+
+function cpr() {
+  cp -r "$@"
+}
+
+function mkdirp() {
+  mkdir -p "$@"
+}
+
+# Custom React Templates
+function crn() {
+  [[ -z "$1" ]] && { echo "Usage: crn <name>" >&2; return 1; }
+  git clone git@github.com:Lazytangent/react-next-template.git $1
+  cd $1
+  git remote remove origin
+  npm install
+}
+
+# QMK
+function qmkc() {
+  qmk compile -km $1 -kb $2
+}
+
+function qmkcc() {
+  qmk compile
+}
+
+function qmkf() {
+  qmk flash -km $1 -kb $2
+}
+
+function qmkff() {
+  qmk flash
+}
+
+function aa-gend() {
+  docker container run -v $(pwd):/$(basename $(pwd)) -a stdin -a stdout -it aa-github-app-local
+}
+
+function genv() {
+  touch .env
+cat > .env <<- EOM
+PORT=5000
+DB_USERNAME=$1
+DB_PASSWORD=password
+DB_DATABASE=$1_db
+DB_HOST=localhost
+JWT_SECRET=$(openssl rand -base64 10)
+JWT_EXPIRES_IN=604800
+EOM
+}
+
+function psqlc() {
+  psql -c "$@"
+}
+
+function psqlcc() {
+  psql -c "CREATE USER $1 WITH PASSWORD 'password' CREATEDB;"
+}
+
+function jsdock() {
+  jsdoc -c $1
+}
+
+function gig() {
+  gi $1 >> .gitignore
+  echo "Added $1 ignores to .gitignore"
+}
+
+function glump() {
+  git pull upstream $(git_main_branch)
+  echo "Pulled from upstream\n"
+  echo "Now pushing to remote origin"
+  git push
+}
+
+function zipr() {
+  if [[ $1 ]] && [[ $2 ]]; then
+    zip -r $2 $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
+  elif [[ $1 ]]; then
+    zip -r "$1.zip" $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
+  else
+    echo "Missing argument(s)"
+    echo "Usage: zipr FILENAME [ZIPPED NAME]"
+  fi
+}
+
+# Kitty
+function k() {
+  file=$1
+  shift
+  kitty --session "$HOME/.config/kitty/sessions/$file.conf" "$@" &
+}
+
+function __kitty-templates() {
+  local expl
+  local -a templates
+  templates=( ${${(f)"$(command find $HOME/.config/kitty/sessions -type f | xargs -n1 basename -s .conf)"}} )
+  _describe -t templates 'templates' templates "$@"
+}
+
+compdef __kitty-templates k
+
+# TMUX
+function t() {
+  if tmux ls | grep -q $1; then
+    local my_num=$(tmux ls | grep -c $1)
+    if [[ $my_num = 1 ]]; then
+      tmux attach -t $1
+    else
+      echo "Too many matches"
+    fi
+  else
+    if [ "$TERM_PROGRAM" = tmux ]; then
+      tmux new -s $1 -d
+    else
+      tmux new -s $1
+    fi
+  fi
+}
+
+function tt() {
+  [[ -z "$1" ]] && { echo "Usage: tm <session>" >&2; return 1; }
+  tmux has -t $1 && tmux attach -t $1 || tmux new -s $1
+}
+
+function ta() {
+  tmux attach -t $1
+}
+
+function tad() {
+  tmux attach -d -t $1
+}
+
+function ts() {
+  tmux new-session -s "$@"
+}
+
+function tkss() {
+  tmux kill-session -t $1
+}
+
+function tll() {
+  tmuxp load "$@"
+}
+
+function __tmux-sessions() {
+  local expl
+  local -a sessions
+  sessions=( ${${(f)"$(command tmux list-sessions)"}} )
+  _describe -t sessions 'sessions' sessions "$@"
+}
+
+function __tmuxp-load() {
+  local expl
+  local -a templates
+  templates=( ${${(f)"$(command find $HOME/.config/tmuxp -type f | xargs -n1 basename -s .yaml)"}} )
+  _describe -t templates 'templates' templates "$@"
+}
+
+compdef __tmux-sessions tt ta tad tkss
+compdef __tmuxp-load tll
+
+function tdup() {
+  if [ "$TERM_PROGRAM" = tmux ]; then
+    current=$(tmux display-message -p '#S')
+    tmux new -s "COPY_OF_$current"
+  else
+    echo "Not in a tmux session"
+    echo "Usage: Run in a tmux session to make a copy of the current session"
+  fi
+}
+
+function tc() {
+  tmux new -s $1 -c $2
+}
+
+function tm() {
+  tmux command-prompt -I $PWD -p "New session dir:" "attach -c %1"
+  echo "Set tmux session directory to $(pwd)"
+}
+
+function tsw() {
+  if tmux ls | grep -q $1; then
+    local my_num=$(tmux ls | grep -c $1)
+    if [[ $my_num = 1 ]]; then
+      tmux switch -t $1
+    else
+      echo "Too many matches"
+    fi
+  else
+    tmux new -s $1 -d
+    tmux switch -t $1
+  fi
+}
+
+function mcd() {
+  mkdir -p "$@"
+  cd "$@"
+}
+
+function diffy() {
+  diff -y $1 $2
+}
+
+# Create React App
+
+function crat() {
+  npx create-react-app $1 --template $2
+}
+
+function crata() {
+  npx create-react-app $1 --template @appacademy/react-v17
+}
+
+# Sequelize
+function sqmg() {
+  npx sequelize model:generate --name $1 --attributes $2
+}
+
+function sqmgu() {
+  npx sequelize model:generate --name $1 --attributes $2 --underscored
+}
+
+function sqsg() {
+  npx sequelize seed:generate --name $1
+}
+
+function nvid() {
+  open -a /Applications/Neovide.app --args $1
+}

@@ -1,0 +1,20 @@
+antigen use oh-my-zsh
+
+antigen bundles << EOBUNDLES
+  git
+  nvm
+  npm
+  ssh-agent
+  gitignore
+  vi-mode
+  jsontools
+  gh
+  pipenv
+  docker
+  docker-compose
+EOBUNDLES
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+
+antigen apply
