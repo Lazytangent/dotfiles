@@ -1,0 +1,6 @@
+# vim: set ft=zsh:
+
+alias spi='sudo pacman -S'
+alias spu='sudo pacman -Syu'
+alias spr='sudo pacman -Rsu'
+alias sps='pacman -Ss'
