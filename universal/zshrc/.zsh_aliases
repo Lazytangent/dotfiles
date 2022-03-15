@@ -1,0 +1,44 @@
+# vim: foldmethod=marker
+
+# Direnv {{{
+alias da="direnv allow"
+# }}}
+
+# Git {{{
+alias gphm='git push heroku $(git_main_branch)'
+alias gfu='git fetch upstream'
+alias gsma='git submodule add'
+alias gcs='git checkout staging'
+alias grrmo='git remove remote origin'
+# }}}
+
+# Docker {{{
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias dc='docker-compose'
+alias dcp='docker container prune'
+alias dcd='docker-compose -f docker-compose-dev.yml'
+# }}}
+
+# Shell Stuff {{{
+alias trnom='tree -C -I node_modules'
+alias tree='tree -C'
+alias trea='tree -Ca'
+alias treanom='tree -Ca -I node_modules'
+alias rmr='rm -r'
+alias rmrf='rm -rf'
+alias ezsh='exec zsh'
+alias gvim='gview'
+alias gonvim='goneovim &'
+alias vimc='vim --clean'
+alias nvimc='nvim --clean'
+alias agh='ag --hidden'
+alias grep='grep --color=auto'
+alias zshrc='source ~/.zshrc'
+# }}}
+
+# Exa/ls {{{
+alias l='ls -laFh --git'
+alias ll='ls -lFh --git'
+alias ldot='ls -ld .*'
+# }}}
