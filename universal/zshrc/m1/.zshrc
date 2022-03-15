@@ -41,15 +41,6 @@ then
   compinit
 fi
 
-# Use Zoxide if it's executable
-if command -v z > /dev/null 2>&1; then
-  alias cd=z
-fi
-
-if command -v exa > /dev/null 2>&1; then
-  alias ls=exa
-fi
-
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
 
@@ -82,3 +73,12 @@ eval "$(rbenv init -)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
+
+# Use Zoxide if it's executable
+if command -v z > /dev/null 2>&1; then
+  alias cd=z
+fi
+
+if command -v exa > /dev/null 2>&1; then
+  alias ls=exa
+fi
