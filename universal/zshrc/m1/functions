@@ -1,30 +1,8 @@
-function get_remote_origin() {
-  git remote -v \
-    | grep -m 1 origin \
-    | awk '{printf "%s",$2}' \
-    | pbcopy
-}
-
-function git-nitialize() {
-  touch README.org
-  git add -A
-  git commit -m "Initial commit"
-  git push -u origin $(git_current_branch)
-}
-
 # Set Emacs Profiles
 function setmacs() {
   [[ -z "$1" ]] && { echo "Usage: setmacs <name>" >&2; return 1; }
   echo "$1" > ~/dotfiles/.emacs-profile
   echo "Set $1 as the default Emacs profile"
-}
-
-function cpr() {
-  cp -r "$@"
-}
-
-function mkdirp() {
-  mkdir -p "$@"
 }
 
 # Custom React Templates
@@ -70,10 +48,6 @@ JWT_EXPIRES_IN=604800
 EOM
 }
 
-function psqlc() {
-  psql -c "$@"
-}
-
 function psqlcc() {
   psql -c "CREATE USER $1 WITH PASSWORD 'password' CREATEDB;"
 }
@@ -81,45 +55,6 @@ function psqlcc() {
 function jsdock() {
   jsdoc -c $1
 }
-
-function gig() {
-  gi $1 >> .gitignore
-  echo "Added $1 ignores to .gitignore"
-}
-
-function glump() {
-  git pull upstream $(git_main_branch)
-  echo "Pulled from upstream\n"
-  echo "Now pushing to remote origin"
-  git push
-}
-
-function zipr() {
-  if [[ $1 ]] && [[ $2 ]]; then
-    zip -r $2 $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
-  elif [[ $1 ]]; then
-    zip -r "$1.zip" $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
-  else
-    echo "Missing argument(s)"
-    echo "Usage: zipr FILENAME [ZIPPED NAME]"
-  fi
-}
-
-# Kitty
-function k() {
-  file=$1
-  shift
-  kitty --session "$HOME/.config/kitty/sessions/$file.conf" "$@" &
-}
-
-function __kitty-templates() {
-  local expl
-  local -a templates
-  templates=( ${${(f)"$(command find $HOME/.config/kitty/sessions -type f | xargs -n1 basename -s .conf)"}} )
-  _describe -t templates 'templates' templates "$@"
-}
-
-compdef __kitty-templates k
 
 # TMUX
 function t() {
@@ -214,17 +149,7 @@ function tsw() {
   fi
 }
 
-function mcd() {
-  mkdir -p "$@"
-  cd "$@"
-}
-
-function diffy() {
-  diff -y $1 $2
-}
-
 # Create React App
-
 function crat() {
   npx create-react-app $1 --template $2
 }
@@ -244,8 +169,4 @@ function sqmgu() {
 
 function sqsg() {
   npx sequelize seed:generate --name $1
-}
-
-function nvid() {
-  open -a /Applications/Neovide.app --args $1
 }

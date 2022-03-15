@@ -51,11 +51,19 @@ else
   echo "You're missing the aliases"
 fi
 
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
+fi
+
 # Port in Functions
 if [ -f ~/.zsh_functions ]; then
   source ~/.zsh_functions
 else
   echo "You're missing the functions"
+fi
+
+if [ -f ~/.functions ]; then
+  source ~/.functions
 fi
 
 if [ -f ~/.vaultrc ]; then
