@@ -1,0 +1,73 @@
+function get_remote_origin() {
+  git remote -v \
+    | grep -m 1 origin \
+    | awk '{printf "%s",$2}' \
+    | pbcopy
+}
+
+function git-nitialize() {
+  touch README.org
+  git add -A
+  git commit -m "Initial commit"
+  git push -u origin $(git_current_branch)
+}
+
+function cpr() {
+  cp -r "$@"
+}
+
+function mkdirp() {
+  mkdir -p "$@"
+}
+
+function psqlc() {
+  psql -c "$@"
+}
+
+function gig() {
+  gi $1 >> .gitignore
+  echo "Added $1 ignores to .gitignore"
+}
+
+function glump() {
+  git pull upstream $(git_main_branch)
+  echo "Pulled from upstream\n"
+  echo "Now pushing to remote origin"
+  git push
+}
+
+function zipr() {
+  if [[ $1 ]] && [[ $2 ]]; then
+    zip -r $2 $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
+  elif [[ $1 ]]; then
+    zip -r "$1.zip" $1 -x "*node_modules*" -x "*.git/*" -x "*tags*"
+  else
+    echo "Missing argument(s)"
+    echo "Usage: zipr FILENAME [ZIPPED NAME]"
+  fi
+}
+
+# Kitty
+function k() {
+  file=$1
+  shift
+  kitty --session "$HOME/.config/kitty/sessions/$file.conf" "$@" &
+}
+
+function __kitty-templates() {
+  local expl
+  local -a templates
+  templates=( ${${(f)"$(command find $HOME/.config/kitty/sessions -type f | xargs -n1 basename -s .conf)"}} )
+  _describe -t templates 'templates' templates "$@"
+}
+
+compdef __kitty-templates k
+
+function mcd() {
+  mkdir -p "$@"
+  cd "$@"
+}
+
+function diffy() {
+  diff -y $1 $2
+}
