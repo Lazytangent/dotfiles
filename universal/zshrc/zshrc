@@ -27,6 +27,11 @@ bindkey -M menuselect 'l' vi-forward-char
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
 
+# Source in custom config
+if [ -f ~/.zsh_config ]; then
+  source ~/.zsh_config
+fi
+
 # Port in Aliases
 if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
