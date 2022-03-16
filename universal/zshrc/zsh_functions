@@ -71,3 +71,21 @@ function mcd() {
 function diffy() {
   diff -y $1 $2
 }
+
+function pynit() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: pynit <module_name>" >&2
+    return 1
+  fi
+
+  while [[ "$1" ]]
+  do
+    module=$1
+    shift
+
+    mkdir $module
+    touch $module/__init__.py
+
+    echo "Generated $module as a Python module"
+  done
+}

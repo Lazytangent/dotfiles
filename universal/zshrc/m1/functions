@@ -1,3 +1,5 @@
+# vim: ft=zsh
+
 # Set Emacs Profiles
 function setmacs() {
   [[ -z "$1" ]] && { echo "Usage: setmacs <name>" >&2; return 1; }
