@@ -48,6 +48,11 @@ else
   echo "You're missing the aliases"
 fi
 
+# Port in OS Custom Aliases
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
+fi
+
 # Port in Functions
 if [ -f ~/.zsh_functions ]; then
   source ~/.zsh_functions
@@ -62,7 +67,6 @@ fi
 if command -v pyenv 1>/dev/null 2>&1
 then
   eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
 fi
 
 eval "$(starship init zsh)"
@@ -77,4 +81,3 @@ fi
 if command -v exa > /dev/null 2>&1; then
   alias ls=exa
 fi
-
