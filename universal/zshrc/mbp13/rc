@@ -1,0 +1,8 @@
+# Rbenv Setup
+eval "$(rbenv init -)"
+
+# Go Setup
+export PATH="$HOME/go/bin:$PATH"
+
+# Doom Emacs
+export PATH="$HOME/.emacs.d/bin:$PATH"

@@ -27,12 +27,6 @@ alias herconfs='heroku git:remote -a'
 alias herconp='heroku container:push'
 alias herconr='heroku container:release'
 
-# Git
-alias gphm='git push heroku $(git_main_branch)'
-alias gfu='git fetch upstream'
-alias gsma='git submodule add'
-alias ggcl="git clone"
-
 # Python Unit tests
 alias pyutest='python -m unittest'
 alias grevf='green -vv -f'
@@ -46,34 +40,6 @@ alias fdbm='flask db migrate'
 alias fdbup='flask db upgrade'
 alias fdbdown='flask db downgrade'
 alias fdbr='flask db downgrade base'
-
-# Docker
-alias dps='docker ps'
-alias dpsa='docker ps -a'
-alias dc='docker container'
-alias der='docker'
-alias ders='docker start'
-alias dere='docker exec'
-alias dermage='docker image'
-alias dermages='docker image ls'
-alias dernet='docker network'
-alias dernets='docker network ls'
-
-# Shell Stuff
-alias trnom='tree -C -I node_modules'
-alias trea='tree -Ca'
-alias tree='tree -C'
-alias treanom='tree -Ca -I node_modules'
-alias vNo='vim -Nu NORC'
-alias szsh='source .zshrc'
-alias rmr='rm -r'
-alias rmrf='rm -rf'
-alias ezsh='exec zsh'
-alias zipr='zip -r'
-
-# Exa
-alias l='exa -la --git'
-alias ls='exa'
 
 # Sequelize
 alias sqi='npx sequelize init'
