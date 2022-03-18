@@ -1,5 +1,12 @@
 # vim: ft=zsh
 
+# Rust
+alias car="cargo"
+alias carb="cargo build"
+alias carr="cargo run"
+alias carbr="cargo build --release"
+alias carc="cargo check"
+
 # Set Emacs Profiles
 function setmacs() {
   [[ -z "$1" ]] && { echo "Usage: setmacs <name>" >&2; return 1; }
