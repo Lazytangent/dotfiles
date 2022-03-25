@@ -1,3 +1,8 @@
+# vim: ft=zsh
+
+# Neovide
+alias nvid="open /Applications/Neovide.app"
+
 # Brew Services
 alias bs="brew services"
 alias bsst="brew services start"
