@@ -5,6 +5,14 @@ declare -A directions=(
 )
 
 if which yabai >/dev/null; then
+  if [ "$1" = "next" ]; then
+    yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus next || yabai -m window --focus first
+  fi
+
+  if [ "$1" = "prev" ]; then
+    yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus prev || yabai -m window --focus last
+  fi
+
   if [[ -n "${directions[$1]}" ]]; then
     yabai -m window --focus "$1" || yabai -m display --focus "$1"
   fi
