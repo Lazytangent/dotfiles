@@ -1,0 +1,47 @@
+#!/usr/bin/env sh
+
+if which spacebar >/dev/null; then
+  case "$1" in
+    default)
+      spacebar -m config background_color       0xff7aa2f7
+      spacebar -m config center_shell           off
+      spacebar -m config title                  on
+      ;;
+    resize)
+      spacebar -m config background_color       0xff0ece6a
+      spacebar -m config title                  off
+      spacebar -m config center_shell           on
+      spacebar -m config center_shell_command   'echo "[RESIZE MODE]"'
+      ;;
+    passthrough)
+      spacebar -m config background_color       0xffe0af68
+      spacebar -m config title                  off
+      spacebar -m config center_shell           on
+      spacebar -m config center_shell_command   'echo "[PASSTHROUGH MODE]"'
+      ;;
+    active)
+      spacebar -m config background_color       0xffbb9af7
+      spacebar -m config title                  off
+      spacebar -m config center_shell           on
+      spacebar -m config center_shell_command   'echo "[ACTIVE MODE]"'
+      ;;
+    layout)
+      spacebar -m config background_color       0xfff7768e
+      spacebar -m config title                  off
+      spacebar -m config center_shell           on
+      spacebar -m config center_shell_command   'echo "[LAYOUT MODE]"'
+      ;;
+    normal)
+      spacebar -m config background_color       0xff0ece6a
+      spacebar -m config title                  off
+      spacebar -m config center_shell           on
+      spacebar -m config center_shell_command   'echo "[NORMAL MODE]"'
+      ;;
+    leader)
+      spacebar -m config background_color       0xff0ece6a
+      spacebar -m config title                  off
+      spacebar -m config center_shell           on
+      spacebar -m config center_shell_command   'echo "[LEADER: SPACE]"'
+      ;;
+  esac
+fi
