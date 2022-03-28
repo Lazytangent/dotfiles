@@ -42,3 +42,7 @@ alias l='ls -laFh --git'
 alias ll='ls -lFh --git'
 alias ldot='ls -ld .*'
 # }}}
+
+# Python {{{
+alias py="python"
+# }}}
