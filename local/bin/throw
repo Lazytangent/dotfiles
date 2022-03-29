@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if which yabai >/dev/null; then
+  if [[ "$1" = "space" ]]; then
+    shift
+    if [[ "$1" = "next" ]]; then
+      yabai -m window --space next || yabai -m window --space first
+    fi
+
+    if [[ "$1" = "prev" ]]; then
+      yabai -m window --space prev || yabai -m window --space last
+    fi
+  fi
+fi
