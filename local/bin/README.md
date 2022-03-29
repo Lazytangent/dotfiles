@@ -6,6 +6,9 @@ mkdir -p ~/.local/bin
 
 # 2. Create symbolic link
 ln -sv ~/dotfiles/local/bin/* ~/.local/bin
+
+# Or, if there's nothing currently in the ~/.local/bin directory
+ln -sv ~/dotfiles/local/bin ~/.local
 ```
 
 Note that this requires the directory of `~/.local/bin` to be within the `PATH`.
