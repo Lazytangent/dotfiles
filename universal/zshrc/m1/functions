@@ -1,5 +1,36 @@
 # vim: ft=zsh
 
+# Alembic Completion
+function __alembic() {
+  local -a base_options opts_help
+  local expl help="--help"
+  alembic_commands=(
+    "branches:Show current branch points."
+    "current:Display the current revision for a database."
+    "downgrade:Revert to a previous version."
+    "edit:Edit revision script(s) using \$EDITOR."
+    "ensure_version:Create the alembic version table if it doesn't exit already."
+    "heads:Show current available heads in the script directory."
+    "history:List changeset scripts in chronological order."
+    "init:Initialize a new scripts directory."
+    "list_templates:List available templates."
+    "merge:Merge two revisions together. Creates a new migration file."
+    "revision:Create a new revision file."
+    "show: Show the revision(s) denoted by the given symbol."
+    "stamp:'stamp' the revision table with the given revision; don't run any migrations."
+    "upgrade:Upgrade to a later version."
+  )
+  opts_help=("(: -)--help[Print usage]")
+
+  _arguments $(print -- -s) \
+      $opts_help \
+      "($help)--version[show program's version number and exit]" \
+      "($help -c --config)"{-c=,--config=}"[Alternate config file; defaults to value of ALEMBIC_CONFIG environment variable, or \"alembic.ini\"]"
+  _describe -t base_options 'alembic' alembic_commands "$@"
+}
+
+compdef __alembic alembic
+
 # Rust
 alias car="cargo"
 alias carb="cargo build"
