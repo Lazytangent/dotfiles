@@ -1,9 +1,21 @@
 # vim: ft=zsh
 
 # Alembic Completion
-function __alembic() {
-  local -a base_options opts_help
+function __alembic_commands() {
+  local -a opts_help
   local expl help="--help"
+  opts_help=("(: -)--help[Print usage]")
+
+  case "$words[1]" in
+    (branches)
+      _arguments -s "(-v --verbose)"{-v,--verbose}"[Verbose]" $opts_help
+  esac
+  # _describe -t alembic-commands "alembic command" _alembic_subcommands
+}
+
+function __alembic_command() {
+  local -a _command_args base_options opts_help
+  local expl state help="--help"
   alembic_commands=(
     "branches:Show current branch points."
     "current:Display the current revision for a database."
@@ -22,11 +34,33 @@ function __alembic() {
   )
   opts_help=("(: -)--help[Print usage]")
 
+  _describe -t base_options 'alembic command' alembic_commands "$@"
   _arguments $(print -- -s) \
-      $opts_help \
-      "($help)--version[show program's version number and exit]" \
-      "($help -c --config)"{-c=,--config=}"[Alternate config file; defaults to value of ALEMBIC_CONFIG environment variable, or \"alembic.ini\"]"
-  _describe -t base_options 'alembic' alembic_commands "$@"
+    $opts_help \
+    "($help)--version[show program's version number and exit]" \
+    "($help -c --config)"{-c=,--config=}"[Alternate config file; defaults to value of ALEMBIC_CONFIG environment variable, or \"alembic.ini\"]" \
+    "($help -n --name)"{-n=,--name=}"[Name of section in .ini file to use for Alembic config]" \
+    "($help)-x[Additional arguments consumed by custom env.py scripts, e.g. -x setting1=somesetting -x setting2=somesetting]" \
+    "($help)--raiseerr[Raise a full stack track on error]" \
+    "($help -): :->command" \
+    "($help -)*:: :->option-or-argument"
+}
+
+function __alembic() {
+  local state
+
+  _arguments -C \
+    '(-): :->command' \
+    '(-)*:: :->option-or-argument'
+
+  case $state in
+    (command)
+      __alembic_command
+      ;;
+    (option-or-argument)
+      __alembic_commands
+      ;;
+  esac
 }
 
 compdef __alembic alembic
