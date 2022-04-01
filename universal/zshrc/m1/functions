@@ -2,13 +2,45 @@
 
 # Alembic Completion
 function __alembic_commands() {
-  local -a opts_help
+  local -a opts_help opts_verbose
   local expl help="--help"
-  opts_help=("(: -)--help[Print usage]")
+  opts_help=("(: -)--help[show this help message and exit]")
+  opts_verbose=("(-v --verbose)"{-v,--verbose}"[Use more verbose output]")
 
   case "$words[1]" in
     (branches)
-      _arguments -s "(-v --verbose)"{-v,--verbose}"[Verbose]" $opts_help
+      _arguments -s $opts_verbose $opts_help
+      ;;
+    (current)
+      _arguments -s $opts_verbose $opts_help
+      ;;
+    (downgrade)
+      _arguments -s "--sql[Don't emit SQL to database - dump to standard output/file instead. See docs on offline mode." "--tag[Arbitrary 'tag' name - can be used by custom env.py scripts." $opts_help
+      ;;
+    (edit)
+      _arguments -s $opts_help
+      ;;
+    (ensure_version)
+      _arguments -s "--sql[Don't emit SQL to database - dump to standard output/file instead. See docs on offline mode." $opts_help
+      ;;
+    (heads)
+      _arguments -s $opts_verbose "--resolve-dependencies[Treat dependency versions as down revisions]" $opts_help
+      ;;
+    ("history")
+      _arguments -s $opts_verbose "(-r --rev-range)"{-r,--rev-range}"[Specify a revision range; format is \[start\]:\[end\]]" "(-i --indicate-current)"{-i,--indicate-current}"[Indicate the current revision]" $opts_help
+      ;;
+    (init)
+      _arguments -s $opts_help "(-t --template)"{-t,--template}"[Setup template for use with 'init']" "--package[Write empty __init__.py files to the environment and version locations]"
+      ;;
+    (list_templates)
+      _arguments -s $opts_help
+      ;;
+    (merge)
+      _arguments -s $opts_help "(-m --message)"{-m,--message}"[Message string to use with 'revision']" "--branch-label[Specify a branch label to apply to the new revision]" "--rev-id[Specify a hardcoded revision id instead of generating a new one]"
+      ;;
+    (revision)
+      _arguments -s $opts_help
+      ;;
   esac
   # _describe -t alembic-commands "alembic command" _alembic_subcommands
 }
