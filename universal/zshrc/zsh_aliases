@@ -33,6 +33,7 @@ alias gvim='gview'
 alias gonvim='goneovim &'
 alias vimc='vim --clean'
 alias nvimc='nvim --clean'
+alias ngit="nvim -c Git"  # Open Fugitive in Neovim
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
 alias zshrc='source ~/.zshrc'
