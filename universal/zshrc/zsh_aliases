@@ -48,3 +48,6 @@ alias ldot='ls -ld .*'
 # Python {{{
 alias py="python"
 # }}}
+
+# Lazygit
+alias lg="lazygit"
