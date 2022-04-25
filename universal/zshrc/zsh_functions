@@ -1,3 +1,7 @@
+function gen-secret() {
+  echo $(python -c "import secrets; print(secrets.token_hex())")
+}
+
 function get_remote_origin() {
   git remote -v \
     | grep -m 1 origin \
