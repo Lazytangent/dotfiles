@@ -18,7 +18,6 @@ alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias dc='docker-compose'
 alias dcp='docker container prune'
-alias dcd='docker-compose -f docker-compose-dev.yml'
 # }}}
 
 # Shell Stuff {{{
