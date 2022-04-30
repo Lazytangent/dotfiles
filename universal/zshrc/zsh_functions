@@ -1,3 +1,20 @@
+function uvis() {
+  local module=${1:-"main"}
+  local app=${2:-"app"}
+
+  if ! command -v uvicorn &> /dev/null
+  then
+    echo "uvicorn not found"
+    return
+  fi
+
+  uvicorn $module:$app "$@"
+}
+
+function uvir() {
+  uvis --reload
+}
+
 function gen-secret() {
   echo $(python -c "import secrets; print(secrets.token_hex())")
 }
