@@ -1,6 +1,9 @@
 function uvis() {
-  local module=${1:-"main"}
-  local app=${2:-"app"}
+  local module=${1:-"main:app"}
+  if [ ! -z "$1" ]
+  then
+    shift
+  fi
 
   if ! command -v uvicorn &> /dev/null
   then
@@ -8,11 +11,17 @@ function uvis() {
     return
   fi
 
-  uvicorn $module:$app "$@"
+  uvicorn $module "$@"
 }
 
 function uvir() {
-  uvis --reload
+  if [ -z "$1" ]
+  then
+    uvis main:app --reload
+    return
+  fi
+
+  uvis "$1" --reload
 }
 
 function gen-secret() {
