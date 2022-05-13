@@ -1,6 +1,3 @@
-# Source Custom zshenv
-source ~/._zshenv
-
 # Set Antigen for plugins
 source $HOME/antigen.zsh
 antigen init ~/.antigenrc
