@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+ln -sv ~/dotfiles/universal/zshrc/zshrc ~/.zshrc
+ln -sv ~/dotfiles/universal/zshrc/zshenv ~/.zshenv
+ln -sv ~/dotfiles/universal/zshrc/zsh_aliases ~/.zsh_aliases
+ln -sv ~/dotfiles/universal/zshrc/zsh_functions ~/.zsh_functions
+ln -sv ~/dotfiles/universal/zshrc/m1/zprofile ~/.zprofile
+
+ln -sv ~/dotfiles/universal/zshrc/m1/aliases ~/.aliases
+ln -sv ~/dotfiles/universal/zshrc/m1/functions ~/.functions
+ln -sv ~/dotfiles/universal/zshrc/m1/rc ~/.custom_rc
+
+ln -sv ~/dotfiles/universal/antigenrc/.antigenrc ~/.antigenrc
+
+ln -sv ~/dotfiles/universal/.psqlrc ~/.psqlrc
