@@ -1,3 +1,11 @@
+function act() {
+  source .venv/bin/activate
+}
+
+function deact() {
+  deactivate
+}
+
 function uvis() {
   local module=${1:-"main:app"}
   if [ ! -z "$1" ]
@@ -95,7 +103,7 @@ compdef __kitty-templates k
 
 function mcd() {
   mkdir -p "$@"
-  cd "$@"
+  cd "${@:$#}"
 }
 
 function diffy() {
