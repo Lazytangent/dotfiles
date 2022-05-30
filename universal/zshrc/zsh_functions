@@ -129,12 +129,15 @@ function pynit() {
 }
 
 function add-submodule() {
-  origin=$(get_remote_origin)
+  origin=$(git remote -v \
+    | grep -m 1 origin \
+    | awk '{printf "%s",$2}')
+
   curr_dir=$(basename $(pwd))
   cd ../
 
-  echo "Creating submodule $curr_dir in $pwd with origin of"
-  echo "$origin"
+  echo "Creating submodule $curr_dir in $(pwd) with origin of"
+  echo "$origin\n\n"
 
   git submodule add "$origin" "$curr_dir"
   git commit -m "Add submodule"
