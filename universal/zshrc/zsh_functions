@@ -127,3 +127,15 @@ function pynit() {
     echo "Generated $module as a Python module"
   done
 }
+
+function add-submodule() {
+  origin=$(get_remote_origin)
+  curr_dir=$(basename $(pwd))
+  cd ../
+
+  echo "Creating submodule $curr_dir in $pwd with origin of"
+  echo "$origin"
+
+  git submodule add "$origin" "$curr_dir"
+  git commit -m "Add submodule"
+}
