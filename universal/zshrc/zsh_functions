@@ -141,4 +141,14 @@ function add-submodule() {
 
   git submodule add "$origin" "$curr_dir"
   git commit -m "Add submodule"
+  cd $curr_dir
+}
+
+function update-submodule() {
+  curr_submodule=$(basename $(pwd))
+  cd ../
+  git add "$curr_submodule"
+  git commit -m "Update submodule"
+  git push
+  cd $curr_dir
 }
