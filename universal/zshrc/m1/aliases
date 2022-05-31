@@ -1,8 +1,5 @@
 # vim: ft=zsh
 
-# Neovide
-alias nvid="open /Applications/Neovide.app"
-
 # Brew Services
 alias bs="brew services"
 alias bsst="brew services start"
@@ -10,14 +7,10 @@ alias bssp="brew services stop"
 alias bsr="brew services restart"
 alias brr='brew reinstall'
 
-# JSDoc
-alias jsdocc="jsdoc -c ./conf.json"
-
 # Direnv
 alias da="direnv allow"
 
 # Tmux
-# alias tll="tmuxp load"
 alias tl="tmux list-sessions"
 alias tksv="tmux kill-server"
 alias thome="tmux new-session -s home -c ~/"
@@ -27,47 +20,8 @@ alias tvim="tmux new-session -s vim -c ~/.vim_conf/"
 alias tdotvim="tmux new-session -s dotvim -c ~/.vim/"
 alias tleet="tmux new-session -s leetcode -c ~/Documents/Algorithms/LeetCode/"
 
-alias tdj="tmux new-session -s django -c ~/Documents/Django/"
-alias tdoom="tmux new-session -s doom -c ~/.config/doom"
-alias tvue="tmux new-session -s vue -c ~/Documents/Vue/"
-alias tfl="tmux new-session -s flask -c ~/Documents/Flask/"
-alias tgql="tmux new-session -s graphql -c ~/Documents/GraphQL/"
-alias talgos="tmux new-session -s algos -c ~/Documents/Java/Algorithms_4th_Edition/"
-alias tgrok="tmux new-session -s grokking -c ~/Documents/Algos/"
-alias tjs="tmux new-session -s JavaScript -c ~/Documents/JavaScript/"
-alias treact="tmux new-session -s react -c ~/Documents/React/"
-alias tang="tmux new-session -s angular -c ~/Documents/Angular/"
-alias tjava="tmux new-session -s java -c ~/Documents/Java/"
-alias trst="tmux new-session -s rust -c ~/Documents/Rust/"
-alias tgo="tmux new-session -s go -c ~/Documents/Go/"
-
-alias tqmk="tmux new-session -s qmk -c ~/qmk_firmware"
-alias tdot="tmux new-session -s dot-files -c ~/dotfiles"
-alias tpersonal="tmux new-session -s personal -c ~/Documents/PersonalProjects"
-alias torg="tmux new-session -s org -c ~/Documents/org"
-alias tkill="tmux command-prompt kill-session"
-alias truby="tmux new-session -s ruby -c ~/Documents/Ruby/"
-alias ttest="tmux new-session -s test-runs -c ~/TestRuns"
-alias trex="tmux new-session -s ruby-express -c ~/Documents/PersonalProjects/RubyExpressConversion/"
-
-alias emacsd="emacs --daemon"
-alias emacsc="emacs --with-profile custom"
-alias doomacs="emacs --with-profile default"
-
-# App Academy
-alias aa-gen="ruby ~/Documents/AppAcademyWork/WorkRepos/GithubApp/main.rb"
-
 # ARM64 Zsh
 alias armz="arch -arm64 zsh"
-
-# Homebrew
-alias x86brew="/usr/local/Homebrew/bin/brew"
-
-# Ctags
-alias ctags="`brew --prefix`/bin/ctags"
-
-# Django
-alias pmy='python manage.py'
 
 # BitBucket
 alias gpbb='git push bitbucket'
@@ -79,32 +33,10 @@ alias gsma='git submodule add'
 alias gcs='git checkout staging'
 alias grrmo='git remove remote origin'
 
-# Python Unit tests
-alias pyutest='python -m unittest'
-alias grevf='green -vv -f'
-alias grevv='green -vv'
-alias grevq='green -vv -q'
-alias grevqf='green -vv -q -f'
-
-# Flask-Migrate
-alias fdb='flask db'
-alias fdbm='flask db migrate'
-alias fdbup='flask db upgrade'
-alias fdbdown='flask db downgrade'
-alias fdbr='flask db downgrade base'
-
 # Docker
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias dc='docker-compose'
-alias dcp='docker container prune'
-alias der='docker'
-alias ders='docker start'
-alias dere='docker exec'
-alias dermage='docker image'
-alias dermages='docker image ls'
-alias dernet='docker network'
-alias dernets='docker network ls'
 
 # Shell Stuff
 alias trnom='tree -C -I node_modules'
@@ -121,33 +53,9 @@ alias nvimc='nvim --clean'
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
 
-# Vite
-alias vite='npm init vite@latest'
-
 # Exa/ls
 alias l='ls -laFh --git'
 alias ll='ls -lFh --git'
 alias ldot='ls -ld .*'
 
 alias zshrc='source ~/.zshrc'
-
-# Sequelize
-alias sqi='npx sequelize init'
-alias sqdbc='npx sequelize db:create'
-alias sqdbd='npx sequelize db:drop'
-alias sqdbr='npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all'
-alias sqdbm='npx sequelize db:migrate'
-alias sqdbsa='npx sequelize db:seed:all'
-alias sqdbmua='npx sequelize db:migrate:undo:all'
-alias sqdbsua='npx sequelize db:seed:undo:all'
-
-# Dotenv Sequelize
-alias dsqi='npx dotenv sequelize init'
-alias dsqdbc='npx dotenv sequelize db:create'
-alias dsqdbd='npx dotenv sequelize db:drop'
-alias dsqdbs='npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all'
-alias dsqdbr='npx dotenv sequelize db:drop && npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all'
-alias dsqdbm='npx dotenv sequelize db:migrate'
-alias dsqdbsa='npx dotenv sequelize db:seed:all'
-alias dsqdbmua='npx dotenv sequelize db:migrate:undo:all'
-alias dsqdbsua='npx dotenv sequelize db:seed:undo:all'
