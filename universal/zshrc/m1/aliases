@@ -39,7 +39,7 @@ alias treact="tmux new-session -s react -c ~/Documents/React/"
 alias tang="tmux new-session -s angular -c ~/Documents/Angular/"
 alias tjava="tmux new-session -s java -c ~/Documents/Java/"
 alias trst="tmux new-session -s rust -c ~/Documents/Rust/"
-alias tgo="tmux new-session -s go -c ~/Docuemnts/Go/"
+alias tgo="tmux new-session -s go -c ~/Documents/Go/"
 
 alias tqmk="tmux new-session -s qmk -c ~/qmk_firmware"
 alias tdot="tmux new-session -s dot-files -c ~/dotfiles"
