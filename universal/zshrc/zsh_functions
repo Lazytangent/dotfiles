@@ -137,7 +137,7 @@ function add-submodule() {
   cd ../
 
   echo "Creating submodule $curr_dir in $(pwd) with origin of"
-  echo "\t$origin\n"
+  echo "  $origin\n"
 
   git submodule add "$origin" "$curr_dir"
   git commit -m "Add submodule"
