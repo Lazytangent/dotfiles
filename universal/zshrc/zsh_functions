@@ -152,3 +152,8 @@ function update-submodule() {
   git push
   cd $curr_dir
 }
+
+function freeze() {
+  pip freeze > requirements.txt
+  bat requirements.txt
+}
