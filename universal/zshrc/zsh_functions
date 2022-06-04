@@ -150,7 +150,7 @@ function update-submodule() {
   git add "$curr_submodule"
   git commit -m "Update submodule"
   git push
-  cd $curr_dir
+  cd $curr_submodule
 }
 
 function freeze() {
