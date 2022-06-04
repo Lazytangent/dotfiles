@@ -137,31 +137,6 @@ function qmkff() {
   qmk flash
 }
 
-function aa-gend() {
-  docker container run -v $(pwd):/$(basename $(pwd)) -a stdin -a stdout -it aa-github-app-local
-}
-
-function genv() {
-  touch .env
-cat > .env <<- EOM
-PORT=5000
-DB_USERNAME=$1
-DB_PASSWORD=password
-DB_DATABASE=$1_db
-DB_HOST=localhost
-JWT_SECRET=$(openssl rand -base64 10)
-JWT_EXPIRES_IN=604800
-EOM
-}
-
-function psqlcc() {
-  psql -c "CREATE USER $1 WITH PASSWORD 'password' CREATEDB;"
-}
-
-function jsdock() {
-  jsdoc -c $1
-}
-
 # TMUX
 function t() {
   if tmux ls | grep -q $1; then
