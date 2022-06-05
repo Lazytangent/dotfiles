@@ -5,7 +5,6 @@ antigen use oh-my-zsh
 antigen bundles << EOBUNDLES
   brew
   bundler
-  cargo
   docker
   docker-compose
   golang
@@ -20,6 +19,7 @@ antigen bundles << EOBUNDLES
   rails
   ripgrep
   ruby
+  rust
   ssh-agent
   terraform
   vi-mode
