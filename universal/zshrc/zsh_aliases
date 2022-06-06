@@ -11,6 +11,12 @@ alias gsma='git submodule add'
 alias gcs='git checkout staging'
 alias gcr='git checkout release'
 alias grrmo='git remove remote origin'
+alias gwa='git worktree add'
+alias gwl='git worktree list'
+alias gwm='git worktree move'
+alias gwp='git worktree prune'
+alias gwrm='git worktree remove'
+alias gwrp='git worktree repair'
 # }}}
 
 # Docker {{{
