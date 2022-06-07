@@ -157,3 +157,9 @@ function freeze() {
   pip freeze > requirements.txt
   bat requirements.txt
 }
+
+function fcd() {
+  local dir
+  dir=$(fd -t d ${1:-.} 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
