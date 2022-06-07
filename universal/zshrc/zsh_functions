@@ -163,3 +163,12 @@ function fcd() {
   dir=$(fd -t d ${1:-.} 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+
+function rgf() {
+  local rg_prefix query cmd
+  rg_prefix="rg --column --line-number --no-heading --color=always --smart-case"
+  query=""
+  FZF_DEFAULT_COMMAND="$rg_prefix '$query'" \
+    fzf --bind "change:reload:$rg_prefix {q} || true" \
+        --ansi --phony --query "$query"
+}
