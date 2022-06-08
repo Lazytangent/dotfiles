@@ -97,46 +97,6 @@ function __alembic() {
 
 compdef __alembic alembic
 
-# Rust
-alias car="cargo"
-alias carb="cargo build"
-alias carr="cargo run"
-alias carbr="cargo build --release"
-alias carc="cargo check"
-
-# Set Emacs Profiles
-function setmacs() {
-  [[ -z "$1" ]] && { echo "Usage: setmacs <name>" >&2; return 1; }
-  echo "$1" > ~/dotfiles/.emacs-profile
-  echo "Set $1 as the default Emacs profile"
-}
-
-# Custom React Templates
-function crn() {
-  [[ -z "$1" ]] && { echo "Usage: crn <name>" >&2; return 1; }
-  git clone git@github.com:Lazytangent/react-next-template.git $1
-  cd $1
-  git remote remove origin
-  npm install
-}
-
-# QMK
-function qmkc() {
-  qmk compile -km $1 -kb $2
-}
-
-function qmkcc() {
-  qmk compile
-}
-
-function qmkf() {
-  qmk flash -km $1 -kb $2
-}
-
-function qmkff() {
-  qmk flash
-}
-
 # TMUX
 function t() {
   if tmux ls | grep -q $1; then
@@ -228,26 +188,4 @@ function tsw() {
     tmux new -s $1 -d
     tmux switch -t $1
   fi
-}
-
-# Create React App
-function crat() {
-  npx create-react-app $1 --template $2
-}
-
-function crata() {
-  npx create-react-app $1 --template @appacademy/react-v17
-}
-
-# Sequelize
-function sqmg() {
-  npx sequelize model:generate --name $1 --attributes $2
-}
-
-function sqmgu() {
-  npx sequelize model:generate --name $1 --attributes $2 --underscored
-}
-
-function sqsg() {
-  npx sequelize seed:generate --name $1
 }
