@@ -6,3 +6,10 @@ function setmacs() {
   echo "$1" > ~/dotfiles/.emacs-profile
   echo "Set $1 as the default Emacs profile"
 }
+
+function get_remote_origin() {
+  git remote -v \
+    | grep -m 1 origin \
+    | awk '{printf "%s",$2}' \
+    | wl-copy
+}

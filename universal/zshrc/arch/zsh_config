@@ -1,3 +1,5 @@
 export PATH="$PATH:$HOME/.config/doom-emacs/bin"
 
 eval "$(rbenv init - zsh)"
+
+export PATH="$PATH:$HOME/go/bin"
