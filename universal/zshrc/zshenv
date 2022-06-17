@@ -14,3 +14,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # GPG
 export GPG_TTY=$(tty)
+
+# AWS (LocalStack)
+export AWS_DEFAULT_REGION="us-east-2"
