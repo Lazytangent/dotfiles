@@ -5,9 +5,6 @@ source ~/._zshenv
 source $HOME/antigen.zsh
 antigen init ~/.antigenrc
 
-# MacOS iTerm Shell Integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Zathura
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
@@ -30,14 +27,6 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 # bindkey -M menuselect 'k' vi-down-line-history
 # bindkey -M menuselect 'l' vi-forward-char
 
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
-fi
-
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
 
@@ -58,10 +47,6 @@ if [ -f ~/.zsh_functions ]; then
   source ~/.zsh_functions
 else
   echo "You're missing the functions"
-fi
-
-if [ -f ~/.vaultrc ]; then
-  source ~/.vaultrc
 fi
 
 if command -v pyenv 1>/dev/null 2>&1
