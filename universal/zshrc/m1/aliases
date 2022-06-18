@@ -1,16 +1,14 @@
-# vim: ft=zsh
+# vim: ft=zsh foldmethod=marker
 
-# Brew Services
+# Brew Services {{{
 alias bs="brew services"
 alias bsst="brew services start"
 alias bssp="brew services stop"
 alias bsr="brew services restart"
 alias brr='brew reinstall'
+# }}}
 
-# Direnv
-alias da="direnv allow"
-
-# Tmux
+# Tmux {{{
 alias tl="tmux list-sessions"
 alias tksv="tmux kill-server"
 alias thome="tmux new-session -s home -c ~/"
@@ -19,30 +17,18 @@ alias tnvim="tmux new-session -s nvim -c ~/.config/nvim/"
 alias tvim="tmux new-session -s vim -c ~/.vim_conf/"
 alias tdotvim="tmux new-session -s dotvim -c ~/.vim/"
 alias tleet="tmux new-session -s leetcode -c ~/Documents/Algorithms/LeetCode/"
+# }}}
 
-# ARM64 Zsh
+# ARM64 Zsh {{{
 alias armz="arch -arm64 zsh"
+# }}}
 
-# BitBucket
+# BitBucket {{{
 alias gpbb='git push bitbucket'
+# }}}
 
-# Git
-alias gphm='git push heroku $(git_main_branch)'
-alias gfu='git fetch upstream'
-alias gsma='git submodule add'
-alias gcs='git checkout staging'
-alias grrmo='git remove remote origin'
-
-# Docker
-alias dps='docker ps'
-alias dpsa='docker ps -a'
-alias dc='docker-compose'
-
-# Shell Stuff
-alias trnom='tree -C -I node_modules'
+# Shell Stuff {{{
 alias tree='tree -C'
-alias trea='tree -Ca'
-alias treanom='tree -Ca -I node_modules'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
@@ -52,10 +38,8 @@ alias vimc='vim --clean'
 alias nvimc='nvim --clean'
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
+# }}}
 
-# Exa/ls
-alias l='ls -laFh --git'
-alias ll='ls -lFh --git'
-alias ldot='ls -ld .*'
-
+# Zsh {{{
 alias zshrc='source ~/.zshrc'
+# }}}

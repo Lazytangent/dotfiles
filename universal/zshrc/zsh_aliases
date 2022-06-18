@@ -23,14 +23,10 @@ alias gwrp='git worktree repair'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias dc='docker-compose'
-alias dcp='docker container prune'
 # }}}
 
 # Shell Stuff {{{
-alias trnom='tree -C -I node_modules'
 alias tree='tree -C'
-alias trea='tree -Ca'
-alias treanom='tree -Ca -I node_modules'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
@@ -38,7 +34,6 @@ alias gvim='gview'
 alias gonvim='goneovim &'
 alias vimc='vim --clean'
 alias nvimc='nvim --clean'
-alias ngit="nvim -c Git"  # Open Fugitive in Neovim
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
 alias zshrc='source ~/.zshrc'
@@ -50,9 +45,10 @@ alias ll='ls -lFh --git'
 alias ldot='ls -ld .*'
 # }}}
 
-# Python {{{
-alias py="python"
+# Lazygit {{{
+alias lg="lazygit"
 # }}}
 
-# Lazygit
-alias lg="lazygit"
+# AWS {{{
+alias awsl="aws --endpoint-url=http://localhost:4566"
+# }}}
