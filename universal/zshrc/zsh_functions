@@ -145,8 +145,11 @@ function add-submodule() {
 }
 
 function update-submodule() {
-  curr_submodule=$(basename $(pwd))
-  cd ../
+  curr_submodule=$1
+  if [ -z "$curr_submodule" ]; then
+    curr_submodule=$(basename $(pwd))
+    cd ../
+  fi
   git add "$curr_submodule"
   git commit -m "Update submodule"
   git push
