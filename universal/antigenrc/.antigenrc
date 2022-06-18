@@ -3,10 +3,12 @@
 antigen use oh-my-zsh
 
 antigen bundles << EOBUNDLES
+  ag
   brew
   bundler
   docker
   docker-compose
+  fd
   golang
   git
   gitignore
