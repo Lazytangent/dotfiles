@@ -1,17 +1,19 @@
+# vim: ft=zsh
+
 antigen use oh-my-zsh
 
 antigen bundles << EOBUNDLES
-  git
-  nvm
-  npm
-  ssh-agent
-  gitignore
-  vi-mode
-  jsontools
-  gh
-  pipenv
   docker
   docker-compose
+  gh
+  git
+  gitignore
+  jsontools
+  npm
+  nvm
+  pipenv
+  ssh-agent
+  vi-mode
 EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting

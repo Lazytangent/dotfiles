@@ -1,24 +1,25 @@
+# vim: ft=zsh
+
 antigen use oh-my-zsh
 
 antigen bundles << EOBUNDLES
-  git
-  zsh-interactive-cd
-  nvm
-  npm
-  ssh-agent
-  gitignore
-  vi-mode
-  jsontools
-  gh
-  brew
-  cargo
-  heroku
-  pipenv
-  vscode
   bundler
+  cargo
+  gh
+  git
+  gitignore
+  heroku
+  jsontools
+  npm
+  nvm
+  pipenv
   rails
   ruby
+  ssh-agent
   ubuntu
+  vi-mode
+  vscode
+  zsh-interactive-cd
 EOBUNDLES
 
 antigen bundle zsh-users/zsh-syntax-highlighting

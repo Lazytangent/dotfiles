@@ -9,9 +9,9 @@ antigen bundles << EOBUNDLES
   docker
   docker-compose
   fd
-  golang
   git
   gitignore
+  golang
   heroku
   jsontools
   macos
