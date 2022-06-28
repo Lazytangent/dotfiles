@@ -53,3 +53,7 @@ alias lg="lazygit"
 # AWS {{{
 alias awsl="aws --endpoint-url=http://localhost:4566"
 # }}}
+
+# Wezterm {{{
+alias upgrade_wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
+# }}}
