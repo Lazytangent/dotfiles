@@ -1,0 +1,7 @@
+bindkey -s '^f' 'fzf^M'
+bindkey -s '^o' 'fzf_nvim^M'
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-up-line-or-history
+bindkey -M menuselect 'k' vi-down-line-history
+bindkey -M menuselect 'l' vi-forward-char
