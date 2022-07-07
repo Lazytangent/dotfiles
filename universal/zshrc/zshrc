@@ -12,6 +12,7 @@ export FZF_DEFAULT_OPTS="\
 bindkey -v
 set -o vi
 export EDITOR='nvim'
+export MANPAGER='nvim --clean +Man!'
 
 # Docker Plugin Completion
 zstyle ':completion:*:*:docker:*' option-stacking yes
