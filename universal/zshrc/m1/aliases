@@ -8,17 +8,6 @@ alias bsr="brew services restart"
 alias brr='brew reinstall'
 # }}}
 
-# Tmux {{{
-alias tl="tmux list-sessions"
-alias tksv="tmux kill-server"
-alias thome="tmux new-session -s home -c ~/"
-alias twork="tmux new-session -s work -c ~/Documents/AppAcademyWork/"
-alias tnvim="tmux new-session -s nvim -c ~/.config/nvim/"
-alias tvim="tmux new-session -s vim -c ~/.vim_conf/"
-alias tdotvim="tmux new-session -s dotvim -c ~/.vim/"
-alias tleet="tmux new-session -s leetcode -c ~/Documents/Algorithms/LeetCode/"
-# }}}
-
 # ARM64 Zsh {{{
 alias armz="arch -arm64 zsh"
 # }}}
