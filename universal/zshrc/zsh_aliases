@@ -36,7 +36,6 @@ alias vimc='vim --clean'
 alias nvimc='nvim --clean'
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
-alias zshrc='source ~/.zshrc'
 # }}}
 
 # Exa/ls {{{
