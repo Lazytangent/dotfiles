@@ -101,3 +101,10 @@ else
   export VISUAL="nvim"
   export EDITOR="nvim"
 fi
+
+# bun completions
+[ -s "/Users/petermai/.bun/_bun" ] && source "/Users/petermai/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/petermai/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
