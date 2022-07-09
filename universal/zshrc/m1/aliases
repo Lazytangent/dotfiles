@@ -28,7 +28,3 @@ alias nvimc='nvim --clean'
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
 # }}}
-
-# Zsh {{{
-alias zshrc='source ~/.zshrc'
-# }}}
