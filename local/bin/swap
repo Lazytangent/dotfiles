@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-declare -A directions=(
+declare -a directions=(
   [west]=1 [east]=1 [north]=1 [south]=1
 )
 
