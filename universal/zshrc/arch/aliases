@@ -4,3 +4,6 @@ alias spi='sudo pacman -S'
 alias spu='sudo pacman -Syu'
 alias spr='sudo pacman -Rsu'
 alias sps='pacman -Ss'
+
+# Bare Git Repository for config/.config
+alias config="$(which git) --git-dir=$HOME/config/.git --work-tree=$HOME/.config"
