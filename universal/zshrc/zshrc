@@ -39,64 +39,62 @@ if test -n "$KITTY_INSTALLATION_DIR"; then
   unfunction kitty-integration
 fi
 
-# Port in Completions
-if [[ ! -v ZSH_CONFIG_LOADED ]] || [[ $ZSH_CONFIG_LOADED == '' ]] || [[ $ZSH_CONFIG_LOADED == 'false' ]]; then
-  fpath+=${ZDOTDIR:-~}/.zsh_completions
-
-  # Source in custom config
-  if [ -f ~/.zsh_config ]; then
-    source ~/.zsh_config
-  fi
-
-  # Port in Aliases
-  if [ -f ~/.zsh_aliases ]; then
-    source ~/.zsh_aliases
-  else
-    echo "You're missing the aliases"
-  fi
-
-  # Port in Functions
-  if [ -f ~/.zsh_functions ]; then
-    source ~/.zsh_functions
-  else
-    echo "You're missing the functions"
-  fi
-
-  if [ -f ~/.zsh_bindings ]; then
-    source ~/.zsh_bindings
-  fi
-
-  if [ -f ~/.vaultrc ]; then
-    source ~/.vaultrc
-  fi
-
-  # Use Zoxide if it's executable
-  if command -v z > /dev/null 2>&1; then
-    alias cd=z
-  fi
-
-  if command -v exa > /dev/null 2>&1; then
-    alias ls=exa
-  fi
-
-  if [ -f ~/.custom_env ]; then
-    source ~/.custom_env
-  fi
-
-  if [ -f ~/.custom_rc ]; then
-    source ~/.custom_rc
-  fi
-
-  if [ -f ~/.aliases ]; then
-    source ~/.aliases
-  fi
-
-  if [ -f ~/.functions ]; then
-    source ~/.functions
-  fi
-
-  export ZSH_CONFIG_LOADED='true'
+# Use Zoxide if it's executable
+if command -v z > /dev/null 2>&1; then
+  alias cd=z
 fi
+
+if command -v exa > /dev/null 2>&1; then
+  alias ls=exa
+fi
+
+# Port in Completions
+fpath+=${ZDOTDIR:-~}/.zsh_completions
+
+# Source in custom config
+if [ -f ~/.zsh_config ]; then
+  source ~/.zsh_config
+fi
+
+# Port in Aliases
+if [ -f ~/.zsh_aliases ]; then
+  source ~/.zsh_aliases
+else
+  echo "You're missing the aliases"
+fi
+
+# Port in Functions
+if [ -f ~/.zsh_functions ]; then
+  source ~/.zsh_functions
+else
+  echo "You're missing the functions"
+fi
+
+if [ -f ~/.zsh_bindings ]; then
+  source ~/.zsh_bindings
+fi
+
+if [ -f ~/.vaultrc ]; then
+  source ~/.vaultrc
+fi
+
+if [ -f ~/.custom_env ]; then
+  source ~/.custom_env
+fi
+
+if [ -f ~/.custom_rc ]; then
+  source ~/.custom_rc
+fi
+
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
+fi
+
+if [ -f ~/.functions ]; then
+  source ~/.functions
+fi
+
+export ZSH_CONFIG_LOADED='true'
 
 # LazyGit and Neovim
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
