@@ -8,6 +8,8 @@ export FZF_DEFAULT_OPTS="\
   --bind='ctrl-d:reload(fd -t d),ctrl-f:reload(fd -t f)'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export NNN_PLUG='f:finder;o:fzopen;d:diffs'
+
 # Vi-Mode in Terminal
 bindkey -v
 set -o vi
