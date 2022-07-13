@@ -42,10 +42,6 @@ fi
 # Port in Completions
 if [[ ! -v ZSH_CONFIG_LOADED ]] || [[ $ZSH_CONFIG_LOADED == '' ]] || [[ $ZSH_CONFIG_LOADED == 'false' ]]; then
   fpath+=${ZDOTDIR:-~}/.zsh_completions
-  echo 'Here again'
-  [[ $ZSH_CONFIG_LOADED == '' ]] && echo "is an empty string"
-  [[ $ZSH_CONFIG_LOADED == 'false' ]] && echo "is false"
-  [[ -v ZSH_CONFIG_LOADED ]] && echo "variable exists"
 
   # Source in custom config
   if [ -f ~/.zsh_config ]; then
