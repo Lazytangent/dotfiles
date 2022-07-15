@@ -1,6 +1,7 @@
 # vim: ft=zsh foldmethod=marker
 
 # Brew Services {{{
+alias b="brew"
 alias bs="brew services"
 alias bsst="brew services start"
 alias bssp="brew services stop"
