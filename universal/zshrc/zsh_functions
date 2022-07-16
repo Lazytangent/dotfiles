@@ -1,5 +1,37 @@
 # vim: foldmethod=indent
 
+function check() {
+  old_dir=$(pwd)
+
+  cd "$HOME/.config"
+  echo "---------- Git Status of ~/.config ----------"
+  git status
+
+  cd "$HOME/dotfiles"
+  echo "\n\n---------- Git Status of ~/dotfiles ----------"
+  git status
+
+  cd "$HOME/.config/nvim"
+  echo "\n\n---------- Git Status of ~/.config/nvim ----------"
+  git status
+
+  cd "$HOME/.config/doom"
+  echo "\n\n---------- Git Status of ~/.config/doom ----------"
+  git status
+
+  cd "$HOME/.config/wezterm"
+  echo "\n\n---------- Git Status of ~/.config/wezterm ----------"
+  git status
+
+  cd "$old_dir"
+}
+
+function update() {
+  git add .
+  git commit -m "Update submodules"
+  git push
+}
+
 function dclogs() {
   COMPOSE_HTTP_TIMEOUT=84600 docker-compose logs -f "$@"
 }
