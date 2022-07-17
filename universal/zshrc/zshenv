@@ -17,3 +17,6 @@ export GPG_TTY=$(tty)
 
 # AWS (LocalStack)
 export AWS_DEFAULT_REGION="us-east-2"
+
+# Exenv
+export PATH="$HOME/.exenv/bin:$PATH"

@@ -28,6 +28,13 @@ then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+if command -v exenv 1>/dev/null 2>&1
+then
+  eval "$(exenv init -)"
+else
+  echo "exenv not available in shell scope"
+fi
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
