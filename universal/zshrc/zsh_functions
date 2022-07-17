@@ -1,5 +1,10 @@
 # vim: foldmethod=indent
 
+function path () {
+  result=$(echo "$PATH" | tr ':' '\n')
+  echo "$result"
+}
+
 function check() {
   old_dir=$(pwd)
 
