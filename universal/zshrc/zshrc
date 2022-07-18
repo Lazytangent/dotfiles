@@ -119,3 +119,4 @@ fi
 # Bun
 export BUN_INSTALL="/Users/petermai/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
