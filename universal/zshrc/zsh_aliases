@@ -1,5 +1,9 @@
 # vim: foldmethod=marker
 
+# Emacs {{{
+alias vmacs="emacs -nw --with-profile vanilla"
+# }}}
+
 # Direnv {{{
 alias da="direnv allow"
 # }}}
