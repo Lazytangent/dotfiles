@@ -20,3 +20,7 @@ export AWS_DEFAULT_REGION="us-east-2"
 
 # Exenv
 export PATH="$HOME/.exenv/bin:$PATH"
+
+# Build stuff
+export C_INCLUDE_PATH=$(brew --prefix)/include
+export LIBRARY_PATH=$(brew --prefix)/lib
