@@ -2,6 +2,7 @@
 
 # Emacs {{{
 alias vmacs="emacs -nw --with-profile vanilla"
+alias plainmacs="emacs -nw --with-profile plain"
 # }}}
 
 # Direnv {{{
