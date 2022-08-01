@@ -28,6 +28,10 @@ function check() {
   echo "\n\n---------- Git Status of ~/.config/wezterm ----------"
   git status
 
+  cd "$HOME/.vim"
+  echo "\n\n---------- Git Status of ~/.vim ----------"
+  git status
+
   cd "$old_dir"
 }
 
