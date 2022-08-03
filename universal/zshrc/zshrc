@@ -8,6 +8,26 @@ export FZF_DEFAULT_OPTS="\
   --bind='ctrl-d:reload(fd -t d),ctrl-f:reload(fd -t f)'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+function _fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+function _fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+function _fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd) fzf "$@" --preview 'tree -C {} | head -200' ;;
+    export|unset) fzf "$@" --preview "eval 'echo \$'{}" ;;
+    ssh) fzf "$@" --preview 'dig {}' ;;
+    *) fzf "$@" ;;
+  esac
+}
+
 export NNN_PLUG='f:fzplug;o:fzopen;d:diffs'
 
 # Vi-Mode in Terminal
