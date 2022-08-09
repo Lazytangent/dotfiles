@@ -1,5 +1,9 @@
 # vim: foldmethod=indent
 
+function cn() {
+  cargo new "$@" && cd "$1"
+}
+
 function path () {
   result=$(echo "$PATH" | tr ':' '\n')
   echo "$result"
