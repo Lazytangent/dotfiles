@@ -75,6 +75,7 @@ fi
 
 # Port in Completions
 fpath+=${ZDOTDIR:-~}/.zsh_completions
+fpath+=~/.zfunc
 
 # Source in custom config
 if [ -f ~/.zsh_config ]; then
