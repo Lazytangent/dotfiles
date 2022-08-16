@@ -5,3 +5,6 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'j' vi-up-line-or-history
 bindkey -M menuselect 'k' vi-down-line-history
 bindkey -M menuselect 'l' vi-forward-char
+
+bindkey -M viins '^n' down-line-or-beginning-search
+bindkey -M viins '^p' up-line-or-beginning-search
