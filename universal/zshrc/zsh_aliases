@@ -33,6 +33,7 @@ alias dcub='docker-compose up --build'
 
 # Shell Stuff {{{
 alias tree='tree -C'
+alias treeg='tree --gitignore -C'
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 alias ezsh='exec zsh'
