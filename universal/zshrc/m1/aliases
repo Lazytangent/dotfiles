@@ -25,3 +25,7 @@ alias nvimc='nvim --clean'
 alias agh='ag --hidden'
 alias grep='grep --color=auto'
 # }}}
+
+# Cargo {{{
+alias cip='cargo install --path .'
+# }}}
