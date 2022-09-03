@@ -1,4 +1,17 @@
 # vim: foldmethod=indent
+function dc() {
+  if [[ $1 == "r" ]]; then
+    if [[ $2 == "" ]]; then
+      echo "'dc r' command requires an argument"
+      return
+    fi
+
+    command docker-compose stop $2
+    command docker-compose up -d $2
+  else
+    command docker-compose "$@"
+  fi
+}
 
 function cn() {
   cargo new "$@" && cd "$1"

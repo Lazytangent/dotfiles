@@ -27,7 +27,6 @@ alias gwrp='git worktree repair'
 # Docker {{{
 alias dps='docker ps'
 alias dpsa='docker ps -a'
-alias dc='docker-compose'
 alias dcub='docker-compose up --build'
 # }}}
 
