@@ -139,10 +139,3 @@ fi
 export BUN_INSTALL="/Users/petermai/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-# Build stuff
-if command -v brew 1>/dev/null 2>&1
-then
-  export C_INCLUDE_PATH=$(brew --prefix)/include
-  export LIBRARY_PATH=$(brew --prefix)/lib
-fi
