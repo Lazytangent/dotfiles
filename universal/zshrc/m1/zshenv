@@ -1,8 +1,5 @@
 # vim: ft=zsh
 
-# Cargo and Rust
-. "$HOME/.cargo/env"
-
 # MDLoader for Drop CTRL
 export PATH="$HOME/Documents/mdloader/build:$PATH"
 

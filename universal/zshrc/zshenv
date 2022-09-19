@@ -20,3 +20,6 @@ export AWS_DEFAULT_REGION="us-east-2"
 
 # Exenv
 export PATH="$HOME/.exenv/bin:$PATH"
+
+# Cargo and Rust
+. "$HOME/.cargo/env"
