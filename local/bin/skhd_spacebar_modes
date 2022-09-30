@@ -49,5 +49,11 @@ if which spacebar >/dev/null; then
       spacebar -m config center_shell           on
       spacebar -m config center_shell_command   'echo "[EMACS]"'
       ;;
+    thirds)
+      spacebar -m config background_color       0xfff7768e
+      spacebar -m config title                  off
+      spacebar -m config center_shell           on
+      spacebar -m config center_shell_command   'echo "[THIRDS]"'
+      ;;
   esac
 fi
