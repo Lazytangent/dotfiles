@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Pyenv Setup
 export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/shims:$PATH"
@@ -23,3 +25,10 @@ export PATH="$HOME/.exenv/bin:$PATH"
 
 # Cargo and Rust
 . "$HOME/.cargo/env"
+
+# Java (OpenJDK)
+export PATH="$(brew --prefix)/opt/openjdk/bin:$PATH"
+export GLASSFISH_HOME="$(brew --prefix)/opt/glassfish/libexec"
+export PATH="$PATH:$GLASSFISH_HOME/bin:$GLASSFISH_HOME/glassfish/bin"
+
+export PATH="$HOME/.config/doom-emacs/bin:$PATH"

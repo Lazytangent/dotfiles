@@ -77,48 +77,22 @@ fi
 fpath+=${ZDOTDIR:-~}/.zsh_completions
 fpath+=~/.zfunc
 
-# Source in custom config
-if [ -f ~/.zsh_config ]; then
-  source ~/.zsh_config
-fi
+declare -a CONFIG_FILES
+CONIFG_FILES=(
+  "$HOME/.zsh_config"
+  "$HOME/.zsh_aliases"
+  "$HOME/.zsh_functions"
+  "$HOME/.zsh_bindings"
+  "$HOME/.custom_env"
+  "$HOME/.custom_rc"
+  "$HOME/.aliases"
+  "$HOME/.functions"
+)
 
-# Port in Aliases
-if [ -f ~/.zsh_aliases ]; then
-  source ~/.zsh_aliases
-else
-  echo "You're missing the aliases"
-fi
-
-# Port in Functions
-if [ -f ~/.zsh_functions ]; then
-  source ~/.zsh_functions
-else
-  echo "You're missing the functions"
-fi
-
-if [ -f ~/.zsh_bindings ]; then
-  source ~/.zsh_bindings
-fi
-
-if [ -f ~/.vaultrc ]; then
-  source ~/.vaultrc
-fi
-
-if [ -f ~/.custom_env ]; then
-  source ~/.custom_env
-fi
-
-if [ -f ~/.custom_rc ]; then
-  source ~/.custom_rc
-fi
-
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
-fi
-
-if [ -f ~/.functions ]; then
-  source ~/.functions
-fi
+for i in $CONFIG_FILES
+do
+  source "$i"
+done
 
 export ZSH_CONFIG_LOADED='true'
 
@@ -139,3 +113,6 @@ fi
 export BUN_INSTALL="/Users/petermai/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# Make sure Homebrew is first
+export PATH="$(brew --prefix)/bin:$PATH"
