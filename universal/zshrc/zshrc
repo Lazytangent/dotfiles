@@ -78,7 +78,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_completions
 fpath+=~/.zfunc
 
 declare -a CONFIG_FILES
-CONIFG_FILES=(
+CONFIG_FILES=(
   "$HOME/.zsh_config"
   "$HOME/.zsh_aliases"
   "$HOME/.zsh_functions"
@@ -91,7 +91,10 @@ CONIFG_FILES=(
 
 for i in $CONFIG_FILES
 do
-  source "$i"
+  if [[ -f "$i" ]]
+  then
+    source "$i"
+  fi
 done
 
 export ZSH_CONFIG_LOADED='true'
